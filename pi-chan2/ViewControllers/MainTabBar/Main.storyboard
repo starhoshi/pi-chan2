@@ -49,10 +49,23 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="flat" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </navigationBar>
+                    <connections>
+                        <segue destination="ROQ-Tq-ohd" kind="relationship" relationship="rootViewController" id="5MT-Pn-FwN"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Joj-Ar-DJB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="569" y="568"/>
+        </scene>
+        <!--Posts-->
+        <scene sceneID="edY-iB-umq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Posts" id="ROQ-Tq-ohd" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="mLJ-kN-t0y"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tvo-Ug-cXs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1181" y="621"/>
         </scene>
         <!--Members-->
         <scene sceneID="uDe-Jx-DP2">

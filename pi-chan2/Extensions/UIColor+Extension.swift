@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    public static let esaGreen = UIColor.init(hexString: "#78B9FF")
-    public static let esaBrown = UIColor.init(hexString: "#78B9FF")
-    public static let esaFontBlue = UIColor.init(hexString: "#78B9FF")
-    public static let grayUITextFieldBorderColor = UIColor.init(hexString: "#78B9FF")
-    public static let skyblue = UIColor.init(hexString: "#78B9FF")
+    public static let esaGreen = UIColor.init(hexString: "#0a9b94")!
+    public static let esaBrown = UIColor.init(hexString: "#efede0")!
+    public static let esaFontBlue = UIColor.init(hexString: "#3c4a60")!
+    public static let grayUITextFieldBorderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
+    public static let skyblue = UIColor.init(hexString: "#78B9FF")!
 }
 
 extension UIColor {

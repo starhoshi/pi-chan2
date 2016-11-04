@@ -7,6 +7,8 @@ PODS:
   - Fabric (1.6.11)
   - FontAwesome.swift (1.0.0)
   - KeychainAccess (3.0.1)
+  - Kingfisher (3.1.4)
+  - MGSwipeTableCell (1.5.6)
   - ObjectMapper (2.2.0)
   - R.swift (3.1.0):
     - R.swift.Library (~> 3.0.2)
@@ -15,6 +17,7 @@ PODS:
   - SDCAlertView (7.1)
   - SVProgressHUD (2.0.3)
   - SwiftyUserDefaults (3.0.0)
+  - Toaster (2.0.1)
   - XCGLogger (4.0.0):
     - XCGLogger/Core (= 4.0.0)
   - XCGLogger/Core (4.0.0)
@@ -26,11 +29,14 @@ DEPENDENCIES:
   - Fabric
   - FontAwesome.swift (from `https://github.com/thii/FontAwesome.swift.git`)
   - KeychainAccess
+  - Kingfisher
+  - MGSwipeTableCell
   - ObjectMapper
   - R.swift
   - SDCAlertView
   - SVProgressHUD
   - SwiftyUserDefaults
+  - Toaster
   - XCGLogger
 
 EXTERNAL SOURCES:
@@ -49,6 +55,8 @@ SPEC CHECKSUMS:
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   FontAwesome.swift: beb1ff2f206a1517745f4f057a4d30a76f8d7d4e
   KeychainAccess: 017ea25e313a49eda10bb19b0bb0760fb1edfe1a
+  Kingfisher: 6c67e3e57f2d81a9cfdfa25052cd86f33ceac9bb
+  MGSwipeTableCell: 616700eb0ffd1c611ba909066cb7fd739790a0a7
   ObjectMapper: 4060d739febae11ab0c6af8d786f98667c82e1bd
   R.swift: 14400e5784224d1e4e59a8fc5549198c7e8fe360
   R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
@@ -56,8 +64,9 @@ SPEC CHECKSUMS:
   SDCAlertView: b92fd1f00e522e18a062005e15a16c1e8295c5b5
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
+  Toaster: be65cd48e93a525b2a9cc4bd25a2bfc900e02d9f
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 634e3dec5726b982e6e49e022cd2ae086d67668d
+PODFILE CHECKSUM: 300d36913deff47d2cfafec432e52c6f912cf201
 
 COCOAPODS: 1.2.0.beta.1

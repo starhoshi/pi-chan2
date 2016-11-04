@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		D60F251CDDDEF44BE81249BB /* Pods_pi_chan2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E66946F6D7FAEB50483A9F7 /* Pods_pi_chan2.framework */; };
 		E3B301BE1DCB94B500C0A7B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B301BD1DCB94B500C0A7B0 /* AppDelegate.swift */; };
-		E3B301C01DCB94B500C0A7B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B301BF1DCB94B500C0A7B0 /* ViewController.swift */; };
-		E3B301C31DCB94B500C0A7B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B301C11DCB94B500C0A7B0 /* Main.storyboard */; };
 		E3B301C51DCB94B500C0A7B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3B301C41DCB94B500C0A7B0 /* Assets.xcassets */; };
 		E3B301C81DCB94B500C0A7B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B301C61DCB94B500C0A7B0 /* LaunchScreen.storyboard */; };
 		E3C6CE8B1DCC1C11001C2A06 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6CE8A1DCC1C11001C2A06 /* R.generated.swift */; };
@@ -28,15 +26,18 @@
 		E3C6CEAB1DCC2947001C2A06 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6CEA91DCC2947001C2A06 /* MainTabBarController.swift */; };
 		E3C6CEAD1DCC29FA001C2A06 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3C6CEAC1DCC29FA001C2A06 /* Lato-Regular.ttf */; };
 		E3C6CEB01DCC2A4A001C2A06 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6CEAF1DCC2A4A001C2A06 /* UIColor+Extension.swift */; };
+		E3C6CEB41DCC3292001C2A06 /* Posts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C6CEB21DCC3292001C2A06 /* Posts.storyboard */; };
+		E3C6CEB51DCC3292001C2A06 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6CEB31DCC3292001C2A06 /* PostsViewController.swift */; };
+		E3C6CEB91DCC32AC001C2A06 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6CEB71DCC32AC001C2A06 /* PostTableViewCell.swift */; };
+		E3C6CEBA1DCC32AC001C2A06 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3C6CEB81DCC32AC001C2A06 /* PostTableViewCell.xib */; };
+		E3C6CEBC1DCC3799001C2A06 /* Toaster+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6CEBB1DCC3799001C2A06 /* Toaster+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2EB1FADF4B8E2ADEBC6072B2 /* Pods-pi-chan2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pi-chan2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pi-chan2/Pods-pi-chan2.debug.xcconfig"; sourceTree = "<group>"; };
 		9E66946F6D7FAEB50483A9F7 /* Pods_pi_chan2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pi_chan2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B301BA1DCB94B500C0A7B0 /* pi-chan2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pi-chan2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3B301BD1DCB94B500C0A7B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E3B301BF1DCB94B500C0A7B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E3B301C21DCB94B500C0A7B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E3B301BD1DCB94B500C0A7B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3B301C41DCB94B500C0A7B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3B301C71DCB94B500C0A7B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3B301C91DCB94B500C0A7B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +56,11 @@
 		E3C6CEA91DCC2947001C2A06 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		E3C6CEAC1DCC29FA001C2A06 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		E3C6CEAF1DCC2A4A001C2A06 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		E3C6CEB21DCC3292001C2A06 /* Posts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Posts.storyboard; sourceTree = "<group>"; };
+		E3C6CEB31DCC3292001C2A06 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		E3C6CEB71DCC32AC001C2A06 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		E3C6CEB81DCC32AC001C2A06 /* PostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		E3C6CEBB1DCC3799001C2A06 /* Toaster+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Toaster+Extension.swift"; sourceTree = "<group>"; };
 		EB2DF305C746D4888A059423 /* Pods-pi-chan2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pi-chan2.release.xcconfig"; path = "Pods/Target Support Files/Pods-pi-chan2/Pods-pi-chan2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,9 +144,8 @@
 		E3C6CE841DCC1B36001C2A06 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E3C6CEB11DCC3286001C2A06 /* Posts */,
 				E3C6CEA71DCC2931001C2A06 /* MainTabBar */,
-				E3B301C11DCB94B500C0A7B0 /* Main.storyboard */,
-				E3B301BF1DCB94B500C0A7B0 /* ViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -171,6 +176,7 @@
 				E3C6CE8E1DCC1E14001C2A06 /* Bundle+Extension.swift */,
 				E3C6CEAF1DCC2A4A001C2A06 /* UIColor+Extension.swift */,
 				E3C6CE901DCC1E36001C2A06 /* URL+Extension.swift */,
+				E3C6CEBB1DCC3799001C2A06 /* Toaster+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -193,7 +199,6 @@
 			children = (
 				E3C6CE9D1DCC20CD001C2A06 /* GET_user_Request.swift */,
 			);
-			name = Requests;
 			path = Requests;
 			sourceTree = "<group>";
 		};
@@ -202,7 +207,6 @@
 			children = (
 				E3C6CEA01DCC20E8001C2A06 /* GET_user_Response.swift */,
 			);
-			name = Responses;
 			path = Responses;
 			sourceTree = "<group>";
 		};
@@ -211,7 +215,6 @@
 			children = (
 				E3C6CEA31DCC2169001C2A06 /* User.swift */,
 			);
-			name = Entities;
 			path = Entities;
 			sourceTree = "<group>";
 		};
@@ -221,8 +224,26 @@
 				E3C6CEA81DCC2947001C2A06 /* Main.storyboard */,
 				E3C6CEA91DCC2947001C2A06 /* MainTabBarController.swift */,
 			);
-			name = MainTabBar;
 			path = MainTabBar;
+			sourceTree = "<group>";
+		};
+		E3C6CEB11DCC3286001C2A06 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				E3C6CEB61DCC329B001C2A06 /* Cell */,
+				E3C6CEB21DCC3292001C2A06 /* Posts.storyboard */,
+				E3C6CEB31DCC3292001C2A06 /* PostsViewController.swift */,
+			);
+			name = Posts;
+			sourceTree = "<group>";
+		};
+		E3C6CEB61DCC329B001C2A06 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E3C6CEB71DCC32AC001C2A06 /* PostTableViewCell.swift */,
+				E3C6CEB81DCC32AC001C2A06 /* PostTableViewCell.xib */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,9 +312,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3B301C81DCB94B500C0A7B0 /* LaunchScreen.storyboard in Resources */,
+				E3C6CEB41DCC3292001C2A06 /* Posts.storyboard in Resources */,
 				E3B301C51DCB94B500C0A7B0 /* Assets.xcassets in Resources */,
+				E3C6CEBA1DCC32AC001C2A06 /* PostTableViewCell.xib in Resources */,
 				E3C6CEAD1DCC29FA001C2A06 /* Lato-Regular.ttf in Resources */,
-				E3B301C31DCB94B500C0A7B0 /* Main.storyboard in Resources */,
 				E3C6CEAA1DCC2947001C2A06 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,14 +406,16 @@
 				E3C6CE931DCC1E6C001C2A06 /* Log.swift in Sources */,
 				E3C6CE9E1DCC20CD001C2A06 /* GET_user_Request.swift in Sources */,
 				E3C6CEA11DCC20E8001C2A06 /* GET_user_Response.swift in Sources */,
-				E3B301C01DCB94B500C0A7B0 /* ViewController.swift in Sources */,
 				E3B301BE1DCB94B500C0A7B0 /* AppDelegate.swift in Sources */,
+				E3C6CEBC1DCC3799001C2A06 /* Toaster+Extension.swift in Sources */,
 				E3C6CE9B1DCC1FF0001C2A06 /* ESAApiClient.swift in Sources */,
 				E3C6CE951DCC1EAE001C2A06 /* ESASession.swift in Sources */,
 				E3C6CEA61DCC24CE001C2A06 /* Constants.swift in Sources */,
 				E3C6CE991DCC1EED001C2A06 /* ESARequestType.swift in Sources */,
 				E3C6CEB01DCC2A4A001C2A06 /* UIColor+Extension.swift in Sources */,
+				E3C6CEB51DCC3292001C2A06 /* PostsViewController.swift in Sources */,
 				E3C6CEA41DCC2169001C2A06 /* User.swift in Sources */,
+				E3C6CEB91DCC32AC001C2A06 /* PostTableViewCell.swift in Sources */,
 				E3C6CEAB1DCC2947001C2A06 /* MainTabBarController.swift in Sources */,
 				E3C6CE8B1DCC1C11001C2A06 /* R.generated.swift in Sources */,
 				E3C6CE911DCC1E36001C2A06 /* URL+Extension.swift in Sources */,
@@ -402,15 +426,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E3B301C11DCB94B500C0A7B0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E3B301C21DCB94B500C0A7B0 /* Base */,
-			);
-			name = Main.storyboard;
-			path = .;
-			sourceTree = "<group>";
-		};
 		E3B301C61DCB94B500C0A7B0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

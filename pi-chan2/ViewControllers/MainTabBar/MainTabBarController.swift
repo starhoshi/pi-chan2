@@ -7,15 +7,15 @@
 //
 
 import UIKit
-// import Font_Awesome_Swift
+import FontAwesome_swift
 
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // self.tabBar.items?[0].setFAIcon(.FAFileTextO)
-        // self.tabBar.items?[1].setFAIcon(.FASmileO)
-        // self.tabBar.items?[2].setFAIcon(.FAUser)
+        tabBar.items?[0].image = UIImage.fontAwesomeIcon(name: .fileTextO, textColor: UIColor.black, size: CGSize(width: 30, height: 30))
+        tabBar.items?[1].image = UIImage.fontAwesomeIcon(name: .smileO, textColor: UIColor.black, size: CGSize(width: 30, height: 30))
+        tabBar.items?[2].image = UIImage.fontAwesomeIcon(name: .user, textColor: UIColor.black, size: CGSize(width: 30, height: 30))
     }
 
     override func didReceiveMemoryWarning() {

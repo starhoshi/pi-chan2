@@ -16,6 +16,9 @@ def main_pods
   pod 'SwiftyUserDefaults'
   pod 'ObjectMapper'
   pod 'FontAwesome.swift', :git => 'https://github.com/thii/FontAwesome.swift.git'
+  pod 'MGSwipeTableCell'
+  pod 'Toaster'
+  pod 'Kingfisher'
 end
 
 target 'pi-chan2' do
