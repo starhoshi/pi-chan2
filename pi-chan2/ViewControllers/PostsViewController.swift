@@ -18,9 +18,8 @@ import PullToRefreshSwift
 class PostsViewController: UIViewController, UISearchBarDelegate {
 
     var posts: [Post] = []
-    var searchText: String? = nil
+    var searchText = ""
     var nextPage: Int? = 1
-    var loading = false
     var searchController = UISearchController(searchResultsController: nil)
 
     @IBOutlet weak var rightBarButton: UIBarButtonItem!
@@ -78,19 +77,14 @@ class PostsViewController: UIViewController, UISearchBarDelegate {
         }
     }
 
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        searchText = searchController.searchBar.text
-        // resetAndLoadApi()
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchText = searchController.searchBar.text!
+        resetAndLoadApi()
     }
 
-    // func deletePosts(post: Post) {
-    // let alert = AlertController(title: "記事削除", message: "\(post.fullName) を本当に削除しますか？", preferredStyle: .Alert)
-    // alert.addAction(AlertAction(title: "削除する", style: .Preferred) {
-    // _ in self.loadDeleteApi(post)
-    // })
-    // alert.addAction(AlertAction(title: "キャンセル", style: .Default))
-    // alert.present()
-    // }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchText = ""
+    }
 
     func resetAndLoadApi() {
         posts = []
@@ -104,7 +98,7 @@ class PostsViewController: UIViewController, UISearchBarDelegate {
             return
         }
         SVProgressHUD.showLoading()
-        let request = ESAApiClient.GetPostsRequest(page: page)
+        let request = ESAApiClient.GetPostsRequest(page: page, q: searchText)
         ESASession.send(request) { result in
             SVProgressHUD.dismiss()
             switch result {
@@ -116,25 +110,8 @@ class PostsViewController: UIViewController, UISearchBarDelegate {
             case .failure(let error):
                 ESAApiClient.errorHandler(error)
             }
-            self.loading = false
         }
     }
-
-    // func loadDeleteApi(post: Post) {
-    // loading = true
-    // SVProgressHUD.showWithStatus("Loading...")
-    // Esa(token: KeychainManager.getToken()!, currentTeam: KeychainManager.getTeamName()!).deletePost(post.number) { result in
-    // SVProgressHUD.dismiss()
-    // self.loading = false
-    // switch result {
-    // case .Success(_):
-    // self.resetAndLoadApi()
-    // JLToast.showPichanToast("記事を削除しました (\\( ⁰⊖⁰)/)")
-    // case .Failure(let error):
-    // ErrorHandler.errorAlert(error, controller: self)
-    // }
-    // }
-    // }
 
     @IBAction func openEditor(sender: AnyObject) {
         // Window.openEditor(self, post: nil)
@@ -150,12 +127,6 @@ extension PostsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: PostTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: R.nib.postTableViewCell.name)! as! PostTableViewCell
         cell.setItems(post: posts[indexPath.row])
-//        let deleteIcon = UIImage.fontAwesomeIcon(name: .trash, textColor: UIColor.white, size: CGSize(width: 45, height: 45))
-//        cell.rightButtons = [MGSwipeButton(title: "", icon: deleteIcon, backgroundColor: UIColor.red, callback: { (sender: MGSwipeTableCell!) -> Bool in
-////            self.deletePosts(self.posts[indexPath.row])
-//            return true
-//            })]
-//        cell.rightSwipeSettings.transition = .clipCenter
         if (posts.count - 1) == indexPath.row {
             loadGetPostApi(page: nextPage)
         }

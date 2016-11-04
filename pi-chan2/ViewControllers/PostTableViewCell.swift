@@ -9,7 +9,6 @@
 import UIKit
 import Kingfisher
 import FontAwesome_swift
-import SwiftDate
 import NSDate_TimeAgo
 import MGSwipeTableCell
 
@@ -66,8 +65,13 @@ class PostTableViewCell: MGSwipeTableCell {
 
     func setCreatedBy(_ post: Post) {
         var createdByText = ""
-        createdByText += "Updated by \(post.updatedBy.screenName) | "
-        createdByText += NSDate(timeIntervalSince1970: post.updatedAt.timeIntervalSince1970).timeAgo()
+        if post.updatedAt == post.createdAt {
+            createdByText += "Created by \(post.createdBy.screenName) | "
+            createdByText += NSDate(timeIntervalSince1970: post.createdAt.timeIntervalSince1970).timeAgo()
+        } else {
+            createdByText += "Updated by \(post.updatedBy.screenName) | "
+            createdByText += NSDate(timeIntervalSince1970: post.updatedAt.timeIntervalSince1970).timeAgo()
+        }
         createdBy.text = createdByText
     }
 }

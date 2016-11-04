@@ -8,7 +8,6 @@
 
 import Foundation
 import ObjectMapper
-import SwiftDate
 
 class Post: Mappable {
     var number: Int = 0
