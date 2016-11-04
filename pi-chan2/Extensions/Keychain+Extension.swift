@@ -10,6 +10,6 @@ import Foundation
 import KeychainAccess
 
 extension Keychain {
-    static let tokenKey = "toke   n"
+    static let tokenKey = "token"
     static let teamKey = "team"
 }
