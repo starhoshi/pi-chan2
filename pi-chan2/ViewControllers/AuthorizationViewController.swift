@@ -24,15 +24,13 @@ class AuthorizationViewController: UIViewController {
     }
 
     @IBAction func login(sender: AnyObject) {
-        // Esa.authorization(controller: self,
-        // success: { credential in
-////                log?.info(credential.oauth_token)
-        // self.callTeamsApi(token: credential.oauth_token)
-        // },
-        // failure: { error in
-        // log?.info(error.localizedDescription)
-        // }
-        // )
+        ESAAuthorization.oauth2(
+            success: { credential in
+                log?.info(credential.oauthToken)
+            }, failure: { error in
+                log?.info(error.localizedDescription)
+            }
+        )
     }
 
     func callTeamsApi(token: String) {

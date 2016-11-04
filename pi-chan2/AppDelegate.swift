@@ -9,6 +9,7 @@
 import UIKit
 import Fabric
 import Crashlytics
+import OAuthSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -35,6 +36,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let attributesSelected = [NSForegroundColorAttributeName: UIColor.esaGreen, NSFontAttributeName: titleFontAll]
         UITabBarItem.appearance().setTitleTextAttributes(attributesNormal, for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes(attributesSelected, for: .selected)
+    }
+
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any] = [:]) -> Bool {
+        if (url.host == "oauth-callback") {
+            OAuthSwift.handle(url: url)
+        }
+        return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

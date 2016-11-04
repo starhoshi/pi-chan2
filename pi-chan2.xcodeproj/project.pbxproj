@@ -39,7 +39,7 @@
 		E3C6CEC91DCC6772001C2A06 /* SVProgressHUD+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6CEC81DCC6772001C2A06 /* SVProgressHUD+Extension.swift */; };
 		E3C6CECD1DCC6EE9001C2A06 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6CECB1DCC6EE9001C2A06 /* AuthorizationViewController.swift */; };
 		E3C6CECE1DCC6EE9001C2A06 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C6CECC1DCC6EE9001C2A06 /* Authorization.storyboard */; };
-		E3C6CED01DCC7424001C2A06 /* Authoriaztion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6CECF1DCC7424001C2A06 /* Authoriaztion.swift */; };
+		E3C6CED01DCC7424001C2A06 /* ESAAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6CECF1DCC7424001C2A06 /* ESAAuthorization.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,7 +78,7 @@
 		E3C6CEC81DCC6772001C2A06 /* SVProgressHUD+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SVProgressHUD+Extension.swift"; sourceTree = "<group>"; };
 		E3C6CECB1DCC6EE9001C2A06 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		E3C6CECC1DCC6EE9001C2A06 /* Authorization.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
-		E3C6CECF1DCC7424001C2A06 /* Authoriaztion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authoriaztion.swift; sourceTree = "<group>"; };
+		E3C6CECF1DCC7424001C2A06 /* ESAAuthorization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESAAuthorization.swift; sourceTree = "<group>"; };
 		EB2DF305C746D4888A059423 /* Pods-pi-chan2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pi-chan2.release.xcconfig"; path = "Pods/Target Support Files/Pods-pi-chan2/Pods-pi-chan2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				E3C6CE861DCC1B49001C2A06 /* APIs */,
-				E3C6CECF1DCC7424001C2A06 /* Authoriaztion.swift */,
+				E3C6CECF1DCC7424001C2A06 /* ESAAuthorization.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -470,7 +470,7 @@
 				E3C6CECD1DCC6EE9001C2A06 /* AuthorizationViewController.swift in Sources */,
 				E3C6CEC31DCC5970001C2A06 /* Pagination.swift in Sources */,
 				E3C6CE911DCC1E36001C2A06 /* URL+Extension.swift in Sources */,
-				E3C6CED01DCC7424001C2A06 /* Authoriaztion.swift in Sources */,
+				E3C6CED01DCC7424001C2A06 /* ESAAuthorization.swift in Sources */,
 				E3C6CE8F1DCC1E14001C2A06 /* Bundle+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
