@@ -32,7 +32,7 @@ extension ESAApiClient {
         }
 
         var path: String {
-            return "/teams/currentTeam/posts"
+            return teamPath + "/posts"
         }
     }
 }

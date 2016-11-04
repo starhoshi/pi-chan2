@@ -10,11 +10,12 @@ import UIKit
 import APIKit
 import SVProgressHUD
 import FontAwesome_swift
-//import XLActionController
+import XLActionController
 import KeychainAccess
 import Toaster
 
 class AuthorizationViewController: UIViewController {
+    var teams: [Team] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,7 @@ class AuthorizationViewController: UIViewController {
         ESAAuthorization.oauth2(
             success: { credential in
                 log?.info(credential.oauthToken)
-                Keychain.token = credential.oauthToken
+                Keychain()[Keychain.tokenKey] = credential.oauthToken
                 self.loadTeamsApi()
             }, failure: { error in
                 log?.info(error.localizedDescription)
@@ -44,46 +45,49 @@ class AuthorizationViewController: UIViewController {
             SVProgressHUD.dismiss()
             switch result {
             case .success(let response):
-                log?.info("\(response)")
-                // self.selectTeamWhenJoinedMultiTeams(teams, token: token)
+                self.teams = response.teams
+                self.selectTeamWhenJoinedMultiTeams()
             case .failure(let error):
                 ESAApiClient.errorHandler(error)
             }
         }
-
-        // Esa.teams(token) {
-        // }
     }
 
-    // func selectTeamWhenJoinedMultiTeams(teams: Teams, token: String) {
-    // switch teams.teams.count {
-    // case 1:
-    // successAuthorization(teamName: teams.teams.first()!.name, token: token)
-    // break
-    // default:
-    // showTeamSelectActionSheet(teams: teams, token: token)
-    // break
-    // }
-    // }
+    func selectTeamWhenJoinedMultiTeams() {
+        switch teams.count {
+        case 1:
+            successAuthorization(teamName: teams.first!.name)
+            break
+        default:
+            showTeamSelectActionSheet()
+            break
+        }
+    }
 
-    // func showTeamSelectActionSheet(teams: Teams, token: String) {
-    // let actionSheet = TwitterActionController()
-    // actionSheet.headerData = "Select Your Team (\\( ⁰⊖⁰)/)"
-    // teams.teams.each { team in
-    // let image = UIImage(data: NSData(contentsOfURL: team.icon)!)
-    // actionSheet.addAction(Action(ActionData(title: team.name, subtitle: team.url.absoluteString, image: image!), style: .Default, handler: { action in
-    // self.successAuthorization(team.name, token: token)
-    // log?.debug(team.name)
-    // }))
-    // }
-    // presentViewController(actionSheet, animated: true, completion: nil)
-    // }
+    func showTeamSelectActionSheet() {
+        let actionSheet = TwitterActionController()
+        actionSheet.headerData = "Select Your Team (\\( ⁰⊖⁰)/)"
+        teams.forEach { team in
+            let image = UIImage(data: try! Data(contentsOf: team.icon))!
+            actionSheet.addAction(Action(
+                ActionData(title: team.name,
+                    subtitle: team.url.absoluteString,
+                    image: image
+                ),
+                style: .default,
+                handler: { action in
+                    self.successAuthorization(teamName: team.name)
+                    log?.debug(team.name)
+                })
+            )
+        }
+        present(actionSheet, animated: true, completion: nil)
+    }
 
-    // func successAuthorization(teamName: String, token: String) {
-    // KeychainManager.setTeamName(teamName)
-    // KeychainManager.setToken(token)
-    // self.dismissViewControllerAnimated(true, completion: nil)
-    // Toaster.showPichanToast("\(teamName) へのログインが成功しました!")
-    // Global.fromLogin = true
-    // }
+    func successAuthorization(teamName: String) {
+        Keychain()[Keychain.teamKey] = teamName
+        self.dismiss(animated: true, completion: nil)
+        Toast.showLong(text: "\(teamName) へのログインが成功しました!")
+        // Global.fromLogin = true
+    }
 }

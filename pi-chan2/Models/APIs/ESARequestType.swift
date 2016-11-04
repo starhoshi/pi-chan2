@@ -21,11 +21,11 @@ extension ESARequestType {
     }
 
     var headerFields: [String: String] {
-        return ["Authorization": "Bearer " + (Keychain.token ?? "")]
+        return ["Authorization": "Bearer " + (Keychain()[Keychain.tokenKey] ?? "")]
     }
 
     var teamPath: String {
-        return "teams/\(Keychain.team)"
+        return "teams/\(Keychain()[Keychain.teamKey] ?? "")"
     }
 }
 

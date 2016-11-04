@@ -48,8 +48,8 @@ class PostsViewController: UIViewController, UISearchBarDelegate {
         }
     }
     func setSearchBar() {
-        self.definesPresentationContext = true
-        self.extendedLayoutIncludesOpaqueBars = true
+        definesPresentationContext = true
+        extendedLayoutIncludesOpaqueBars = true
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.delegate = self
         searchController.dimsBackgroundDuringPresentation = false
