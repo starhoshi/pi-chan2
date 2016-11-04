@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ia5-e8-20S">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="ldn-hm-qM3">
+            <objects>
+                <navigationController storyboardIdentifier="AuthorizationNavigation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ia5-e8-20S" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="BhO-1s-bnx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.039215686274509803" green="0.60784313725490191" blue="0.58039215686274515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="0uY-OQ-eWE" kind="relationship" relationship="rootViewController" id="EKu-DP-aPJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jLR-OE-tJo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-568" y="356"/>
+        </scene>
+        <!--Authorization-->
+        <scene sceneID="PXu-iZ-o17">
+            <objects>
+                <viewController storyboardIdentifier="AuthorizationStoryboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0uY-OQ-eWE" customClass="AuthorizationViewController" customModule="pi_chan2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DVf-7R-kIC"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bmg-4p-ElO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3FL-UB-9wh">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ONS-zm-kZe">
+                                <rect key="frame" x="58" y="281.5" width="259" height="40"/>
+                                <color key="backgroundColor" red="0.039215686274509803" green="0.60784313725490191" blue="0.58039215686274515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="feW-nd-Ae5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="22"/>
+                                <state key="normal" title="Login in esa.io">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="login:" destination="0uY-OQ-eWE" eventType="touchUpInside" id="Nr6-YG-Gr4"/>
+                                    <action selector="loginWithSender:" destination="0uY-OQ-eWE" eventType="touchUpInside" id="POy-XG-4EU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ONS-zm-kZe" firstAttribute="centerX" secondItem="3FL-UB-9wh" secondAttribute="centerX" id="Onz-El-Nxd"/>
+                            <constraint firstItem="ONS-zm-kZe" firstAttribute="centerY" secondItem="3FL-UB-9wh" secondAttribute="centerY" id="QyP-HM-560"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ONS-zm-kZe" secondAttribute="trailing" constant="42" id="TKQ-pA-59V"/>
+                            <constraint firstItem="ONS-zm-kZe" firstAttribute="leading" secondItem="3FL-UB-9wh" secondAttribute="leadingMargin" constant="42" id="YNs-8N-G1U"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" title="Authorization" id="7c3-ec-IiM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qhd-TJ-dmN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="98" y="356"/>
+        </scene>
+    </scenes>
+</document>

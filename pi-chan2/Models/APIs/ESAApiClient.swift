@@ -24,6 +24,13 @@ final class ESAApiClient {
         case .requestError(_):
             Toast.showLong(text: "エラーが発生しました。(\\( ⁰⊖⁰)/)\n\nしばらく経ってから再度お試しください。")
         case .responseError(let error as Unauthorized):
+            // let loginStoryboard = R.storyboard.authorization()
+            // R.storyboard.authorization().
+            // let login = loginStoryboard.instantiateViewControllerWithIdentifier("AuthorizationNavigation") as! UINavigationController
+            // controller.presentViewController(login, animated: true, completion: nil)
+
+            let login = R.storyboard.authorization().instantiateInitialViewController()!
+            UIApplication.topViewController()?.present(login, animated: true, completion: nil)
             error.showLoginWindow()
         case .responseError(let error as NotFound):
             error.showToast()

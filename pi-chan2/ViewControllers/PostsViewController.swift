@@ -149,7 +149,7 @@ extension PostsViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: PostTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "PostCell")! as! PostTableViewCell
+        let cell: PostTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: R.nib.postTableViewCell.name)! as! PostTableViewCell
         // cell.setItems(posts[indexPath.row])
         // let deleteIcon = UIImage(icon: .FATrash, size: CGSize(width: 45, height: 45)).fillAlpha(.whiteColor())
         // cell.rightButtons = [MGSwipeButton(title: "", icon: deleteIcon, backgroundColor: UIColor.redColor(), callback: { (sender: MGSwipeTableCell!) -> Bool in

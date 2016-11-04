@@ -1,0 +1,6 @@
+framework module Pods_pi_chan2 {
+  umbrella header "Pods-pi-chan2-umbrella.h"
+
+  export *
+  module * { export * }
+}

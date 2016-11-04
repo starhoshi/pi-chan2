@@ -19,6 +19,7 @@ def main_pods
   pod 'MGSwipeTableCell'
   pod 'Toaster'
   pod 'Kingfisher'
+  pod 'OAuthSwift'
 end
 
 target 'pi-chan2' do
