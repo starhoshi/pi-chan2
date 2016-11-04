@@ -29,7 +29,7 @@ class PostsViewController: UIViewController, UISearchBarDelegate {
         let attributes = [NSFontAttributeName: UIFont.fontAwesome(ofSize: 20)] as [String: Any]
         rightBarButton.setTitleTextAttributes(attributes, for: .normal)
         rightBarButton.title = String.fontAwesomeIcon(name: .pencil)
-        self.navigationItem.title = searchText != nil ? searchText : "Posts"
+        self.navigationItem.title = searchText == "" ? "Posts" : searchText
         initTableView()
         resetAndLoadApi()
         setSearchBar()
@@ -105,7 +105,6 @@ class PostsViewController: UIViewController, UISearchBarDelegate {
             case .success(let response):
                 self.posts += response.posts
                 self.nextPage = response.nextPage
-                self.navigationItem.title = "\(response.totalCount) Posts"
                 self.tableView.reloadData()
             case .failure(let error):
                 ESAApiClient.errorHandler(error)
@@ -137,7 +136,6 @@ extension PostsViewController: UITableViewDataSource, UITableViewDelegate {
         log?.debug("\(indexPath)")
         // performSegue(withIdentifier: R.segue.dexSelectionListController.toPokemonList, sender: dexPokemonList)
     }
-
 }
 
 extension PostsViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
