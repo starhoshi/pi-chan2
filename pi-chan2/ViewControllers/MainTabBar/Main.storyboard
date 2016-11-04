@@ -116,10 +116,23 @@
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>
+                    <connections>
+                        <segue destination="qNV-Jf-pfZ" kind="relationship" relationship="rootViewController" id="KTU-rL-iMM"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hy8-7J-Wjw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="569" y="2140"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="x9l-wf-Gmy">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="qNV-Jf-pfZ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="jJb-Hu-EVf"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o66-18-943" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1199" y="2158"/>
         </scene>
     </scenes>
 </document>

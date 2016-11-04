@@ -17,6 +17,10 @@
 		E36DC5131DCCACB400D16167 /* GET_members_Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DC5121DCCACB400D16167 /* GET_members_Request.swift */; };
 		E36DC5151DCCAD2700D16167 /* GET_members_Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DC5141DCCAD2700D16167 /* GET_members_Response.swift */; };
 		E36DC5171DCCAD4F00D16167 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DC5161DCCAD4F00D16167 /* Member.swift */; };
+		E36DC5291DCCB05400D16167 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E36DC5271DCCB05400D16167 /* Profile.storyboard */; };
+		E36DC52A1DCCB05400D16167 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DC5281DCCB05400D16167 /* ProfileViewController.swift */; };
+		E36DC52C1DCCB21900D16167 /* POST_revoke_Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DC52B1DCCB21900D16167 /* POST_revoke_Request.swift */; };
+		E36DC52E1DCCB27000D16167 /* POST_revoke_Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DC52D1DCCB27000D16167 /* POST_revoke_Response.swift */; };
 		E3B301BE1DCB94B500C0A7B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B301BD1DCB94B500C0A7B0 /* AppDelegate.swift */; };
 		E3B301C51DCB94B500C0A7B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3B301C41DCB94B500C0A7B0 /* Assets.xcassets */; };
 		E3B301C81DCB94B500C0A7B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B301C61DCB94B500C0A7B0 /* LaunchScreen.storyboard */; };
@@ -67,6 +71,10 @@
 		E36DC5121DCCACB400D16167 /* GET_members_Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GET_members_Request.swift; sourceTree = "<group>"; };
 		E36DC5141DCCAD2700D16167 /* GET_members_Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GET_members_Response.swift; sourceTree = "<group>"; };
 		E36DC5161DCCAD4F00D16167 /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		E36DC5271DCCB05400D16167 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		E36DC5281DCCB05400D16167 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E36DC52B1DCCB21900D16167 /* POST_revoke_Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = POST_revoke_Request.swift; path = ../Responses/POST_revoke_Request.swift; sourceTree = "<group>"; };
+		E36DC52D1DCCB27000D16167 /* POST_revoke_Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POST_revoke_Response.swift; sourceTree = "<group>"; };
 		E3B301BA1DCB94B500C0A7B0 /* pi-chan2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pi-chan2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B301BD1DCB94B500C0A7B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3B301C41DCB94B500C0A7B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -155,6 +163,15 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		E36DC5181DCCB01E00D16167 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E36DC5271DCCB05400D16167 /* Profile.storyboard */,
+				E36DC5281DCCB05400D16167 /* ProfileViewController.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
 		E3B301B11DCB94B500C0A7B0 = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +225,7 @@
 		E3C6CE841DCC1B36001C2A06 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E36DC5181DCCB01E00D16167 /* Profile */,
 				E36DC5081DCCAA5200D16167 /* Members */,
 				E3C6CECA1DCC6ED7001C2A06 /* Authorization */,
 				E3C6CEB11DCC3286001C2A06 /* Posts */,
@@ -271,6 +289,7 @@
 				E3C6CE9D1DCC20CD001C2A06 /* GET_user_Request.swift */,
 				E3C6CEC01DCC54D7001C2A06 /* GET_posts_Request.swift */,
 				E3C6CED31DCC82AE001C2A06 /* GET_teams_Request.swift */,
+				E36DC52B1DCCB21900D16167 /* POST_revoke_Request.swift */,
 				E36DC5121DCCACB400D16167 /* GET_members_Request.swift */,
 			);
 			path = Requests;
@@ -283,6 +302,7 @@
 				E3C6CEC21DCC5970001C2A06 /* Pagination.swift */,
 				E3C6CED51DCC82C1001C2A06 /* GET_teams_response.swift */,
 				E36DC5141DCCAD2700D16167 /* GET_members_Response.swift */,
+				E36DC52D1DCCB27000D16167 /* POST_revoke_Response.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -415,6 +435,7 @@
 			files = (
 				E3B301C81DCB94B500C0A7B0 /* LaunchScreen.storyboard in Resources */,
 				E3C6CEB41DCC3292001C2A06 /* Posts.storyboard in Resources */,
+				E36DC5291DCCB05400D16167 /* Profile.storyboard in Resources */,
 				E3B301C51DCB94B500C0A7B0 /* Assets.xcassets in Resources */,
 				E3C6CEBA1DCC32AC001C2A06 /* PostTableViewCell.xib in Resources */,
 				E36DC50C1DCCAA6800D16167 /* Members.storyboard in Resources */,
@@ -514,6 +535,7 @@
 				E3C6CED81DCC82F2001C2A06 /* Team.swift in Sources */,
 				E3C6CEC11DCC54D7001C2A06 /* GET_posts_Request.swift in Sources */,
 				E3C6CE9E1DCC20CD001C2A06 /* GET_user_Request.swift in Sources */,
+				E36DC52A1DCCB05400D16167 /* ProfileViewController.swift in Sources */,
 				E3C6CED21DCC8064001C2A06 /* Keychain+Extension.swift in Sources */,
 				E3B301BE1DCB94B500C0A7B0 /* AppDelegate.swift in Sources */,
 				E3C6CEBE1DCC4BB5001C2A06 /* UIApplication+Extension.swift in Sources */,
@@ -537,10 +559,12 @@
 				E3C6CE8B1DCC1C11001C2A06 /* R.generated.swift in Sources */,
 				E3C6CED61DCC82C1001C2A06 /* GET_teams_response.swift in Sources */,
 				E3C6CECD1DCC6EE9001C2A06 /* AuthorizationViewController.swift in Sources */,
+				E36DC52E1DCCB27000D16167 /* POST_revoke_Response.swift in Sources */,
 				E36DC5071DCCA6DC00D16167 /* UIView+Extension.swift in Sources */,
 				E3C6CEC31DCC5970001C2A06 /* Pagination.swift in Sources */,
 				E36DC5131DCCACB400D16167 /* GET_members_Request.swift in Sources */,
 				E3C6CE911DCC1E36001C2A06 /* URL+Extension.swift in Sources */,
+				E36DC52C1DCCB21900D16167 /* POST_revoke_Request.swift in Sources */,
 				E3C6CED01DCC7424001C2A06 /* ESAAuthorization.swift in Sources */,
 				E3C6CE8F1DCC1E14001C2A06 /* Bundle+Extension.swift in Sources */,
 			);
