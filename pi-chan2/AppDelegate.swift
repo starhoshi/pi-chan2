@@ -22,6 +22,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    private func settingTabNavBar() {
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().barTintColor = UIColor.esaGreen
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: R.font.latoRegular(size: 19)!, NSForegroundColorAttributeName: UIColor.white]
+
+        // tabbar settings
+        let titleFontAll: UIFont = R.font.latoRegular(size: 11)!
+        let attributesNormal = [NSForegroundColorAttributeName: UIColor.gray, NSFontAttributeName: titleFontAll]
+        let attributesSelected = [NSForegroundColorAttributeName: UIColor.esaGreen, NSFontAttributeName: titleFontAll]
+        UITabBarItem.appearance().setTitleTextAttributes(attributesNormal, for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes(attributesSelected, for: .selected)
+    }
+
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
