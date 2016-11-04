@@ -54,6 +54,12 @@ extension ESARequestType {
         case 200..<300:
             return object
 
+        case 401:
+            throw Unauthorized()
+
+        case 404:
+            throw NotFound()
+
         default:
             throw ResponseError.unacceptableStatusCode(urlResponse.statusCode)
         }

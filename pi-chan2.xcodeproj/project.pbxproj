@@ -31,6 +31,7 @@
 		E3C6CEB91DCC32AC001C2A06 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6CEB71DCC32AC001C2A06 /* PostTableViewCell.swift */; };
 		E3C6CEBA1DCC32AC001C2A06 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3C6CEB81DCC32AC001C2A06 /* PostTableViewCell.xib */; };
 		E3C6CEBC1DCC3799001C2A06 /* Toaster+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6CEBB1DCC3799001C2A06 /* Toaster+Extension.swift */; };
+		E3C6CEBE1DCC4BB5001C2A06 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6CEBD1DCC4BB5001C2A06 /* UIApplication+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		E3C6CEB71DCC32AC001C2A06 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		E3C6CEB81DCC32AC001C2A06 /* PostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		E3C6CEBB1DCC3799001C2A06 /* Toaster+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Toaster+Extension.swift"; sourceTree = "<group>"; };
+		E3C6CEBD1DCC4BB5001C2A06 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		EB2DF305C746D4888A059423 /* Pods-pi-chan2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pi-chan2.release.xcconfig"; path = "Pods/Target Support Files/Pods-pi-chan2/Pods-pi-chan2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,6 +162,7 @@
 		E3C6CE861DCC1B49001C2A06 /* APIs */ = {
 			isa = PBXGroup;
 			children = (
+				E3C6CEBF1DCC5087001C2A06 /* Errors */,
 				E3C6CEA21DCC215E001C2A06 /* Entities */,
 				E3C6CE9C1DCC20A5001C2A06 /* Requests */,
 				E3C6CE9F1DCC20D9001C2A06 /* Responses */,
@@ -177,6 +180,7 @@
 				E3C6CEAF1DCC2A4A001C2A06 /* UIColor+Extension.swift */,
 				E3C6CE901DCC1E36001C2A06 /* URL+Extension.swift */,
 				E3C6CEBB1DCC3799001C2A06 /* Toaster+Extension.swift */,
+				E3C6CEBD1DCC4BB5001C2A06 /* UIApplication+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -244,6 +248,13 @@
 				E3C6CEB81DCC32AC001C2A06 /* PostTableViewCell.xib */,
 			);
 			name = Cell;
+			sourceTree = "<group>";
+		};
+		E3C6CEBF1DCC5087001C2A06 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Errors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,6 +418,7 @@
 				E3C6CE9E1DCC20CD001C2A06 /* GET_user_Request.swift in Sources */,
 				E3C6CEA11DCC20E8001C2A06 /* GET_user_Response.swift in Sources */,
 				E3B301BE1DCB94B500C0A7B0 /* AppDelegate.swift in Sources */,
+				E3C6CEBE1DCC4BB5001C2A06 /* UIApplication+Extension.swift in Sources */,
 				E3C6CEBC1DCC3799001C2A06 /* Toaster+Extension.swift in Sources */,
 				E3C6CE9B1DCC1FF0001C2A06 /* ESAApiClient.swift in Sources */,
 				E3C6CE951DCC1EAE001C2A06 /* ESASession.swift in Sources */,
