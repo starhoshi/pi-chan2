@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="MemberCell" selectionStyle="default" indentationWidth="10" rowHeight="80" id="KGk-i7-Jjw" customClass="MemberTableViewCell" customModule="pi_chan2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rj9-Am-hZb">
+                        <rect key="frame" x="8" y="8" width="64" height="64"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="64" id="8OU-br-MfN"/>
+                            <constraint firstAttribute="width" constant="64" id="gRK-sy-JyD"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="screen_name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gR-e1-6Ju">
+                        <rect key="frame" x="80" y="8" width="232" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="2q2-sU-Vgs"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="27"/>
+                        <color key="textColor" red="0.039215686274509803" green="0.60784313725490191" blue="0.58039215686274515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JgB-Dg-cXe">
+                        <rect key="frame" x="80" y="51" width="232" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="72H-b3-oG8"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
+                        <color key="textColor" red="0.23529411764705882" green="0.29019607843137257" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Rj9-Am-hZb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Jkw-sn-Yck"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Rj9-Am-hZb" secondAttribute="bottom" constant="-0.5" id="KL8-1W-sAi"/>
+                    <constraint firstItem="6gR-e1-6Ju" firstAttribute="leading" secondItem="Rj9-Am-hZb" secondAttribute="trailing" constant="8" id="LqI-6G-5c1"/>
+                    <constraint firstItem="Rj9-Am-hZb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="aNj-1I-xoc"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="JgB-Dg-cXe" secondAttribute="bottom" constant="-0.5" id="edJ-5G-eRJ"/>
+                    <constraint firstItem="6gR-e1-6Ju" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="joH-NU-j7g"/>
+                    <constraint firstItem="JgB-Dg-cXe" firstAttribute="leading" secondItem="Rj9-Am-hZb" secondAttribute="trailing" constant="8" id="ldl-jV-M11"/>
+                    <constraint firstItem="JgB-Dg-cXe" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="mBb-Cj-ZA7"/>
+                    <constraint firstItem="JgB-Dg-cXe" firstAttribute="top" secondItem="6gR-e1-6Ju" secondAttribute="bottom" constant="8" id="pTW-wu-gsg"/>
+                    <constraint firstItem="6gR-e1-6Ju" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="sUx-c4-MNM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="circleThumbnail" destination="Rj9-Am-hZb" id="R2f-cF-8Z9"/>
+                <outlet property="name" destination="JgB-Dg-cXe" id="yTa-Lk-43H"/>
+                <outlet property="screenNane" destination="6gR-e1-6Ju" id="9vi-hV-6F1"/>
+            </connections>
+            <point key="canvasLocation" x="279" y="435"/>
+        </tableViewCell>
+    </objects>
+</document>

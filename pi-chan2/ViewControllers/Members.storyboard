@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RUr-de-D2g">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Empty Data Set Delegate-->
+        <scene sceneID="QQa-y3-fYA">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="RUr-de-D2g" customClass="MembersViewController" customModule="pi_chan2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Ct-DA-t8r"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zad-18-B6h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bSB-vH-gsM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4ig-n5-1Md">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="RUr-de-D2g" id="kXR-Ah-8Hj"/>
+                                    <outlet property="delegate" destination="RUr-de-D2g" id="SGa-Mi-AAv"/>
+                                    <outlet property="emptyDataSetDelegate" destination="RUr-de-D2g" id="1v3-Z5-0Ql"/>
+                                    <outlet property="emptyDataSetSource" destination="RUr-de-D2g" id="3FG-AF-fgP"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="4ig-n5-1Md" secondAttribute="trailing" id="opq-hJ-QwK"/>
+                            <constraint firstItem="4ig-n5-1Md" firstAttribute="top" secondItem="2Ct-DA-t8r" secondAttribute="bottom" id="pD5-83-bG9"/>
+                            <constraint firstItem="4ig-n5-1Md" firstAttribute="leading" secondItem="bSB-vH-gsM" secondAttribute="leading" id="qac-dp-1C3"/>
+                            <constraint firstItem="Zad-18-B6h" firstAttribute="top" secondItem="4ig-n5-1Md" secondAttribute="bottom" id="rXY-qH-4tp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Members" id="AlR-rk-HMk"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="4ig-n5-1Md" id="PfT-Ds-UA7"/>
+                        <segue destination="CDT-UD-sjR" kind="show" identifier="MembersToPosts" id="3NH-wf-zw2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pJA-Xe-vWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="354" y="435"/>
+        </scene>
+        <!--Posts-->
+        <scene sceneID="Ebt-nk-AaU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Posts" id="CDT-UD-sjR" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ldl-QU-qD6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="821.5" y="448"/>
+        </scene>
+    </scenes>
+</document>

@@ -84,10 +84,23 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="flat" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </navigationBar>
+                    <connections>
+                        <segue destination="KlV-nC-7jK" kind="relationship" relationship="rootViewController" id="Jg8-56-wky"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hgb-Gn-UP4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="569" y="1310"/>
+        </scene>
+        <!--Members-->
+        <scene sceneID="l76-hq-a5w">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Members" id="KlV-nC-7jK" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="sX8-99-MM5"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HUH-j6-4W6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1204" y="1333"/>
         </scene>
         <!--Profile-->
         <scene sceneID="Bde-kA-wy5">
