@@ -44,7 +44,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="4ig-n5-1Md" id="PfT-Ds-UA7"/>
-                        <segue destination="CDT-UD-sjR" kind="show" identifier="MembersToPosts" id="3NH-wf-zw2"/>
+                        <segue destination="CDT-UD-sjR" kind="show" identifier="toPosts" id="3NH-wf-zw2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pJA-Xe-vWb" userLabel="First Responder" sceneMemberID="firstResponder"/>

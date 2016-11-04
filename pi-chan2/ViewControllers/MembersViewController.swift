@@ -91,13 +91,14 @@ extension MembersViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         log?.debug("\(indexPath)")
-        // performSegue(withIdentifier: R.segue.dexSelectionListController.toPokemonList, sender: dexPokemonList)
+        performSegue(withIdentifier: R.segue.membersViewController.toPosts, sender: "@" + members[indexPath.row].screenName)
     }
 
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        let postsViewController: PostsViewController = segue.destinationViewController as! PostsViewController
-//        postsViewController.searchText = sender as? String
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let postsViewController: PostsViewController = segue.destination as! PostsViewController
+        postsViewController.searchText = sender as? String ?? ""
+
+    }
 }
 
 extension MembersViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
