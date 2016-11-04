@@ -40,6 +40,7 @@
 		E3C6CECD1DCC6EE9001C2A06 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6CECB1DCC6EE9001C2A06 /* AuthorizationViewController.swift */; };
 		E3C6CECE1DCC6EE9001C2A06 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C6CECC1DCC6EE9001C2A06 /* Authorization.storyboard */; };
 		E3C6CED01DCC7424001C2A06 /* ESAAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6CECF1DCC7424001C2A06 /* ESAAuthorization.swift */; };
+		E3C6CED21DCC8064001C2A06 /* Keychain+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6CED11DCC8064001C2A06 /* Keychain+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		E3C6CECB1DCC6EE9001C2A06 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		E3C6CECC1DCC6EE9001C2A06 /* Authorization.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
 		E3C6CECF1DCC7424001C2A06 /* ESAAuthorization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESAAuthorization.swift; sourceTree = "<group>"; };
+		E3C6CED11DCC8064001C2A06 /* Keychain+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Keychain+Extension.swift"; sourceTree = "<group>"; };
 		EB2DF305C746D4888A059423 /* Pods-pi-chan2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pi-chan2.release.xcconfig"; path = "Pods/Target Support Files/Pods-pi-chan2/Pods-pi-chan2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -200,6 +202,7 @@
 				E3C6CEBB1DCC3799001C2A06 /* Toaster+Extension.swift */,
 				E3C6CEBD1DCC4BB5001C2A06 /* UIApplication+Extension.swift */,
 				E3C6CEC81DCC6772001C2A06 /* SVProgressHUD+Extension.swift */,
+				E3C6CED11DCC8064001C2A06 /* Keychain+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				E3C6CEC11DCC54D7001C2A06 /* GET_posts_Request.swift in Sources */,
 				E3C6CE9E1DCC20CD001C2A06 /* GET_user_Request.swift in Sources */,
 				E3C6CEA11DCC20E8001C2A06 /* GET_user_Response.swift in Sources */,
+				E3C6CED21DCC8064001C2A06 /* Keychain+Extension.swift in Sources */,
 				E3B301BE1DCB94B500C0A7B0 /* AppDelegate.swift in Sources */,
 				E3C6CEBE1DCC4BB5001C2A06 /* UIApplication+Extension.swift in Sources */,
 				E3C6CEBC1DCC3799001C2A06 /* Toaster+Extension.swift in Sources */,

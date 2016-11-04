@@ -11,6 +11,7 @@ import APIKit
 import SVProgressHUD
 import FontAwesome_swift
 //import XLActionController
+import KeychainAccess
 import Toaster
 
 class AuthorizationViewController: UIViewController {
@@ -27,6 +28,7 @@ class AuthorizationViewController: UIViewController {
         ESAAuthorization.oauth2(
             success: { credential in
                 log?.info(credential.oauthToken)
+                Keychain.token = credential.oauthToken
             }, failure: { error in
                 log?.info(error.localizedDescription)
             }
