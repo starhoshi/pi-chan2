@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D60F251CDDDEF44BE81249BB /* Pods_pi_chan2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E66946F6D7FAEB50483A9F7 /* Pods_pi_chan2.framework */; };
 		E3B301BE1DCB94B500C0A7B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B301BD1DCB94B500C0A7B0 /* AppDelegate.swift */; };
 		E3B301C01DCB94B500C0A7B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B301BF1DCB94B500C0A7B0 /* ViewController.swift */; };
 		E3B301C31DCB94B500C0A7B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B301C11DCB94B500C0A7B0 /* Main.storyboard */; };
 		E3B301C51DCB94B500C0A7B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3B301C41DCB94B500C0A7B0 /* Assets.xcassets */; };
 		E3B301C81DCB94B500C0A7B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B301C61DCB94B500C0A7B0 /* LaunchScreen.storyboard */; };
+		E3C6CE8B1DCC1C11001C2A06 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6CE8A1DCC1C11001C2A06 /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2EB1FADF4B8E2ADEBC6072B2 /* Pods-pi-chan2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pi-chan2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pi-chan2/Pods-pi-chan2.debug.xcconfig"; sourceTree = "<group>"; };
+		9E66946F6D7FAEB50483A9F7 /* Pods_pi_chan2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pi_chan2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B301BA1DCB94B500C0A7B0 /* pi-chan2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pi-chan2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B301BD1DCB94B500C0A7B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3B301BF1DCB94B500C0A7B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,8 @@
 		E3B301C41DCB94B500C0A7B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3B301C71DCB94B500C0A7B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3B301C91DCB94B500C0A7B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3C6CE8A1DCC1C11001C2A06 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		EB2DF305C746D4888A059423 /* Pods-pi-chan2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pi-chan2.release.xcconfig"; path = "Pods/Target Support Files/Pods-pi-chan2/Pods-pi-chan2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D60F251CDDDEF44BE81249BB /* Pods_pi_chan2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		581E2A9601D291152B139CE5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9E66946F6D7FAEB50483A9F7 /* Pods_pi_chan2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8E38E3E3154F6F3451FA1973 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2EB1FADF4B8E2ADEBC6072B2 /* Pods-pi-chan2.debug.xcconfig */,
+				EB2DF305C746D4888A059423 /* Pods-pi-chan2.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E3B301B11DCB94B500C0A7B0 = {
 			isa = PBXGroup;
 			children = (
-				E3B301BC1DCB94B500C0A7B0 /* pi-chan2 */,
+				581E2A9601D291152B139CE5 /* Frameworks */,
+				8E38E3E3154F6F3451FA1973 /* Pods */,
 				E3B301BB1DCB94B500C0A7B0 /* Products */,
+				E3B301BC1DCB94B500C0A7B0 /* pi-chan2 */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +80,71 @@
 		E3B301BC1DCB94B500C0A7B0 /* pi-chan2 */ = {
 			isa = PBXGroup;
 			children = (
-				E3B301BD1DCB94B500C0A7B0 /* AppDelegate.swift */,
-				E3B301BF1DCB94B500C0A7B0 /* ViewController.swift */,
-				E3B301C11DCB94B500C0A7B0 /* Main.storyboard */,
-				E3B301C41DCB94B500C0A7B0 /* Assets.xcassets */,
-				E3B301C61DCB94B500C0A7B0 /* LaunchScreen.storyboard */,
-				E3B301C91DCB94B500C0A7B0 /* Info.plist */,
+				E3C6CE871DCC1B76001C2A06 /* Extensions */,
+				E3C6CE821DCC1B2B001C2A06 /* Models */,
+				E3C6CE881DCC1B8C001C2A06 /* SupportingFiles */,
+				E3C6CE831DCC1B31001C2A06 /* Utils */,
+				E3C6CE851DCC1B3F001C2A06 /* ViewComponents */,
+				E3C6CE841DCC1B36001C2A06 /* ViewControllers */,
 			);
 			path = "pi-chan2";
+			sourceTree = "<group>";
+		};
+		E3C6CE821DCC1B2B001C2A06 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E3C6CE861DCC1B49001C2A06 /* APIs */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E3C6CE831DCC1B31001C2A06 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E3C6CE841DCC1B36001C2A06 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E3B301C11DCB94B500C0A7B0 /* Main.storyboard */,
+				E3B301BF1DCB94B500C0A7B0 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E3C6CE851DCC1B3F001C2A06 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
+		E3C6CE861DCC1B49001C2A06 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
+		E3C6CE871DCC1B76001C2A06 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E3C6CE881DCC1B8C001C2A06 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				E3B301BD1DCB94B500C0A7B0 /* AppDelegate.swift */,
+				E3C6CE8A1DCC1C11001C2A06 /* R.generated.swift */,
+				E3B301C41DCB94B500C0A7B0 /* Assets.xcassets */,
+				E3B301C91DCB94B500C0A7B0 /* Info.plist */,
+				E3B301C61DCB94B500C0A7B0 /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +154,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3B301CC1DCB94B500C0A7B0 /* Build configuration list for PBXNativeTarget "pi-chan2" */;
 			buildPhases = (
+				618315B8CA6AEFE01A4E1CF8 /* [CP] Check Pods Manifest.lock */,
+				E3C6CE891DCC1BAE001C2A06 /* Run Script - R.swift */,
 				E3B301B61DCB94B500C0A7B0 /* Sources */,
 				E3B301B71DCB94B500C0A7B0 /* Frameworks */,
 				E3B301B81DCB94B500C0A7B0 /* Resources */,
+				BFD54C9F47CCA49749DF37CA /* [CP] Embed Pods Frameworks */,
+				06EEE70CA0BAA47EB8A1DFB8 /* [CP] Copy Pods Resources */,
+				E3C6CE811DCC1AD3001C2A06 /* Run Script - Fabric */,
 			);
 			buildRules = (
 			);
@@ -132,6 +220,82 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06EEE70CA0BAA47EB8A1DFB8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pi-chan2/Pods-pi-chan2-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		618315B8CA6AEFE01A4E1CF8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BFD54C9F47CCA49749DF37CA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pi-chan2/Pods-pi-chan2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3C6CE811DCC1AD3001C2A06 /* Run Script - Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - Fabric";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" b2c884fd1c5331b63cbc72ec3177379023c8fca4 f65f295f92930560373d8163109fe0339fe43807726ed9b93d4c92023a44a88e";
+		};
+		E3C6CE891DCC1BAE001C2A06 /* Run Script - R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - R.swift";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT/pi-chan2/SupportingFiles\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E3B301B61DCB94B500C0A7B0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -139,6 +303,7 @@
 			files = (
 				E3B301C01DCB94B500C0A7B0 /* ViewController.swift in Sources */,
 				E3B301BE1DCB94B500C0A7B0 /* AppDelegate.swift in Sources */,
+				E3C6CE8B1DCC1C11001C2A06 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +316,7 @@
 				E3B301C21DCB94B500C0A7B0 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		E3B301C61DCB94B500C0A7B0 /* LaunchScreen.storyboard */ = {
@@ -159,6 +325,7 @@
 				E3B301C71DCB94B500C0A7B0 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -204,7 +371,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -247,7 +414,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -257,12 +424,14 @@
 		};
 		E3B301CD1DCB94B500C0A7B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EB1FADF4B8E2ADEBC6072B2 /* Pods-pi-chan2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5J5Q4ZGXZR;
-				INFOPLIST_FILE = "pi-chan2/Info.plist";
+				INFOPLIST_FILE = "pi-chan2/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.starhoshi.pi-chan2";
+				PRODUCT_BUNDLE_IDENTIFIER = com.starhoshi.pichan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -270,12 +439,14 @@
 		};
 		E3B301CE1DCB94B500C0A7B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB2DF305C746D4888A059423 /* Pods-pi-chan2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5J5Q4ZGXZR;
-				INFOPLIST_FILE = "pi-chan2/Info.plist";
+				INFOPLIST_FILE = "pi-chan2/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.starhoshi.pi-chan2";
+				PRODUCT_BUNDLE_IDENTIFIER = com.starhoshi.pichan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -300,6 +471,7 @@
 				E3B301CE1DCB94B500C0A7B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

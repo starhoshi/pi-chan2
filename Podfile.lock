@@ -1,0 +1,63 @@
+PODS:
+  - APIKit (3.0.0):
+    - Result (~> 3.0)
+  - Crashlytics (3.8.3):
+    - Fabric (~> 1.6.3)
+  - DZNEmptyDataSet (1.8.1)
+  - Fabric (1.6.11)
+  - FontAwesome.swift (1.0.0)
+  - KeychainAccess (3.0.1)
+  - ObjectMapper (2.2.0)
+  - R.swift (3.1.0):
+    - R.swift.Library (~> 3.0.2)
+  - R.swift.Library (3.0.2)
+  - Result (3.0.0)
+  - SDCAlertView (7.1)
+  - SVProgressHUD (2.0.3)
+  - SwiftyUserDefaults (3.0.0)
+  - XCGLogger (4.0.0):
+    - XCGLogger/Core (= 4.0.0)
+  - XCGLogger/Core (4.0.0)
+
+DEPENDENCIES:
+  - APIKit
+  - Crashlytics
+  - DZNEmptyDataSet
+  - Fabric
+  - FontAwesome.swift (from `https://github.com/thii/FontAwesome.swift.git`)
+  - KeychainAccess
+  - ObjectMapper
+  - R.swift
+  - SDCAlertView
+  - SVProgressHUD
+  - SwiftyUserDefaults
+  - XCGLogger
+
+EXTERNAL SOURCES:
+  FontAwesome.swift:
+    :git: https://github.com/thii/FontAwesome.swift.git
+
+CHECKOUT OPTIONS:
+  FontAwesome.swift:
+    :commit: 9ca8cc149b14856605ca744ee7c36621e5dc194b
+    :git: https://github.com/thii/FontAwesome.swift.git
+
+SPEC CHECKSUMS:
+  APIKit: f541a78fc054a03690e7bd32198b00bb835654b6
+  Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
+  FontAwesome.swift: beb1ff2f206a1517745f4f057a4d30a76f8d7d4e
+  KeychainAccess: 017ea25e313a49eda10bb19b0bb0760fb1edfe1a
+  ObjectMapper: 4060d739febae11ab0c6af8d786f98667c82e1bd
+  R.swift: 14400e5784224d1e4e59a8fc5549198c7e8fe360
+  R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
+  Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
+  SDCAlertView: b92fd1f00e522e18a062005e15a16c1e8295c5b5
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
+  XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
+
+PODFILE CHECKSUM: 634e3dec5726b982e6e49e022cd2ae086d67668d
+
+COCOAPODS: 1.2.0.beta.1
