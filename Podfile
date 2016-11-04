@@ -23,6 +23,7 @@ def main_pods
   pod 'XLActionController/Twitter'
   pod 'PullToRefreshSwift'
   pod 'NSDate+TimeAgo'
+  pod 'SwiftDate'
 end
 
 target 'pi-chan2' do

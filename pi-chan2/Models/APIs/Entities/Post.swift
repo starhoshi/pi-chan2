@@ -8,6 +8,7 @@
 
 import Foundation
 import ObjectMapper
+import SwiftDate
 
 class Post: Mappable {
     var number: Int = 0
@@ -16,15 +17,15 @@ class Post: Mappable {
     var wip: Bool = false
     var bodyMd: String = ""
     var bodyHtml: String = ""
-    var createdAt: String = ""
+    var createdAt: Date = Date()
+    var updatedAt: Date = Date()
     var message: String = ""
     var url: URL = URL.defaultUrl()
-    var updatedAt: String = ""
     var tags: [String]?
     var category: String?
     var revisionNumber: Int = 0
-    // var createdBy: CreatedBy =
-    // var updatedBy: UpdatedBy
+    var createdBy: CreatedBy!
+    var updatedBy: CreatedBy!
     // var kind: Kind
     var commentsCount: Int = 0
     var tasksCount: Int = 0
@@ -45,15 +46,15 @@ class Post: Mappable {
         wip <- map["wip"]
         bodyMd <- map["body_md"]
         bodyHtml <- map["body_html"]
-        createdAt <- map["created_at"]
+        createdAt <- (map["created_at"], ISO8601DateTransform())
+        updatedAt <- (map["updated_at"], ISO8601DateTransform())
         message <- map["message"]
         url <- map["url"]
-        updatedAt <- map["updated_at"]
         tags <- map["tags"]
         category <- map["category"]
         revisionNumber <- map["revision_number"]
-        // createdBy <- map["id"]
-        // updatedBy <- map["id"]
+        createdBy <- map["created_by"]
+        updatedBy <- map["updated_by"]
         // kind <- map["id"]
         commentsCount <- map["comments_count"]
         tasksCount <- map["tasks_count"]

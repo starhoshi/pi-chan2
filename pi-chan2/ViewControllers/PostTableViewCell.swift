@@ -9,8 +9,8 @@
 import UIKit
 import Kingfisher
 import FontAwesome_swift
-//import SwiftDate
-//import NSDate_TimeAgo
+import SwiftDate
+import NSDate_TimeAgo
 import MGSwipeTableCell
 
 class PostTableViewCell: MGSwipeTableCell {
@@ -54,25 +54,20 @@ class PostTableViewCell: MGSwipeTableCell {
         checkCount.text = "\(post.doneTasksCount)/\(post.tasksCount)"
         wip.isHidden = !post.wip
         contentsView.alpha = post.wip ? 0.5 : 1.0
-//        setCreatedBy(post)
+        setCreatedBy(post)
         setThumbnail(post)
     }
 
     func setThumbnail(_ post: Post) {
-//        circleThumbnail.kf.setImage(with: post.createdBy.icon)
-//        circleUpdateThumbnail.isHidden = post.createdBy.screenName == post.updatedBy.screenName ? true : false
-//        circleUpdateThumbnail.kf.setImage(with: post.updatedBy.icon)
+        circleThumbnail.kf.setImage(with: post.createdBy.icon)
+        circleUpdateThumbnail.isHidden = post.createdBy.screenName == post.updatedBy.screenName ? true : false
+        circleUpdateThumbnail.kf.setImage(with: post.updatedBy.icon)
     }
 
-//    func setCreatedBy(post: Post) {
-//        var createdByText = ""
-//        if post.updatedAt == post.createdAt {
-//            createdByText += "Created by \(post.createdBy.screenName) | "
-//            createdByText += post.createdAt.toDateFromISO8601()!.timeAgo()
-//        } else {
-//            createdByText += "Updated by \(post.updatedBy.screenName) | "
-//            createdByText += post.updatedAt.toDateFromISO8601()!.timeAgo()
-//        }
-//        createdBy.text = createdByText
-//    }
+    func setCreatedBy(_ post: Post) {
+        var createdByText = ""
+        createdByText += "Updated by \(post.updatedBy.screenName) | "
+        createdByText += NSDate(timeIntervalSince1970: post.updatedAt.timeIntervalSince1970).timeAgo()
+        createdBy.text = createdByText
+    }
 }
