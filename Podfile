@@ -21,6 +21,8 @@ def main_pods
   pod 'Kingfisher'
   pod 'OAuthSwift'
   pod 'XLActionController/Twitter'
+  pod 'PullToRefreshSwift'
+  pod 'NSDate+TimeAgo'
 end
 
 target 'pi-chan2' do

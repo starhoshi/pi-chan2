@@ -13,6 +13,7 @@ import MGSwipeTableCell
 import SDCAlertView
 import FontAwesome_swift
 import Toaster
+import PullToRefreshSwift
 
 class PostsViewController: UIViewController, UISearchBarDelegate {
 
@@ -53,9 +54,9 @@ class PostsViewController: UIViewController, UISearchBarDelegate {
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.delegate = self
         searchController.dimsBackgroundDuringPresentation = false
-        // searchController.obscuresBackgroundDuringPresentation = false
+        if #available(iOS 9.1, *) { searchController.obscuresBackgroundDuringPresentation = false }
         searchController.searchBar.text = searchText
-        // searchController.searchBar.searchBarStyle = UISearchBarStyle.Default
+        searchController.searchBar.searchBarStyle = .default
         searchController.searchBar.sizeToFit()
         searchController.searchBar.barTintColor = UIColor.esaGreen
         searchController.searchBar.tintColor = UIColor.white
@@ -71,12 +72,10 @@ class PostsViewController: UIViewController, UISearchBarDelegate {
         tableView.estimatedRowHeight = 123
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.tableFooterView = UIView()
-        // tableView.dg_addPullToRefreshWithActionHandler({ [weak self]() -> Void in
-        // self!.tableView.dg_stopLoading()
-        // self!.resetAndLoadApi()
-        // }, loadingView: View.refreshLoading())
-        // tableView.dg_setPullToRefreshFillColor(UIColor.esaGreen())
-        // tableView.dg_setPullToRefreshBackgroundColor(tableView.backgroundColor!)
+        tableView.addPullRefresh { [weak self] in
+            self?.resetAndLoadApi()
+            self?.tableView.stopPullRefreshEver(false)
+        }
     }
 
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
@@ -150,16 +149,16 @@ extension PostsViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: PostTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: R.nib.postTableViewCell.name)! as! PostTableViewCell
-        // cell.setItems(posts[indexPath.row])
-        // let deleteIcon = UIImage(icon: .FATrash, size: CGSize(width: 45, height: 45)).fillAlpha(.whiteColor())
-        // cell.rightButtons = [MGSwipeButton(title: "", icon: deleteIcon, backgroundColor: UIColor.redColor(), callback: { (sender: MGSwipeTableCell!) -> Bool in
-        // self.deletePosts(self.posts[indexPath.row])
-        // return true
-        // })]
-        // cell.rightSwipeSettings.transition = MGSwipeTransition.ClipCenter
-        // if (posts.count - 1) == indexPath.row {
-        // loadPostApi(nextPage)
-        // }
+        cell.setItems(post: posts[indexPath.row])
+//        let deleteIcon = UIImage.fontAwesomeIcon(name: .trash, textColor: UIColor.white, size: CGSize(width: 45, height: 45))
+//        cell.rightButtons = [MGSwipeButton(title: "", icon: deleteIcon, backgroundColor: UIColor.red, callback: { (sender: MGSwipeTableCell!) -> Bool in
+////            self.deletePosts(self.posts[indexPath.row])
+//            return true
+//            })]
+//        cell.rightSwipeSettings.transition = .clipCenter
+        if (posts.count - 1) == indexPath.row {
+            loadGetPostApi(page: nextPage)
+        }
         return cell
     }
 

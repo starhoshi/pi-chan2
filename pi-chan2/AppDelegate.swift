@@ -30,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: R.font.latoRegular(size: 19)!, NSForegroundColorAttributeName: UIColor.white]
         UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        UINavigationBar.appearance().shadowImage = UIImage()
 
         // tabbar settings
         let titleFontAll: UIFont = R.font.latoRegular(size: 11)!

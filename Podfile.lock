@@ -9,8 +9,10 @@ PODS:
   - KeychainAccess (3.0.1)
   - Kingfisher (3.1.4)
   - MGSwipeTableCell (1.5.6)
+  - NSDate+TimeAgo (1.0.6)
   - OAuthSwift (1.0.0)
   - ObjectMapper (2.2.0)
+  - PullToRefreshSwift (3.0.3)
   - R.swift (3.1.0):
     - R.swift.Library (~> 3.0.2)
   - R.swift.Library (3.0.2)
@@ -35,8 +37,10 @@ DEPENDENCIES:
   - KeychainAccess
   - Kingfisher
   - MGSwipeTableCell
+  - NSDate+TimeAgo
   - OAuthSwift
   - ObjectMapper
+  - PullToRefreshSwift
   - R.swift
   - SDCAlertView
   - SVProgressHUD
@@ -63,8 +67,10 @@ SPEC CHECKSUMS:
   KeychainAccess: 017ea25e313a49eda10bb19b0bb0760fb1edfe1a
   Kingfisher: 6c67e3e57f2d81a9cfdfa25052cd86f33ceac9bb
   MGSwipeTableCell: 616700eb0ffd1c611ba909066cb7fd739790a0a7
+  NSDate+TimeAgo: 35601c619b2d59290055e4fe76e61d97677a2360
   OAuthSwift: dd4f502ffd4f6e122b861b5e4529bf6454a30fe6
   ObjectMapper: 4060d739febae11ab0c6af8d786f98667c82e1bd
+  PullToRefreshSwift: 0743b818072bfd7c9464addc2d1b987b131057ca
   R.swift: 14400e5784224d1e4e59a8fc5549198c7e8fe360
   R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
   Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
@@ -75,6 +81,6 @@ SPEC CHECKSUMS:
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
   XLActionController: 57fe0ce1642e2eed971b188b490762345fdbf963
 
-PODFILE CHECKSUM: 4e3a990e5acc329b46d8fabdfcca7f1dad8bc2f4
+PODFILE CHECKSUM: d3f098325010b263825f34de8e1cd78ffa8b095b
 
 COCOAPODS: 1.2.0.beta.1

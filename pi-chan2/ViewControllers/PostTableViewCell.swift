@@ -33,33 +33,37 @@ class PostTableViewCell: MGSwipeTableCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // starIcon.setFAIcon(.FAStar, iconSize: 14)
-        // eyeIcon.setFAIcon(.FAEye, iconSize: 14)
-        // commentsIcon.setFAIcon(.FAComments, iconSize: 14)
-        // checkIcon.setFAIcon(.FACheckSquareO, iconSize: 14)
+        starIcon.font = UIFont.fontAwesome(ofSize: 14)
+        starIcon.text = String.fontAwesomeIcon(name: .star)
+        eyeIcon.font = UIFont.fontAwesome(ofSize: 14)
+        eyeIcon.text = String.fontAwesomeIcon(name: .eye)
+        commentsIcon.font = UIFont.fontAwesome(ofSize: 14)
+        commentsIcon.text = String.fontAwesomeIcon(name: .comments)
+        checkIcon.font = UIFont.fontAwesome(ofSize: 14)
+        checkIcon.text = String.fontAwesomeIcon(name: .checkSquareO)
     }
 
-//    func setItems(post: Post) {
-//        category.text = post.category
-//        title.text = post.name
-//        starIcon.textColor = post.star ? UIColor.esaGreen() : UIColor.esaFontBlue()
-//        eyeIcon.textColor = post.watch ? UIColor.esaGreen() : UIColor.esaFontBlue()
-//        starCount.text = String(post.stargazersCount)
-//        eyeCount.text = String(post.watchersCount)
-//        commentsCount.text = String(post.commentsCount)
-//        checkCount.text = "\(post.doneTasksCount)/\(post.tasksCount)"
-//        wip.hidden = !post.wip
-//        contentsView.alpha = post.wip ? 0.5 : 1.0
+    func setItems(post: Post) {
+        category.text = post.category
+        title.text = post.name
+        starIcon.textColor = post.star ? UIColor.esaGreen : UIColor.esaFontBlue
+        eyeIcon.textColor = post.watch ? UIColor.esaGreen : UIColor.esaFontBlue
+        starCount.text = String(post.stargazersCount)
+        eyeCount.text = String(post.watchersCount)
+        commentsCount.text = String(post.commentsCount)
+        checkCount.text = "\(post.doneTasksCount)/\(post.tasksCount)"
+        wip.isHidden = !post.wip
+        contentsView.alpha = post.wip ? 0.5 : 1.0
 //        setCreatedBy(post)
-//        setThumbnail(post)
-//    }
-//
-//    func setThumbnail(post: Post) {
-//        circleThumbnail.toCircle().kf_setImageWithURL(post.createdBy.icon)
-//        circleUpdateThumbnail.hidden = post.createdBy.screenName == post.updatedBy.screenName ? true : false
-//        circleUpdateThumbnail.toCircle().kf_setImageWithURL(post.updatedBy.icon)
-//    }
-//
+        setThumbnail(post)
+    }
+
+    func setThumbnail(_ post: Post) {
+//        circleThumbnail.kf.setImage(with: post.createdBy.icon)
+//        circleUpdateThumbnail.isHidden = post.createdBy.screenName == post.updatedBy.screenName ? true : false
+//        circleUpdateThumbnail.kf.setImage(with: post.updatedBy.icon)
+    }
+
 //    func setCreatedBy(post: Post) {
 //        var createdByText = ""
 //        if post.updatedAt == post.createdAt {
