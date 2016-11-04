@@ -9,7 +9,7 @@
 import Foundation
 import APIKit
 import ObjectMapper
-// import KeychainAccess
+import KeychainAccess
 
 protocol ESARequestType: Request {
 
@@ -21,8 +21,11 @@ extension ESARequestType {
     }
 
     var headerFields: [String: String] {
-        let token = ""
-        return ["Authorization": "Bearer " + token]
+        return ["Authorization": "Bearer " + (Keychain.token ?? "")]
+    }
+
+    var teamPath: String {
+        return "teams/\(Keychain.team)"
     }
 }
 

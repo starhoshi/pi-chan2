@@ -104,6 +104,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyUserDefaults/SwiftyUserDefaults.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Toaster/Toaster.framework"
   install_framework "$BUILT_PRODUCTS_DIR/XCGLogger/XCGLogger.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/XLActionController/XLActionController.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/APIKit/APIKit.framework"
@@ -121,6 +122,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyUserDefaults/SwiftyUserDefaults.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Toaster/Toaster.framework"
   install_framework "$BUILT_PRODUCTS_DIR/XCGLogger/XCGLogger.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/XLActionController/XLActionController.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

@@ -1,5 +1,5 @@
 //
-//  GET_posts_Request.swift
+//  GET_teams_Request.swift
 //  pi-chan2
 //
 //  Created by Kensuke Hoshikawa on 2016/11/04.
@@ -10,17 +10,15 @@ import Foundation
 import APIKit
 
 extension ESAApiClient {
-    struct GetPostsRequest: ESARequestType {
-        typealias Response = GetPostsResponse
+    struct GetTeamsRequest: ESARequestType {
+        typealias Response = GetTeamsResponse
 
         let page: Int
         let perPage: Int
-        let q: String
 
-        init(page: Int = 1, perPage: Int = 50, q: String = "") {
+        init(page: Int = 1, perPage: Int = 50) {
             self.page = page
             self.perPage = perPage
-            self.q = q
         }
 
         var method: HTTPMethod {
@@ -28,11 +26,11 @@ extension ESAApiClient {
         }
 
         var queryParameters: [String: Any]? {
-            return ["page": page, "per_page": perPage, "q": q]
+            return ["page": page, "per_page": perPage]
         }
 
         var path: String {
-            return "/teams/currentTeam/posts"
+            return "/teams"
         }
     }
 }

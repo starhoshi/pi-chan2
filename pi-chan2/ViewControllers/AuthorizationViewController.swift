@@ -29,24 +29,29 @@ class AuthorizationViewController: UIViewController {
             success: { credential in
                 log?.info(credential.oauthToken)
                 Keychain.token = credential.oauthToken
+                self.loadTeamsApi()
             }, failure: { error in
                 log?.info(error.localizedDescription)
             }
         )
     }
 
-    func callTeamsApi(token: String) {
-        SVProgressHUD.show(withStatus: "Loading...")
+    func loadTeamsApi() {
+        SVProgressHUD.showLoading()
+        let request = ESAApiClient.GetTeamsRequest()
+        ESASession.send(request) {
+            result in
+            SVProgressHUD.dismiss()
+            switch result {
+            case .success(let response):
+                log?.info("\(response)")
+                // self.selectTeamWhenJoinedMultiTeams(teams, token: token)
+            case .failure(let error):
+                ESAApiClient.errorHandler(error)
+            }
+        }
+
         // Esa.teams(token) {
-        // result in
-        // SVProgressHUD.dismiss()
-        // switch result {
-        // case .Success(let teams):
-        // log?.info("\(teams)")
-        // self.selectTeamWhenJoinedMultiTeams(teams, token: token)
-        // case .Failure(let error):
-        // ErrorHandler.errorAlert(error, controller: self)
-        // }
         // }
     }
 

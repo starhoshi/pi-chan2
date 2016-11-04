@@ -20,6 +20,7 @@ def main_pods
   pod 'Toaster'
   pod 'Kingfisher'
   pod 'OAuthSwift'
+  pod 'XLActionController/Twitter'
 end
 
 target 'pi-chan2' do
