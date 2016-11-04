@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Posts-->
+        <!--Empty Data Set Delegate-->
         <scene sceneID="bE8-dh-erF">
             <objects>
                 <viewController title="Posts" automaticallyAdjustsScrollViewInsets="NO" id="r46-aO-JOG" customClass="PostsViewController" customModule="pi_chan2" customModuleProvider="target" sceneMemberID="viewController">
@@ -23,6 +23,12 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ucX-SB-QA3">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="r46-aO-JOG" id="ouN-6S-kri"/>
+                                    <outlet property="delegate" destination="r46-aO-JOG" id="9Na-RR-b6Q"/>
+                                    <outlet property="emptyDataSetDelegate" destination="r46-aO-JOG" id="p11-7O-7cV"/>
+                                    <outlet property="emptyDataSetSource" destination="r46-aO-JOG" id="MMB-dD-Ldb"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -36,7 +42,7 @@
                     <navigationItem key="navigationItem" title="Posts" id="gSp-5m-i58">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="r36-dJ-MKC">
                             <connections>
-                                <action selector="openEditor:" destination="r46-aO-JOG" id="ZdA-AF-ZQa"/>
+                                <action selector="openEditorWithSender:" destination="r46-aO-JOG" id="Fg4-fC-8Y5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

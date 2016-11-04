@@ -32,6 +32,11 @@
 		E3C6CEBA1DCC32AC001C2A06 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3C6CEB81DCC32AC001C2A06 /* PostTableViewCell.xib */; };
 		E3C6CEBC1DCC3799001C2A06 /* Toaster+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6CEBB1DCC3799001C2A06 /* Toaster+Extension.swift */; };
 		E3C6CEBE1DCC4BB5001C2A06 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6CEBD1DCC4BB5001C2A06 /* UIApplication+Extension.swift */; };
+		E3C6CEC11DCC54D7001C2A06 /* GET_posts_Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6CEC01DCC54D7001C2A06 /* GET_posts_Request.swift */; };
+		E3C6CEC31DCC5970001C2A06 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6CEC21DCC5970001C2A06 /* Pagination.swift */; };
+		E3C6CEC51DCC5A82001C2A06 /* GET_posts_Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6CEC41DCC5A82001C2A06 /* GET_posts_Response.swift */; };
+		E3C6CEC71DCC5B92001C2A06 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6CEC61DCC5B92001C2A06 /* Post.swift */; };
+		E3C6CEC91DCC6772001C2A06 /* SVProgressHUD+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C6CEC81DCC6772001C2A06 /* SVProgressHUD+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +68,11 @@
 		E3C6CEB81DCC32AC001C2A06 /* PostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		E3C6CEBB1DCC3799001C2A06 /* Toaster+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Toaster+Extension.swift"; sourceTree = "<group>"; };
 		E3C6CEBD1DCC4BB5001C2A06 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		E3C6CEC01DCC54D7001C2A06 /* GET_posts_Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GET_posts_Request.swift; sourceTree = "<group>"; };
+		E3C6CEC21DCC5970001C2A06 /* Pagination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
+		E3C6CEC41DCC5A82001C2A06 /* GET_posts_Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GET_posts_Response.swift; sourceTree = "<group>"; };
+		E3C6CEC61DCC5B92001C2A06 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		E3C6CEC81DCC6772001C2A06 /* SVProgressHUD+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SVProgressHUD+Extension.swift"; sourceTree = "<group>"; };
 		EB2DF305C746D4888A059423 /* Pods-pi-chan2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pi-chan2.release.xcconfig"; path = "Pods/Target Support Files/Pods-pi-chan2/Pods-pi-chan2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,6 +191,7 @@
 				E3C6CE901DCC1E36001C2A06 /* URL+Extension.swift */,
 				E3C6CEBB1DCC3799001C2A06 /* Toaster+Extension.swift */,
 				E3C6CEBD1DCC4BB5001C2A06 /* UIApplication+Extension.swift */,
+				E3C6CEC81DCC6772001C2A06 /* SVProgressHUD+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -202,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				E3C6CE9D1DCC20CD001C2A06 /* GET_user_Request.swift */,
+				E3C6CEC01DCC54D7001C2A06 /* GET_posts_Request.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -210,6 +222,8 @@
 			isa = PBXGroup;
 			children = (
 				E3C6CEA01DCC20E8001C2A06 /* GET_user_Response.swift */,
+				E3C6CEC41DCC5A82001C2A06 /* GET_posts_Response.swift */,
+				E3C6CEC21DCC5970001C2A06 /* Pagination.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -218,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				E3C6CEA31DCC2169001C2A06 /* User.swift */,
+				E3C6CEC61DCC5B92001C2A06 /* Post.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -415,6 +430,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3C6CE931DCC1E6C001C2A06 /* Log.swift in Sources */,
+				E3C6CEC71DCC5B92001C2A06 /* Post.swift in Sources */,
+				E3C6CEC11DCC54D7001C2A06 /* GET_posts_Request.swift in Sources */,
 				E3C6CE9E1DCC20CD001C2A06 /* GET_user_Request.swift in Sources */,
 				E3C6CEA11DCC20E8001C2A06 /* GET_user_Response.swift in Sources */,
 				E3B301BE1DCB94B500C0A7B0 /* AppDelegate.swift in Sources */,
@@ -426,10 +443,13 @@
 				E3C6CE991DCC1EED001C2A06 /* ESARequestType.swift in Sources */,
 				E3C6CEB01DCC2A4A001C2A06 /* UIColor+Extension.swift in Sources */,
 				E3C6CEB51DCC3292001C2A06 /* PostsViewController.swift in Sources */,
+				E3C6CEC51DCC5A82001C2A06 /* GET_posts_Response.swift in Sources */,
+				E3C6CEC91DCC6772001C2A06 /* SVProgressHUD+Extension.swift in Sources */,
 				E3C6CEA41DCC2169001C2A06 /* User.swift in Sources */,
 				E3C6CEB91DCC32AC001C2A06 /* PostTableViewCell.swift in Sources */,
 				E3C6CEAB1DCC2947001C2A06 /* MainTabBarController.swift in Sources */,
 				E3C6CE8B1DCC1C11001C2A06 /* R.generated.swift in Sources */,
+				E3C6CEC31DCC5970001C2A06 /* Pagination.swift in Sources */,
 				E3C6CE911DCC1E36001C2A06 /* URL+Extension.swift in Sources */,
 				E3C6CE8F1DCC1E14001C2A06 /* Bundle+Extension.swift in Sources */,
 			);

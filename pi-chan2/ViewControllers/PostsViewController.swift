@@ -16,7 +16,7 @@ import Toaster
 
 class PostsViewController: UIViewController, UISearchBarDelegate {
 
-    // var posts: [Post] = []
+    var posts: [Post] = []
     var searchText: String? = nil
     var nextPage: Int? = 1
     var loading = false
@@ -26,10 +26,12 @@ class PostsViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // rightBarButton.setFAIcon(.FAPencil, iconSize: 22)
+        let attributes = [NSFontAttributeName: UIFont.fontAwesome(ofSize: 20)] as [String: Any]
+        rightBarButton.setTitleTextAttributes(attributes, for: .normal)
+        rightBarButton.title = String.fontAwesomeIcon(name: .pencil)
         self.navigationItem.title = searchText != nil ? searchText : "Posts"
         initTableView()
-        // resetAndLoadApi()
+        resetAndLoadApi()
         setSearchBar()
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -42,7 +44,7 @@ class PostsViewController: UIViewController, UISearchBarDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         if let indexPathForSelectedRow = tableView.indexPathForSelectedRow {
-            // tableView.deselectRowAtIndexPath(indexPathForSelectedRow, animated: true)
+            tableView.deselectRow(at: indexPathForSelectedRow, animated: true)
         }
     }
     func setSearchBar() {
@@ -65,11 +67,10 @@ class PostsViewController: UIViewController, UISearchBarDelegate {
     }
 
     func initTableView() {
-        let postCellNib: UINib = UINib(nibName: "PostTableViewCell", bundle: nil)
-        // tableView.registerNib(postCellNib, forCellReuseIdentifier: "PostCell")
+        tableView.register(R.nib.postTableViewCell(), forCellReuseIdentifier: R.nib.postTableViewCell.name)
         tableView.estimatedRowHeight = 123
         tableView.rowHeight = UITableViewAutomaticDimension
-        // self.tableView.tableFooterView = UIView()
+        tableView.tableFooterView = UIView()
         // tableView.dg_addPullToRefreshWithActionHandler({ [weak self]() -> Void in
         // self!.tableView.dg_stopLoading()
         // self!.resetAndLoadApi()
@@ -83,47 +84,6 @@ class PostsViewController: UIViewController, UISearchBarDelegate {
         // resetAndLoadApi()
     }
 
-    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        return NSAttributedString(string: "取得結果0件\nもしくは取得失敗")
-    }
-
-    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        return NSAttributedString(string: "タップして再取得")
-    }
-
-    func emptyDataSetDidTapView(scrollView: UIScrollView!) {
-        // resetAndLoadApi()
-    }
-
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // return posts.count
-        return 0
-    }
-
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: PostTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "PostCell")! as! PostTableViewCell
-        // cell.setItems(posts[indexPath.row])
-        // let deleteIcon = UIImage(icon: .FATrash, size: CGSize(width: 45, height: 45)).fillAlpha(.whiteColor())
-        // cell.rightButtons = [MGSwipeButton(title: "", icon: deleteIcon, backgroundColor: UIColor.redColor(), callback: { (sender: MGSwipeTableCell!) -> Bool in
-        // self.deletePosts(self.posts[indexPath.row])
-        // return true
-        // })]
-        // cell.rightSwipeSettings.transition = MGSwipeTransition.ClipCenter
-        // if (posts.count - 1) == indexPath.row {
-        // loadPostApi(nextPage)
-        // }
-        return cell
-    }
-
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        // performSegueWithIdentifier("PostsToPreview", sender: posts[indexPath.row].number)
-    }
-
-    // override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // let previewViewController: PreviewViewController = segue.destinationViewController as! PreviewViewController
-    // previewViewController.postNumber = sender as! Int
-    // }
-
     // func deletePosts(post: Post) {
     // let alert = AlertController(title: "記事削除", message: "\(post.fullName) を本当に削除しますか？", preferredStyle: .Alert)
     // alert.addAction(AlertAction(title: "削除する", style: .Preferred) {
@@ -133,31 +93,33 @@ class PostsViewController: UIViewController, UISearchBarDelegate {
     // alert.present()
     // }
 
-    // func resetAndLoadApi() {
-    // posts = []
-    // tableView.reloadData()
-    // loadPostApi(1)
-    // }
+    func resetAndLoadApi() {
+        posts = []
+        tableView.reloadData()
+        loadGetPostApi(page: 1)
+    }
 
-    // func loadPostApi(page: Int?) {
-    // if page == nil || loading {
-    // return
-    // }
-    // loading = true
-    // SVProgressHUD.showWithStatus("Loading...")
-    // Esa(token: KeychainManager.getToken()!, currentTeam: KeychainManager.getTeamName()!).posts(page, q: searchText) { result in
-    // SVProgressHUD.dismiss()
-    // switch result {
-    // case .Success(let posts):
-    // self.posts << posts.posts
-    // self.nextPage = posts.nextPage
-    // self.tableView.reloadData()
-    // case .Failure(let error):
-    // ErrorHandler.errorAlert(error, controller: self)
-    // }
-    // self.loading = false
-    // }
-    // }
+    func loadGetPostApi(page: Int?) {
+        guard let page = page, !SVProgressHUD.isVisible() else {
+            log?.warning("not load...")
+            return
+        }
+        SVProgressHUD.showLoading()
+        let request = ESAApiClient.GetPostsRequest(page: page)
+        ESASession.send(request) { result in
+            SVProgressHUD.dismiss()
+            switch result {
+            case .success(let response):
+                self.posts += response.posts
+                self.nextPage = response.nextPage
+                self.navigationItem.title = "\(response.totalCount) Posts"
+                self.tableView.reloadData()
+            case .failure(let error):
+                ESAApiClient.errorHandler(error)
+            }
+            self.loading = false
+        }
+    }
 
     // func loadDeleteApi(post: Post) {
     // loading = true
@@ -180,3 +142,45 @@ class PostsViewController: UIViewController, UISearchBarDelegate {
     }
 
 }
+
+extension PostsViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: PostTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "PostCell")! as! PostTableViewCell
+        // cell.setItems(posts[indexPath.row])
+        // let deleteIcon = UIImage(icon: .FATrash, size: CGSize(width: 45, height: 45)).fillAlpha(.whiteColor())
+        // cell.rightButtons = [MGSwipeButton(title: "", icon: deleteIcon, backgroundColor: UIColor.redColor(), callback: { (sender: MGSwipeTableCell!) -> Bool in
+        // self.deletePosts(self.posts[indexPath.row])
+        // return true
+        // })]
+        // cell.rightSwipeSettings.transition = MGSwipeTransition.ClipCenter
+        // if (posts.count - 1) == indexPath.row {
+        // loadPostApi(nextPage)
+        // }
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        log?.debug("\(indexPath)")
+        // performSegue(withIdentifier: R.segue.dexSelectionListController.toPokemonList, sender: dexPokemonList)
+    }
+
+}
+
+extension PostsViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        return NSAttributedString(string: "取得結果0件\nもしくは取得失敗")
+    }
+
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        return NSAttributedString(string: "タップして再読み込み")
+    }
+
+    func emptyDataSet(_ scrollView: UIScrollView!, didTap view: UIView!) {
+        resetAndLoadApi()
+    }
+}
+

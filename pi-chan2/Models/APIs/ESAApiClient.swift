@@ -15,7 +15,7 @@ final class ESAApiClient {
 
     }
 
-    static func errorHandler(error: SessionTaskError) {
+    static func errorHandler(_ error: SessionTaskError) {
         log?.error("\(error)")
 
         switch error {
