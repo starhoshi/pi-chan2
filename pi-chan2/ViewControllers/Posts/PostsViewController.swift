@@ -36,11 +36,13 @@ class PostsViewController: UIViewController, UISearchBarDelegate {
         setSearchBar()
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadByNotification), name: ESAObserver.write, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadByNotification), name: ESAObserver.login, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadByNotification), name: ESAObserver.delete, object: nil)
     }
 
     deinit {
         NotificationCenter.default.removeObserver(self, name: ESAObserver.write, object: nil)
         NotificationCenter.default.removeObserver(self, name: ESAObserver.login, object: nil)
+        NotificationCenter.default.removeObserver(self, name: ESAObserver.delete, object: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {

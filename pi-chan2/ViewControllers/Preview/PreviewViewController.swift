@@ -10,25 +10,42 @@ import UIKit
 import SVProgressHUD
 import FontAwesome_swift
 import SafariServices
+import Toaster
+import SDCAlertView
 
 class PreviewViewController: UIViewController, UIWebViewDelegate {
     var postNumber: Int!
     let localHtml = R.file.mdHtml()!.path
     var post: Post?
 
+    @IBOutlet weak var toolbar: UIToolbar!
+    @IBOutlet weak var deleteButton: UIBarButtonItem!
+//    @IBOutlet weak var starButton: UIBarButtonItem!
+//    @IBOutlet weak var eyeButton: UIBarButtonItem!
+    @IBOutlet weak var commentButton: UIBarButtonItem!
+    @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var webView: UIWebView!
-    @IBOutlet weak var rightBarButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let attributes = [NSFontAttributeName: UIFont.fontAwesome(ofSize: 20)] as [String: Any]
-        rightBarButton.setTitleTextAttributes(attributes, for: .normal)
-        rightBarButton.title = String.fontAwesomeIcon(name: .edit)
+        initUIBarButton()
 
         let req = URLRequest(url: URL(string: localHtml)!)
         webView.delegate = self;
         webView.loadRequest(req)
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadByNotification), name: ESAObserver.edit, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadByNotification), name: ESAObserver.login, object: nil)
+    }
+
+    func initUIBarButton() {
+        toolbar.barTintColor = UIColor.esaGreen
+        toolbar.isTranslucent = false
+        let attributes = [NSFontAttributeName: UIFont.fontAwesome(ofSize: 20)] as [String: Any]
+        deleteButton.setTitleTextAttributes(attributes, for: .normal)
+        deleteButton.title = String.fontAwesomeIcon(name: .trashO)
+        commentButton.setTitleTextAttributes(attributes, for: .normal)
+        commentButton.title = String.fontAwesomeIcon(name: .comments)
+        editButton.setTitleTextAttributes(attributes, for: .normal)
+        editButton.title = String.fontAwesomeIcon(name: .edit)
     }
 
     deinit {
@@ -108,4 +125,42 @@ class PreviewViewController: UIViewController, UIWebViewDelegate {
     @IBAction func openEditor(sender: AnyObject) {
         performSegue(withIdentifier: R.segue.previewViewController.toEditor.identifier, sender: nil)
     }
+
+    @IBAction func onDeleteTapped(_ sender: Any) {
+        guard let post = post else {
+            return
+        }
+        let alert = AlertController(title: "記事削除", message: "\(post.fullName) を本当に削除しますか？", preferredStyle: .actionSheet)
+        alert.add(AlertAction(title: "キャンセル", style: .preferred))
+        alert.add(AlertAction(title: "Delete", style: .destructive) {
+            _ in self.showDeleteDialog()
+        })
+        alert.present()
+    }
+
+    func showDeleteDialog() {
+        let alert = AlertController(title: "記事を削除", message: "この操作は取り消せません。\nよろしいですか？", preferredStyle: .alert)
+        alert.add(AlertAction(title: "キャンセル", style: .preferred))
+        alert.add(AlertAction(title: "削除する", style: .destructive) {
+            _ in self.loadDeletePostsApi()
+        })
+        alert.present()
+    }
+
+    func loadDeletePostsApi() {
+        SVProgressHUD.showLoading()
+        let request = ESAApiClient.DeletePostsRequest(number: postNumber)
+        ESASession.send(request) { result in
+            SVProgressHUD.dismiss()
+            switch result {
+            case .success(_):
+                let _ = self.navigationController?.popViewController(animated: true)
+                NotificationCenter.default.post(name: ESAObserver.delete, object: nil)
+                Toast.showLong(text: "記事を削除しました (\\( ⁰⊖⁰)/)")
+            case .failure(let error):
+                ESAApiClient.errorHandler(error)
+            }
+        }
+    }
+
 }

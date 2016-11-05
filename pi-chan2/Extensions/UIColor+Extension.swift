@@ -15,6 +15,7 @@ extension UIColor {
     public static let esaFontBlue = UIColor.init(hexString: "#3c4a60")!
     public static let grayUITextFieldBorderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
     public static let skyblue = UIColor.init(hexString: "#78B9FF")!
+    public static let star = UIColor.init(hexString: "#F29600")!
 }
 
 extension UIColor {

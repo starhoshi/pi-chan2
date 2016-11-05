@@ -11,5 +11,6 @@ import Foundation
 final class ESAObserver {
     static let edit = NSNotification.Name(rawValue: "edit")
     static let write = NSNotification.Name(rawValue: "write")
+    static let delete = NSNotification.Name(rawValue: "delete")
     static let login = NSNotification.Name(rawValue: "login")
 }

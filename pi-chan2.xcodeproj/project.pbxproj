@@ -43,6 +43,8 @@
 		E36DC56E1DCDABDC00D16167 /* PATCH_posts_Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DC56D1DCDABDC00D16167 /* PATCH_posts_Request.swift */; };
 		E36DC5701DCDC0B300D16167 /* ESAObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DC56F1DCDC0B300D16167 /* ESAObserver.swift */; };
 		E3AD42B01DCDF00900E6AD84 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AD42AF1DCDF00900E6AD84 /* Comment.swift */; };
+		E3AD42BB1DCE508300E6AD84 /* DELETE_ posts_Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AD42BA1DCE508300E6AD84 /* DELETE_ posts_Request.swift */; };
+		E3AD42BD1DCE50A500E6AD84 /* DELETE_posts_Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AD42BC1DCE50A500E6AD84 /* DELETE_posts_Response.swift */; };
 		E3B301BE1DCB94B500C0A7B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B301BD1DCB94B500C0A7B0 /* AppDelegate.swift */; };
 		E3B301C51DCB94B500C0A7B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3B301C41DCB94B500C0A7B0 /* Assets.xcassets */; };
 		E3B301C81DCB94B500C0A7B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B301C61DCB94B500C0A7B0 /* LaunchScreen.storyboard */; };
@@ -119,6 +121,8 @@
 		E36DC56D1DCDABDC00D16167 /* PATCH_posts_Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PATCH_posts_Request.swift; sourceTree = "<group>"; };
 		E36DC56F1DCDC0B300D16167 /* ESAObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESAObserver.swift; sourceTree = "<group>"; };
 		E3AD42AF1DCDF00900E6AD84 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		E3AD42BA1DCE508300E6AD84 /* DELETE_ posts_Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DELETE_ posts_Request.swift"; sourceTree = "<group>"; };
+		E3AD42BC1DCE50A500E6AD84 /* DELETE_posts_Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DELETE_posts_Response.swift; sourceTree = "<group>"; };
 		E3B301BA1DCB94B500C0A7B0 /* pi-chan2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pi-chan2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B301BD1DCB94B500C0A7B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3B301C41DCB94B500C0A7B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -388,6 +392,7 @@
 				E36DC56D1DCDABDC00D16167 /* PATCH_posts_Request.swift */,
 				E36DC56B1DCD9B1200D16167 /* POST_posts_Request.swift */,
 				E36DC52B1DCCB21900D16167 /* POST_revoke_Request.swift */,
+				E3AD42BA1DCE508300E6AD84 /* DELETE_ posts_Request.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -399,6 +404,7 @@
 				E3C6CEC41DCC5A82001C2A06 /* GET_posts_Response.swift */,
 				E3C6CED51DCC82C1001C2A06 /* GET_teams_response.swift */,
 				E36DC52D1DCCB27000D16167 /* POST_revoke_Response.swift */,
+				E3AD42BC1DCE50A500E6AD84 /* DELETE_posts_Response.swift */,
 				E3C6CEC21DCC5970001C2A06 /* Pagination.swift */,
 			);
 			path = Responses;
@@ -656,6 +662,7 @@
 				E3C6CE9B1DCC1FF0001C2A06 /* ESAApiClient.swift in Sources */,
 				E36DC55E1DCD842100D16167 /* PreviewViewController.swift in Sources */,
 				E3C6CE951DCC1EAE001C2A06 /* ESASession.swift in Sources */,
+				E3AD42BD1DCE50A500E6AD84 /* DELETE_posts_Response.swift in Sources */,
 				E3C6CEA61DCC24CE001C2A06 /* Constants.swift in Sources */,
 				E3C6CE991DCC1EED001C2A06 /* ESARequestType.swift in Sources */,
 				E36DC56E1DCDABDC00D16167 /* PATCH_posts_Request.swift in Sources */,
@@ -685,6 +692,7 @@
 				E36DC5421DCCB98D00D16167 /* Share.swift in Sources */,
 				E3C6CE911DCC1E36001C2A06 /* URL+Extension.swift in Sources */,
 				E36DC52C1DCCB21900D16167 /* POST_revoke_Request.swift in Sources */,
+				E3AD42BB1DCE508300E6AD84 /* DELETE_ posts_Request.swift in Sources */,
 				E3C6CED01DCC7424001C2A06 /* ESAAuthorization.swift in Sources */,
 				E3C6CE8F1DCC1E14001C2A06 /* Bundle+Extension.swift in Sources */,
 			);
