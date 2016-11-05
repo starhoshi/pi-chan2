@@ -113,9 +113,9 @@ class PostsViewController: UIViewController, UISearchBarDelegate {
     }
 
     @IBAction func openEditor(sender: AnyObject) {
-        // Window.openEditor(self, post: nil)
+        let editor = R.storyboard.editor().instantiateInitialViewController()!
+        present(editor, animated: true, completion: nil)
     }
-
 }
 
 extension PostsViewController: UITableViewDataSource, UITableViewDelegate {

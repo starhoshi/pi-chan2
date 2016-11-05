@@ -26,6 +26,8 @@ def main_pods
   pod 'SwiftDate'
   pod 'VTAcknowledgementsViewController'
   pod 'Siren'
+  pod 'SCLAlertView'
+  pod 'IQKeyboardManagerSwift'
 end
 
 target 'pi-chan2' do

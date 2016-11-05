@@ -37,6 +37,8 @@
 		E36DC5621DCD842100D16167 /* marked.js in Resources */ = {isa = PBXBuildFile; fileRef = E36DC55B1DCD842100D16167 /* marked.js */; };
 		E36DC5631DCD842100D16167 /* md.html in Resources */ = {isa = PBXBuildFile; fileRef = E36DC55C1DCD842100D16167 /* md.html */; };
 		E36DC5651DCD858500D16167 /* GET_post_Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DC5641DCD858500D16167 /* GET_post_Request.swift */; };
+		E36DC5691DCD8E7800D16167 /* Editor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E36DC5671DCD8E7800D16167 /* Editor.storyboard */; };
+		E36DC56A1DCD8E7800D16167 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DC5681DCD8E7800D16167 /* EditorViewController.swift */; };
 		E3B301BE1DCB94B500C0A7B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B301BD1DCB94B500C0A7B0 /* AppDelegate.swift */; };
 		E3B301C51DCB94B500C0A7B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3B301C41DCB94B500C0A7B0 /* Assets.xcassets */; };
 		E3B301C81DCB94B500C0A7B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B301C61DCB94B500C0A7B0 /* LaunchScreen.storyboard */; };
@@ -107,6 +109,8 @@
 		E36DC55B1DCD842100D16167 /* marked.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = marked.js; sourceTree = "<group>"; };
 		E36DC55C1DCD842100D16167 /* md.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = md.html; sourceTree = "<group>"; };
 		E36DC5641DCD858500D16167 /* GET_post_Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GET_post_Request.swift; sourceTree = "<group>"; };
+		E36DC5671DCD8E7800D16167 /* Editor.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Editor.storyboard; sourceTree = "<group>"; };
+		E36DC5681DCD8E7800D16167 /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		E3B301BA1DCB94B500C0A7B0 /* pi-chan2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pi-chan2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B301BD1DCB94B500C0A7B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3B301C41DCB94B500C0A7B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -238,6 +242,15 @@
 			name = Preview;
 			sourceTree = "<group>";
 		};
+		E36DC5661DCD8E6000D16167 /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				E36DC5671DCD8E7800D16167 /* Editor.storyboard */,
+				E36DC5681DCD8E7800D16167 /* EditorViewController.swift */,
+			);
+			name = Editor;
+			sourceTree = "<group>";
+		};
 		E3B301B11DCB94B500C0A7B0 = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +306,7 @@
 		E3C6CE841DCC1B36001C2A06 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E36DC5661DCD8E6000D16167 /* Editor */,
 				E36DC5471DCD83FC00D16167 /* Preview */,
 				E36DC52F1DCCB78300D16167 /* Settings */,
 				E36DC5181DCCB01E00D16167 /* Profile */,
@@ -512,6 +526,7 @@
 				E3C6CEB41DCC3292001C2A06 /* Posts.storyboard in Resources */,
 				E36DC5631DCD842100D16167 /* md.html in Resources */,
 				E36DC5291DCCB05400D16167 /* Profile.storyboard in Resources */,
+				E36DC5691DCD8E7800D16167 /* Editor.storyboard in Resources */,
 				E36DC53E1DCCB81C00D16167 /* Settings.storyboard in Resources */,
 				E36DC55D1DCD842100D16167 /* Preview.storyboard in Resources */,
 				E36DC53C1DCCB81C00D16167 /* SettingTableViewCell.xib in Resources */,
@@ -635,6 +650,7 @@
 				E36DC5021DCC9B2600D16167 /* CreatedBy.swift in Sources */,
 				E36DC5101DCCAA7200D16167 /* MemberTableViewCell.swift in Sources */,
 				E36DC5171DCCAD4F00D16167 /* Member.swift in Sources */,
+				E36DC56A1DCD8E7800D16167 /* EditorViewController.swift in Sources */,
 				E36DC53B1DCCB81C00D16167 /* SettingTableViewCell.swift in Sources */,
 				E3C6CEC51DCC5A82001C2A06 /* GET_posts_Response.swift in Sources */,
 				E3C6CEC91DCC6772001C2A06 /* SVProgressHUD+Extension.swift in Sources */,

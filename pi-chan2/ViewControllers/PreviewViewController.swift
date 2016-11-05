@@ -8,11 +8,11 @@
 
 import UIKit
 import SVProgressHUD
+import FontAwesome_swift
 import SafariServices
 
 class PreviewViewController: UIViewController, UIWebViewDelegate {
     var postNumber: Int!
-//    let localHtml = NSBundle.mainBundle().pathForResource("md", ofType: "html")!
     let localHtml = R.file.mdHtml()!.path
     var post: Post?
 
@@ -20,9 +20,10 @@ class PreviewViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var rightBarButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
-//        rightBarButton.setFAIcon(.FAEdit, iconSize: 22)
+        let attributes = [NSFontAttributeName: UIFont.fontAwesome(ofSize: 20)] as [String: Any]
+        rightBarButton.setTitleTextAttributes(attributes, for: .normal)
+        rightBarButton.title = String.fontAwesomeIcon(name: .edit)
 
-//        let req = NSURLRequest(URL: URL(string: localHtml)!)
         let req = URLRequest(url: URL(string: localHtml)!)
         webView.delegate = self;
         webView.loadRequest(req)
@@ -30,7 +31,7 @@ class PreviewViewController: UIViewController, UIWebViewDelegate {
 
     override func viewDidAppear(_ animated: Bool) {
 //        if Global.fromLogin || Global.posted {
-        loadGetPostApi()
+//        loadGetPostApi()
 //            Global.fromLogin = false
 //            Global.posted = false
 //        }
@@ -60,7 +61,12 @@ class PreviewViewController: UIViewController, UIWebViewDelegate {
     }
 
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        if request.url!.absoluteString.hasPrefix("file:///posts") {
+        log?.info("\(request.url)")
+
+        guard let url = request.url else {
+            return false
+        }
+        if url.absoluteString.hasPrefix("file:///posts") {
             goPreviewToPreview(url: request.url!)
             return false
         }
@@ -75,12 +81,12 @@ class PreviewViewController: UIViewController, UIWebViewDelegate {
 
     func goPreviewToPreview(url: URL) {
         let nextPostNumber = Int(url.absoluteString.replacingOccurrences(of: "file:///posts/", with: ""))!
-//        performSegue(withIdentifier: "PreviewToPreview", sender: nextPostNumber)
+        performSegue(withIdentifier: R.segue.previewViewController.previewToPreview.identifier, sender: nextPostNumber)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let previewViewController: PreviewViewController = segue.destinationViewController as! PreviewViewController
-//        previewViewController.postNumber = sender as! Int
+        let previewViewController = segue.destination as! PreviewViewController
+        previewViewController.postNumber = sender as! Int
     }
 
     @IBAction func openEditor(sender: AnyObject) {
