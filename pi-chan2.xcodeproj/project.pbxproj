@@ -94,7 +94,7 @@
 		E36DC5161DCCAD4F00D16167 /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		E36DC5271DCCB05400D16167 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		E36DC5281DCCB05400D16167 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		E36DC52B1DCCB21900D16167 /* POST_revoke_Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = POST_revoke_Request.swift; path = ../Responses/POST_revoke_Request.swift; sourceTree = "<group>"; };
+		E36DC52B1DCCB21900D16167 /* POST_revoke_Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = POST_revoke_Request.swift; path = POST_revoke_Request.swift; sourceTree = "<group>"; };
 		E36DC52D1DCCB27000D16167 /* POST_revoke_Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POST_revoke_Response.swift; sourceTree = "<group>"; };
 		E36DC5361DCCB81C00D16167 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		E36DC5371DCCB81C00D16167 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
@@ -189,11 +189,12 @@
 		E36DC5081DCCAA5200D16167 /* Members */ = {
 			isa = PBXGroup;
 			children = (
+				E36DC5091DCCAA5E00D16167 /* Cell */,
 				E36DC50A1DCCAA6800D16167 /* Members.storyboard */,
 				E36DC50B1DCCAA6800D16167 /* MembersViewController.swift */,
-				E36DC5091DCCAA5E00D16167 /* Cell */,
 			);
 			name = Members;
+			path = Members;
 			sourceTree = "<group>";
 		};
 		E36DC5091DCCAA5E00D16167 /* Cell */ = {
@@ -203,6 +204,7 @@
 				E36DC50F1DCCAA7200D16167 /* MemberTableViewCell.xib */,
 			);
 			name = Cell;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		E36DC5181DCCB01E00D16167 /* Profile */ = {
@@ -212,6 +214,7 @@
 				E36DC5281DCCB05400D16167 /* ProfileViewController.swift */,
 			);
 			name = Profile;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		E36DC52F1DCCB78300D16167 /* Settings */ = {
@@ -223,15 +226,17 @@
 				E36DC53A1DCCB81C00D16167 /* SettingsViewController.swift */,
 			);
 			name = Settings;
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		E36DC5401DCCB82400D16167 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				E36DC5371DCCB81C00D16167 /* SettingTableViewCell.xib */,
 				E36DC5361DCCB81C00D16167 /* SettingTableViewCell.swift */,
+				E36DC5371DCCB81C00D16167 /* SettingTableViewCell.xib */,
 			);
 			name = Cell;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		E36DC5471DCD83FC00D16167 /* Preview */ = {
@@ -246,6 +251,7 @@
 				E36DC55C1DCD842100D16167 /* md.html */,
 			);
 			name = Preview;
+			path = Preview;
 			sourceTree = "<group>";
 		};
 		E36DC5661DCD8E6000D16167 /* Editor */ = {
@@ -255,6 +261,7 @@
 				E36DC5681DCD8E7800D16167 /* EditorViewController.swift */,
 			);
 			name = Editor;
+			path = Editor;
 			sourceTree = "<group>";
 		};
 		E3B301B11DCB94B500C0A7B0 = {
@@ -278,7 +285,6 @@
 		E3B301BC1DCB94B500C0A7B0 /* pi-chan2 */ = {
 			isa = PBXGroup;
 			children = (
-				E36DC5001DCC901900D16167 /* pi-chan2.entitlements */,
 				E3C6CE871DCC1B76001C2A06 /* Extensions */,
 				E3C6CE821DCC1B2B001C2A06 /* Models */,
 				E3C6CE881DCC1B8C001C2A06 /* SupportingFiles */,
@@ -286,6 +292,7 @@
 				E3C6CE851DCC1B3F001C2A06 /* ViewComponents */,
 				E3C6CE841DCC1B36001C2A06 /* ViewControllers */,
 				E3B301BD1DCB94B500C0A7B0 /* AppDelegate.swift */,
+				E36DC5001DCC901900D16167 /* pi-chan2.entitlements */,
 			);
 			path = "pi-chan2";
 			sourceTree = "<group>";
@@ -303,9 +310,9 @@
 		E3C6CE831DCC1B31001C2A06 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E3C6CE921DCC1E6C001C2A06 /* Log.swift */,
 				E36DC5411DCCB98D00D16167 /* Share.swift */,
 				E36DC5431DCCB99400D16167 /* SirenUpdater.swift */,
-				E3C6CE921DCC1E6C001C2A06 /* Log.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -313,14 +320,14 @@
 		E3C6CE841DCC1B36001C2A06 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E36DC5661DCD8E6000D16167 /* Editor */,
-				E36DC5471DCD83FC00D16167 /* Preview */,
-				E36DC52F1DCCB78300D16167 /* Settings */,
-				E36DC5181DCCB01E00D16167 /* Profile */,
-				E36DC5081DCCAA5200D16167 /* Members */,
 				E3C6CECA1DCC6ED7001C2A06 /* Authorization */,
-				E3C6CEB11DCC3286001C2A06 /* Posts */,
+				E36DC5661DCD8E6000D16167 /* Editor */,
 				E3C6CEA71DCC2931001C2A06 /* MainTabBar */,
+				E36DC5081DCCAA5200D16167 /* Members */,
+				E3C6CEB11DCC3286001C2A06 /* Posts */,
+				E36DC5471DCD83FC00D16167 /* Preview */,
+				E36DC5181DCCB01E00D16167 /* Profile */,
+				E36DC52F1DCCB78300D16167 /* Settings */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -335,8 +342,8 @@
 		E3C6CE861DCC1B49001C2A06 /* APIs */ = {
 			isa = PBXGroup;
 			children = (
-				E3C6CEBF1DCC5087001C2A06 /* Errors */,
 				E3C6CEA21DCC215E001C2A06 /* Entities */,
+				E3C6CEBF1DCC5087001C2A06 /* Errors */,
 				E3C6CE9C1DCC20A5001C2A06 /* Requests */,
 				E3C6CE9F1DCC20D9001C2A06 /* Responses */,
 				E3C6CE9A1DCC1FF0001C2A06 /* ESAApiClient.swift */,
@@ -350,13 +357,13 @@
 			isa = PBXGroup;
 			children = (
 				E3C6CE8E1DCC1E14001C2A06 /* Bundle+Extension.swift */,
-				E3C6CEAF1DCC2A4A001C2A06 /* UIColor+Extension.swift */,
-				E3C6CE901DCC1E36001C2A06 /* URL+Extension.swift */,
+				E3C6CED11DCC8064001C2A06 /* Keychain+Extension.swift */,
+				E3C6CEC81DCC6772001C2A06 /* SVProgressHUD+Extension.swift */,
 				E3C6CEBB1DCC3799001C2A06 /* Toaster+Extension.swift */,
 				E3C6CEBD1DCC4BB5001C2A06 /* UIApplication+Extension.swift */,
-				E3C6CEC81DCC6772001C2A06 /* SVProgressHUD+Extension.swift */,
-				E3C6CED11DCC8064001C2A06 /* Keychain+Extension.swift */,
+				E3C6CEAF1DCC2A4A001C2A06 /* UIColor+Extension.swift */,
 				E36DC5061DCCA6DC00D16167 /* UIView+Extension.swift */,
+				E3C6CE901DCC1E36001C2A06 /* URL+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -364,10 +371,10 @@
 		E3C6CE881DCC1B8C001C2A06 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				E36DC5451DCCBB9100D16167 /* Acknowledgements.plist */,
 				E3B301C41DCB94B500C0A7B0 /* Assets.xcassets */,
 				E3C6CEA51DCC24CE001C2A06 /* Constants.swift */,
 				E3B301C91DCB94B500C0A7B0 /* Info.plist */,
-				E36DC5451DCCBB9100D16167 /* Acknowledgements.plist */,
 				E3C6CEAC1DCC29FA001C2A06 /* Lato-Regular.ttf */,
 				E3B301C61DCB94B500C0A7B0 /* LaunchScreen.storyboard */,
 				E3C6CE8A1DCC1C11001C2A06 /* R.generated.swift */,
@@ -378,14 +385,14 @@
 		E3C6CE9C1DCC20A5001C2A06 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				E3C6CE9D1DCC20CD001C2A06 /* GET_user_Request.swift */,
-				E3C6CEC01DCC54D7001C2A06 /* GET_posts_Request.swift */,
-				E36DC5641DCD858500D16167 /* GET_post_Request.swift */,
-				E3C6CED31DCC82AE001C2A06 /* GET_teams_Request.swift */,
-				E36DC52B1DCCB21900D16167 /* POST_revoke_Request.swift */,
-				E36DC56B1DCD9B1200D16167 /* POST_posts_Request.swift */,
-				E36DC56D1DCDABDC00D16167 /* PATCH_posts_Request.swift */,
 				E36DC5121DCCACB400D16167 /* GET_members_Request.swift */,
+				E36DC5641DCD858500D16167 /* GET_post_Request.swift */,
+				E3C6CEC01DCC54D7001C2A06 /* GET_posts_Request.swift */,
+				E3C6CED31DCC82AE001C2A06 /* GET_teams_Request.swift */,
+				E3C6CE9D1DCC20CD001C2A06 /* GET_user_Request.swift */,
+				E36DC56D1DCDABDC00D16167 /* PATCH_posts_Request.swift */,
+				E36DC56B1DCD9B1200D16167 /* POST_posts_Request.swift */,
+				E36DC52B1DCCB21900D16167 /* POST_revoke_Request.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -393,11 +400,11 @@
 		E3C6CE9F1DCC20D9001C2A06 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
-				E3C6CEC41DCC5A82001C2A06 /* GET_posts_Response.swift */,
-				E3C6CEC21DCC5970001C2A06 /* Pagination.swift */,
-				E3C6CED51DCC82C1001C2A06 /* GET_teams_response.swift */,
 				E36DC5141DCCAD2700D16167 /* GET_members_Response.swift */,
+				E3C6CEC41DCC5A82001C2A06 /* GET_posts_Response.swift */,
+				E3C6CED51DCC82C1001C2A06 /* GET_teams_response.swift */,
 				E36DC52D1DCCB27000D16167 /* POST_revoke_Response.swift */,
+				E3C6CEC21DCC5970001C2A06 /* Pagination.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -405,11 +412,11 @@
 		E3C6CEA21DCC215E001C2A06 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				E3C6CEA31DCC2169001C2A06 /* User.swift */,
-				E3C6CEC61DCC5B92001C2A06 /* Post.swift */,
-				E3C6CED71DCC82F2001C2A06 /* Team.swift */,
 				E36DC5011DCC9B2600D16167 /* CreatedBy.swift */,
 				E36DC5161DCCAD4F00D16167 /* Member.swift */,
+				E3C6CEC61DCC5B92001C2A06 /* Post.swift */,
+				E3C6CED71DCC82F2001C2A06 /* Team.swift */,
+				E3C6CEA31DCC2169001C2A06 /* User.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -431,6 +438,7 @@
 				E3C6CEB31DCC3292001C2A06 /* PostsViewController.swift */,
 			);
 			name = Posts;
+			path = Posts;
 			sourceTree = "<group>";
 		};
 		E3C6CEB61DCC329B001C2A06 /* Cell */ = {
@@ -440,6 +448,7 @@
 				E3C6CEB81DCC32AC001C2A06 /* PostTableViewCell.xib */,
 			);
 			name = Cell;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		E3C6CEBF1DCC5087001C2A06 /* Errors */ = {
@@ -447,15 +456,17 @@
 			children = (
 			);
 			name = Errors;
+			path = Errors;
 			sourceTree = "<group>";
 		};
 		E3C6CECA1DCC6ED7001C2A06 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
-				E3C6CECB1DCC6EE9001C2A06 /* AuthorizationViewController.swift */,
 				E3C6CECC1DCC6EE9001C2A06 /* Authorization.storyboard */,
+				E3C6CECB1DCC6EE9001C2A06 /* AuthorizationViewController.swift */,
 			);
 			name = Authorization;
+			path = Authorization;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
