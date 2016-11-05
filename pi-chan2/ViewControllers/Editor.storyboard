@@ -112,7 +112,11 @@
                                 <action selector="closeWithSender:" destination="zv5-dr-cG2" id="cYd-0y-9ZE"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="rfr-Hr-PNY"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="rfr-Hr-PNY">
+                            <connections>
+                                <action selector="postWithSender:" destination="zv5-dr-cG2" id="Wil-Vi-bed"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="cancelButton" destination="lIW-8j-o5K" id="xMq-BF-RjM"/>
