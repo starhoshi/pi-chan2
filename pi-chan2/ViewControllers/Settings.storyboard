@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Fj6-d6-cbK">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="f5R-au-gCx">
+            <objects>
+                <navigationController id="Fj6-d6-cbK" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="UF5-lN-0Je">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.039215686274509803" green="0.60784313725490191" blue="0.58039215686274515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.039215686274509803" green="0.60784313725490191" blue="0.58039215686274515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="flat" value="NO"/>
+                        </userDefinedRuntimeAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="UEw-7J-skc" kind="relationship" relationship="rootViewController" id="0PO-gX-P0r"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n1r-oz-nkk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-441" y="435"/>
+        </scene>
+        <!--App Informations-->
+        <scene sceneID="UOd-GK-pRB">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="UEw-7J-skc" customClass="SettingsViewController" customModule="pi_chan2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mkI-py-CZc"/>
+                        <viewControllerLayoutGuide type="bottom" id="x6e-Xy-o62"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dVD-yo-Hgn">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="2n4-Qo-xbv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="UEw-7J-skc" id="wte-wM-JE8"/>
+                                    <outlet property="delegate" destination="UEw-7J-skc" id="X66-cE-13D"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2n4-Qo-xbv" firstAttribute="top" secondItem="mkI-py-CZc" secondAttribute="bottom" id="6JR-tL-8ME"/>
+                            <constraint firstItem="x6e-Xy-o62" firstAttribute="top" secondItem="2n4-Qo-xbv" secondAttribute="bottom" id="jG6-kB-arF"/>
+                            <constraint firstItem="2n4-Qo-xbv" firstAttribute="leading" secondItem="dVD-yo-Hgn" secondAttribute="leading" id="naf-ce-ACb"/>
+                            <constraint firstAttribute="trailing" secondItem="2n4-Qo-xbv" secondAttribute="trailing" id="wKh-rm-Gbz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="App Informations" id="YC4-DF-Fk8">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="mrm-Y9-9lV">
+                            <connections>
+                                <action selector="closeWithSender:" destination="UEw-7J-skc" id="6vi-mo-aGt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="closeButton" destination="mrm-Y9-9lV" id="VhG-rm-qIc"/>
+                        <outlet property="tableView" destination="2n4-Qo-xbv" id="0a0-TD-DWG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sHX-F9-ia0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="290" y="435"/>
+        </scene>
+    </scenes>
+</document>

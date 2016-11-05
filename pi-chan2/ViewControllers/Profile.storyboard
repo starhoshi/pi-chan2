@@ -115,7 +115,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="jmi-eP-xfz">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="GuP-FO-gVw"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="GuP-FO-gVw">
+                            <connections>
+                                <segue destination="ycL-Vi-6Re" kind="presentation" id="1Dv-Cj-LRh"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -131,6 +135,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jtA-no-ZxR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="180" y="278"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="N7Y-GQ-ns9">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="ycL-Vi-6Re" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Yz-lv-Jgl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="710" y="96"/>
         </scene>
     </scenes>
 </document>

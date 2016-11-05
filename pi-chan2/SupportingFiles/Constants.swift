@@ -20,19 +20,23 @@ struct Constants {
     }
 
     struct Pichan {
-        static let scheme = "pi-chan://"
-        static let iTunes = ITunes(storeId: "1107328970")
-        static let gitHub = NSURL(string: "https://github.com/starhoshi/pi-chan2")!
+        struct Url {
+            static let scheme = "pi-chan://"
+            static let iTunes = ITunes(storeId: "1107328970")
+            static let gitHub = URL(string: "https://github.com/starhoshi/pi-chan2")!
+        }
     }
 
     struct Opanimed {
-        static let iTunes = ITunes(storeId: "1148280792")
+        struct Url {
+            static let iTunes = ITunes(storeId: "1148280792")
+        }
     }
 
     struct Starhoshi {
         struct Url {
-            static let gitHub = NSURL(string: "https://github.com/starhoshi")!
-            static let twitter = NSURL(string: "https://twitter.com/star__hoshi")!
+            static let gitHub = URL(string: "https://github.com/starhoshi")!
+            static let twitter = URL(string: "https://twitter.com/star__hoshi")!
         }
     }
 }

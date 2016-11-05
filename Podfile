@@ -24,6 +24,8 @@ def main_pods
   pod 'PullToRefreshSwift'
   pod 'NSDate+TimeAgo'
   pod 'SwiftDate'
+  pod 'VTAcknowledgementsViewController'
+  pod 'Siren'
 end
 
 target 'pi-chan2' do
@@ -41,5 +43,8 @@ post_install do |installer|
       config.build_settings['SWIFT_VERSION'] = '3.0'
     end
   end
+
+  require 'fileutils'
+  FileUtils.cp_r('Pods/Target Support Files/Pods-pi-chan2/Pods-pi-chan2-acknowledgements.plist', 'pi-chan2/SupportingFiles/Acknowledgements.plist', :remove_destination => true)
 end
 
