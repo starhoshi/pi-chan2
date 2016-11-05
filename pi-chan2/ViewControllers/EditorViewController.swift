@@ -8,7 +8,6 @@
 
 import UIKit
 import FontAwesome_swift
-//import UITextView_Placeholder
 import SVProgressHUD
 import SCLAlertView
 import SDCAlertView
@@ -83,7 +82,7 @@ class EditorViewController: UIViewController {
     func callPostApi(wip: Bool, commitMessage: String?) {
         self.postsParameters = createPostsParameters(wip: wip, commitMessage: commitMessage)
         if let _ = post {
-//            patch()
+            loadPatchPostsApi()
         } else {
             loadPostPostsApi()
         }
@@ -105,17 +104,21 @@ class EditorViewController: UIViewController {
         }
     }
 
-//    func patch() {
-//        client.patchPost(postsParameters) { result in
-//            SVProgressHUD.dismiss()
-//            switch result {
-//            case .Success(let posts):
-//                log?.info("\(posts)")
-//            case .Failure(let error):
-//                ErrorHandler.errorAlert(error, controller: self)
-//            }
-//        }
-//    }
+    func loadPatchPostsApi() {
+        SVProgressHUD.showLoading()
+        let request = ESAApiClient.PatchPostsRequest(postParameters: postsParameters)
+        ESASession.send(request) { result in
+            SVProgressHUD.dismiss()
+            switch result {
+            case .success(_):
+                Toast.showLong(text: "編集が投稿されました! (\\( ⁰⊖⁰)/)")
+                self.dismiss(animated: true, completion: nil)
+//                Global.posted = true
+            case .failure(let error):
+                ESAApiClient.errorHandler(error)
+            }
+        }
+    }
 
     func createPostsParameters(wip: Bool, commitMessage: String?) -> PostPostsParameters {
         let category = parseCategory(fullName: textField.text!)
@@ -131,7 +134,6 @@ class EditorViewController: UIViewController {
     }
 
     func parseCategory(fullName: String) -> (category: String, name: String) {
-//        var categoryArray = $.remove(fullName.componentsSeparatedByString("/"), value: "")
         var categoryArray = fullName.components(separatedBy: "/")
         let name = categoryArray.last
         categoryArray.removeLast()

@@ -45,7 +45,7 @@ class PreviewViewController: UIViewController, UIWebViewDelegate {
             switch result {
             case .success(let response):
                 self.post = response
-                self.navigationItem.title = response.name
+                self.navigationItem.title = response.wip ? "[WIP]\(response.name)" : response.name
                 let md = response.getModyMdReplacedNewLine()
                 let js = "insert('\(md.replacingOccurrences(of: "'", with: "\\'"))');"
                 log?.debug("\(js)")
@@ -85,11 +85,18 @@ class PreviewViewController: UIViewController, UIWebViewDelegate {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let previewViewController = segue.destination as! PreviewViewController
-        previewViewController.postNumber = sender as! Int
+        if segue.identifier == R.segue.previewViewController.previewToPreview.identifier {
+            let previewViewController = segue.destination as! PreviewViewController
+            previewViewController.postNumber = sender as! Int
+        }
+        if segue.identifier == R.segue.previewViewController.toEditor.identifier {
+            let destinationNavigationController = segue.destination as! UINavigationController
+            let editor = destinationNavigationController.topViewController as! EditorViewController
+            editor.post = post
+        }
     }
 
     @IBAction func openEditor(sender: AnyObject) {
-//        Window.openEditor(self, post: post)
+        performSegue(withIdentifier: R.segue.previewViewController.toEditor.identifier, sender: nil)
     }
 }

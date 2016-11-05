@@ -47,11 +47,20 @@
                         <outlet property="rightBarButton" destination="dWJ-r8-3Cu" id="XLy-py-7QM"/>
                         <outlet property="webView" destination="r00-mL-oHm" id="fKo-5d-MRN"/>
                         <segue destination="gIG-JA-G8Q" kind="show" identifier="PreviewToPreview" id="hbX-sv-X2G"/>
+                        <segue destination="C0b-bm-2WF" kind="presentation" identifier="toEditor" id="KLh-gb-s4C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lhh-x6-cAR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="234" y="315"/>
+        </scene>
+        <!--Editor-->
+        <scene sceneID="Lhw-o8-m0R">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Editor" id="C0b-bm-2WF" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4kH-xy-5zg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="833" y="193"/>
         </scene>
         <!--Preview-->
         <scene sceneID="XIP-83-QLd">
