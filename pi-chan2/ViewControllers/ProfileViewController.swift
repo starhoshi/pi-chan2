@@ -26,13 +26,15 @@ class ProfileViewController: UIViewController {
         settingButton.setTitleTextAttributes(attributes, for: .normal)
         settingButton.title = String.fontAwesomeIcon(name: .infoCircle)
         loadGetUserApi()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadByNotification), name: ESAObserver.login, object: nil)
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-//        if Global.fromLogin {
-//            loadUserApi()
-//            Global.fromLogin = false
-//        }
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: ESAObserver.login, object: nil)
+    }
+
+    func reloadByNotification(notification: Notification) {
+        loadGetUserApi()
     }
 
     func loadGetUserApi() {

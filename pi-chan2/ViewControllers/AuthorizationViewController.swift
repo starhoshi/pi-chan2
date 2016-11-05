@@ -88,6 +88,6 @@ class AuthorizationViewController: UIViewController {
         Keychain()[Keychain.teamKey] = teamName
         self.dismiss(animated: true, completion: nil)
         Toast.showLong(text: "\(teamName) へのログインが成功しました!")
-        // Global.fromLogin = true
+        NotificationCenter.default.post(name: ESAObserver.login, object: nil)
     }
 }

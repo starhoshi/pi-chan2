@@ -85,7 +85,7 @@ let reviewContent = CellContent(
     icon: UIImage.fontAwesomeIcon(name: .star, textColor: UIColor.esaGreen, size: CGSize(width: 30, height: 30)),
     cellType: .disclosureIndicator,
     tapped: { _ in
-        Share.openAppStore(Constants.Pichan.Url.iTunes.getItmsReview())
+        Share.openBrowser(Constants.Pichan.Url.iTunes.getItmsReview())
     }
 )
 
@@ -94,7 +94,7 @@ let shareContent = CellContent(
     icon: UIImage.fontAwesomeIcon(name: .shareAlt, textColor: UIColor.esaGreen, size: CGSize(width: 30, height: 30)),
     cellType: .disclosureIndicator,
     tapped: { _ in
-        // look SettingTableViewCell
+        Share.showAppShareActivityView()
     }
 )
 
@@ -103,7 +103,6 @@ let licenseContent = CellContent(
     icon: UIImage.fontAwesomeIcon(name: .creativeCommons, textColor: UIColor.esaGreen, size: CGSize(width: 30, height: 30)),
     cellType: .disclosureIndicator,
     tapped: { _ in
-        // look SettingTableViewCell
         let vt = VTAcknowledgementsViewController.init(path: R.file.acknowledgementsPlist()?.path)!
         UIApplication.topViewController()?.navigationController?.pushViewController(vt, animated: true)
     }

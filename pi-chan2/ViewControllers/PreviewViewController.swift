@@ -27,14 +27,21 @@ class PreviewViewController: UIViewController, UIWebViewDelegate {
         let req = URLRequest(url: URL(string: localHtml)!)
         webView.delegate = self;
         webView.loadRequest(req)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadByNotification), name: ESAObserver.edit, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadByNotification), name: ESAObserver.login, object: nil)
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-//        if Global.fromLogin || Global.posted {
-//        loadGetPostApi()
-//            Global.fromLogin = false
-//            Global.posted = false
-//        }
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: ESAObserver.edit, object: nil)
+        NotificationCenter.default.removeObserver(self, name: ESAObserver.login, object: nil)
+    }
+
+    func reloadByNotification(notification: Notification) {
+        loadGetPostApi()
+    }
+
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        loadGetPostApi()
     }
 
     func loadGetPostApi() {
@@ -54,10 +61,6 @@ class PreviewViewController: UIViewController, UIWebViewDelegate {
                 ESAApiClient.errorHandler(error)
             }
         }
-    }
-
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-        loadGetPostApi()
     }
 
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {

@@ -41,6 +41,7 @@
 		E36DC56A1DCD8E7800D16167 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DC5681DCD8E7800D16167 /* EditorViewController.swift */; };
 		E36DC56C1DCD9B1200D16167 /* POST_posts_Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DC56B1DCD9B1200D16167 /* POST_posts_Request.swift */; };
 		E36DC56E1DCDABDC00D16167 /* PATCH_posts_Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DC56D1DCDABDC00D16167 /* PATCH_posts_Request.swift */; };
+		E36DC5701DCDC0B300D16167 /* ESAObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DC56F1DCDC0B300D16167 /* ESAObserver.swift */; };
 		E3B301BE1DCB94B500C0A7B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B301BD1DCB94B500C0A7B0 /* AppDelegate.swift */; };
 		E3B301C51DCB94B500C0A7B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3B301C41DCB94B500C0A7B0 /* Assets.xcassets */; };
 		E3B301C81DCB94B500C0A7B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B301C61DCB94B500C0A7B0 /* LaunchScreen.storyboard */; };
@@ -115,6 +116,7 @@
 		E36DC5681DCD8E7800D16167 /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		E36DC56B1DCD9B1200D16167 /* POST_posts_Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POST_posts_Request.swift; sourceTree = "<group>"; };
 		E36DC56D1DCDABDC00D16167 /* PATCH_posts_Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PATCH_posts_Request.swift; sourceTree = "<group>"; };
+		E36DC56F1DCDC0B300D16167 /* ESAObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESAObserver.swift; sourceTree = "<group>"; };
 		E3B301BA1DCB94B500C0A7B0 /* pi-chan2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pi-chan2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B301BD1DCB94B500C0A7B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3B301C41DCB94B500C0A7B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 			children = (
 				E3C6CE861DCC1B49001C2A06 /* APIs */,
 				E3C6CECF1DCC7424001C2A06 /* ESAAuthorization.swift */,
+				E36DC56F1DCDC0B300D16167 /* ESAObserver.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -639,6 +642,7 @@
 				E3C6CED81DCC82F2001C2A06 /* Team.swift in Sources */,
 				E3C6CEC11DCC54D7001C2A06 /* GET_posts_Request.swift in Sources */,
 				E3C6CE9E1DCC20CD001C2A06 /* GET_user_Request.swift in Sources */,
+				E36DC5701DCDC0B300D16167 /* ESAObserver.swift in Sources */,
 				E36DC53F1DCCB81C00D16167 /* SettingsViewController.swift in Sources */,
 				E36DC52A1DCCB05400D16167 /* ProfileViewController.swift in Sources */,
 				E3C6CED21DCC8064001C2A06 /* Keychain+Extension.swift in Sources */,

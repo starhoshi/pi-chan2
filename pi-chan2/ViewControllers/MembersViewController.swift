@@ -21,6 +21,7 @@ class MembersViewController: UIViewController {
         super.viewDidLoad()
         initTableView()
         resetAndLoadApi()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadByNotification), name: ESAObserver.login, object: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -30,11 +31,12 @@ class MembersViewController: UIViewController {
         }
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-//        if Global.fromLogin {
-//            resetAndLoadApi()
-//            Global.fromLogin = false
-//        }
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: ESAObserver.login, object: nil)
+    }
+
+    func reloadByNotification(notification: Notification) {
+        resetAndLoadApi()
     }
 
     func initTableView() {

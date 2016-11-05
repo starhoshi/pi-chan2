@@ -21,6 +21,7 @@ class PostsViewController: UIViewController, UISearchBarDelegate {
     var searchText = ""
     var nextPage: Int? = 1
     var searchController = UISearchController(searchResultsController: nil)
+    var loading = false
 
     @IBOutlet weak var rightBarButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
@@ -33,20 +34,22 @@ class PostsViewController: UIViewController, UISearchBarDelegate {
         initTableView()
         resetAndLoadApi()
         setSearchBar()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadByNotification), name: ESAObserver.write, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadByNotification), name: ESAObserver.login, object: nil)
     }
-    override func viewDidAppear(_ animated: Bool) {
-        // if Global.fromLogin || Global.posted {
-        // resetAndLoadApi()
-        // Global.fromLogin = false
-        // Global.posted = false
-        // }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: ESAObserver.write, object: nil)
+        NotificationCenter.default.removeObserver(self, name: ESAObserver.login, object: nil)
     }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         if let indexPathForSelectedRow = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: indexPathForSelectedRow, animated: true)
         }
     }
+
     func setSearchBar() {
         definesPresentationContext = true
         extendedLayoutIncludesOpaqueBars = true
@@ -77,6 +80,10 @@ class PostsViewController: UIViewController, UISearchBarDelegate {
         }
     }
 
+    func reloadByNotification(notification: Notification) {
+        resetAndLoadApi()
+    }
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchText = searchController.searchBar.text!
         resetAndLoadApi()
@@ -93,11 +100,12 @@ class PostsViewController: UIViewController, UISearchBarDelegate {
     }
 
     func loadGetPostApi(page: Int?) {
-        guard let page = page, !SVProgressHUD.isVisible() else {
+        guard let page = page, !loading else {
             log?.warning("not load...")
             return
         }
         SVProgressHUD.showLoading()
+        loading = true
         let request = ESAApiClient.GetPostsRequest(page: page, q: searchText)
         ESASession.send(request) { result in
             SVProgressHUD.dismiss()
@@ -109,6 +117,7 @@ class PostsViewController: UIViewController, UISearchBarDelegate {
             case .failure(let error):
                 ESAApiClient.errorHandler(error)
             }
+            self.loading = false
         }
     }
 

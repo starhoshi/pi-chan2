@@ -97,7 +97,7 @@ class EditorViewController: UIViewController {
             case .success(_):
                 Toast.showLong(text: "投稿が完了しました! (\\( ⁰⊖⁰)/)")
                 self.dismiss(animated: true, completion: nil)
-//                Global.posted = true
+                NotificationCenter.default.post(name: ESAObserver.write, object: nil)
             case .failure(let error):
                 ESAApiClient.errorHandler(error)
             }
@@ -113,7 +113,7 @@ class EditorViewController: UIViewController {
             case .success(_):
                 Toast.showLong(text: "編集が投稿されました! (\\( ⁰⊖⁰)/)")
                 self.dismiss(animated: true, completion: nil)
-//                Global.posted = true
+                NotificationCenter.default.post(name: ESAObserver.edit, object: nil)
             case .failure(let error):
                 ESAApiClient.errorHandler(error)
             }
