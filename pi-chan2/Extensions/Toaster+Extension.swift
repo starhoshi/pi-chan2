@@ -24,8 +24,9 @@ extension Toast {
 
 class ToastConfigrations {
     static func initSettings() {
-        ToastView.appearance().backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
-        ToastView.appearance().textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        ToastView.appearance().bottomOffsetPortrait = 120
+        ToastView.appearance().backgroundColor = UIColor.esaBrown
+        ToastView.appearance().textColor = UIColor.esaFontBlue
+        ToastView.appearance().font = R.font.latoRegular(size: 15)
+        ToastView.appearance().bottomOffsetPortrait = 100
     }
 }

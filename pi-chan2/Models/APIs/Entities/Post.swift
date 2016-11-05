@@ -64,7 +64,7 @@ class Post: Mappable {
         watch <- map["watch"]
     }
 
-    func getModyMdReplacedNewLine() -> String {
+    func getBodyMdReplacedNewLine() -> String {
         var md = bodyMd.replacingOccurrences(of: "\r\n", with: "#!#!#")
         md = md.replacingOccurrences(of: "\n\r", with: "#!#!#")
         md = md.replacingOccurrences(of: "\n", with: "#!#!#")

@@ -52,15 +52,21 @@ class PreviewViewController: UIViewController, UIWebViewDelegate {
             switch result {
             case .success(let response):
                 self.post = response
+                self.setMarkdown()
                 self.navigationItem.title = response.wip ? "[WIP]\(response.name)" : response.name
-                let md = response.getModyMdReplacedNewLine()
-                let js = "insert('\(md.replacingOccurrences(of: "'", with: "\\'"))');"
-                log?.debug("\(js)")
-                self.webView.stringByEvaluatingJavaScript(from: js)
             case .failure(let error):
                 ESAApiClient.errorHandler(error)
             }
         }
+    }
+
+    func setMarkdown() {
+        let category = post?.category != nil ? "###### \(post!.category!) \\n" : ""
+        let mdPrefixTitle = category + "# \(post!.name)\\n\\n"
+        let md = mdPrefixTitle + post!.getBodyMdReplacedNewLine()
+        let js = "insert('\(md.replacingOccurrences(of: "'", with: "\\'"))');"
+        log?.debug("\(js)")
+        self.webView.stringByEvaluatingJavaScript(from: js)
     }
 
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
