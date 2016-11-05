@@ -33,6 +33,7 @@ class Post: Mappable {
     var watchersCount: Int = 0
     var star: Bool = false
     var watch: Bool = false
+    var comments: [Comment]?
     // var sharingUrls: SharingUrls?
 
     required init?(map: Map) {
@@ -62,6 +63,7 @@ class Post: Mappable {
         watchersCount <- map["watchers_count"]
         star <- map["star"]
         watch <- map["watch"]
+        comments <- map["comments"]
     }
 
     func getBodyMdReplacedNewLine() -> String {

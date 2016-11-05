@@ -23,6 +23,10 @@ extension ESAApiClient {
             return .get
         }
 
+        var queryParameters: [String: Any]? {
+            return ["include": "comments"]
+        }
+
         var path: String {
             return Constants.Esa.apiVersion + "/" + teamPath + "/posts/" + String(number)
         }

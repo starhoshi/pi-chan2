@@ -42,6 +42,7 @@
 		E36DC56C1DCD9B1200D16167 /* POST_posts_Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DC56B1DCD9B1200D16167 /* POST_posts_Request.swift */; };
 		E36DC56E1DCDABDC00D16167 /* PATCH_posts_Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DC56D1DCDABDC00D16167 /* PATCH_posts_Request.swift */; };
 		E36DC5701DCDC0B300D16167 /* ESAObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DC56F1DCDC0B300D16167 /* ESAObserver.swift */; };
+		E3AD42B01DCDF00900E6AD84 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AD42AF1DCDF00900E6AD84 /* Comment.swift */; };
 		E3B301BE1DCB94B500C0A7B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B301BD1DCB94B500C0A7B0 /* AppDelegate.swift */; };
 		E3B301C51DCB94B500C0A7B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3B301C41DCB94B500C0A7B0 /* Assets.xcassets */; };
 		E3B301C81DCB94B500C0A7B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B301C61DCB94B500C0A7B0 /* LaunchScreen.storyboard */; };
@@ -94,7 +95,7 @@
 		E36DC5161DCCAD4F00D16167 /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		E36DC5271DCCB05400D16167 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		E36DC5281DCCB05400D16167 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		E36DC52B1DCCB21900D16167 /* POST_revoke_Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = POST_revoke_Request.swift; path = POST_revoke_Request.swift; sourceTree = "<group>"; };
+		E36DC52B1DCCB21900D16167 /* POST_revoke_Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POST_revoke_Request.swift; sourceTree = "<group>"; };
 		E36DC52D1DCCB27000D16167 /* POST_revoke_Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POST_revoke_Response.swift; sourceTree = "<group>"; };
 		E36DC5361DCCB81C00D16167 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		E36DC5371DCCB81C00D16167 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
@@ -117,6 +118,7 @@
 		E36DC56B1DCD9B1200D16167 /* POST_posts_Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POST_posts_Request.swift; sourceTree = "<group>"; };
 		E36DC56D1DCDABDC00D16167 /* PATCH_posts_Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PATCH_posts_Request.swift; sourceTree = "<group>"; };
 		E36DC56F1DCDC0B300D16167 /* ESAObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESAObserver.swift; sourceTree = "<group>"; };
+		E3AD42AF1DCDF00900E6AD84 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		E3B301BA1DCB94B500C0A7B0 /* pi-chan2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pi-chan2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B301BD1DCB94B500C0A7B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3B301C41DCB94B500C0A7B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -193,7 +195,6 @@
 				E36DC50A1DCCAA6800D16167 /* Members.storyboard */,
 				E36DC50B1DCCAA6800D16167 /* MembersViewController.swift */,
 			);
-			name = Members;
 			path = Members;
 			sourceTree = "<group>";
 		};
@@ -203,7 +204,6 @@
 				E36DC50E1DCCAA7200D16167 /* MemberTableViewCell.swift */,
 				E36DC50F1DCCAA7200D16167 /* MemberTableViewCell.xib */,
 			);
-			name = Cell;
 			path = Cell;
 			sourceTree = "<group>";
 		};
@@ -213,7 +213,6 @@
 				E36DC5271DCCB05400D16167 /* Profile.storyboard */,
 				E36DC5281DCCB05400D16167 /* ProfileViewController.swift */,
 			);
-			name = Profile;
 			path = Profile;
 			sourceTree = "<group>";
 		};
@@ -225,7 +224,6 @@
 				E36DC5391DCCB81C00D16167 /* Settings.storyboard */,
 				E36DC53A1DCCB81C00D16167 /* SettingsViewController.swift */,
 			);
-			name = Settings;
 			path = Settings;
 			sourceTree = "<group>";
 		};
@@ -235,7 +233,6 @@
 				E36DC5361DCCB81C00D16167 /* SettingTableViewCell.swift */,
 				E36DC5371DCCB81C00D16167 /* SettingTableViewCell.xib */,
 			);
-			name = Cell;
 			path = Cell;
 			sourceTree = "<group>";
 		};
@@ -250,7 +247,6 @@
 				E36DC55B1DCD842100D16167 /* marked.js */,
 				E36DC55C1DCD842100D16167 /* md.html */,
 			);
-			name = Preview;
 			path = Preview;
 			sourceTree = "<group>";
 		};
@@ -260,7 +256,6 @@
 				E36DC5671DCD8E7800D16167 /* Editor.storyboard */,
 				E36DC5681DCD8E7800D16167 /* EditorViewController.swift */,
 			);
-			name = Editor;
 			path = Editor;
 			sourceTree = "<group>";
 		};
@@ -417,6 +412,7 @@
 				E3C6CEC61DCC5B92001C2A06 /* Post.swift */,
 				E3C6CED71DCC82F2001C2A06 /* Team.swift */,
 				E3C6CEA31DCC2169001C2A06 /* User.swift */,
+				E3AD42AF1DCDF00900E6AD84 /* Comment.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -437,7 +433,6 @@
 				E3C6CEB21DCC3292001C2A06 /* Posts.storyboard */,
 				E3C6CEB31DCC3292001C2A06 /* PostsViewController.swift */,
 			);
-			name = Posts;
 			path = Posts;
 			sourceTree = "<group>";
 		};
@@ -447,7 +442,6 @@
 				E3C6CEB71DCC32AC001C2A06 /* PostTableViewCell.swift */,
 				E3C6CEB81DCC32AC001C2A06 /* PostTableViewCell.xib */,
 			);
-			name = Cell;
 			path = Cell;
 			sourceTree = "<group>";
 		};
@@ -455,7 +449,6 @@
 			isa = PBXGroup;
 			children = (
 			);
-			name = Errors;
 			path = Errors;
 			sourceTree = "<group>";
 		};
@@ -465,7 +458,6 @@
 				E3C6CECC1DCC6EE9001C2A06 /* Authorization.storyboard */,
 				E3C6CECB1DCC6EE9001C2A06 /* AuthorizationViewController.swift */,
 			);
-			name = Authorization;
 			path = Authorization;
 			sourceTree = "<group>";
 		};
@@ -680,6 +672,7 @@
 				E3C6CEA41DCC2169001C2A06 /* User.swift in Sources */,
 				E36DC5651DCD858500D16167 /* GET_post_Request.swift in Sources */,
 				E3C6CEB91DCC32AC001C2A06 /* PostTableViewCell.swift in Sources */,
+				E3AD42B01DCDF00900E6AD84 /* Comment.swift in Sources */,
 				E36DC5151DCCAD2700D16167 /* GET_members_Response.swift in Sources */,
 				E3C6CEAB1DCC2947001C2A06 /* MainTabBarController.swift in Sources */,
 				E3C6CE8B1DCC1C11001C2A06 /* R.generated.swift in Sources */,
