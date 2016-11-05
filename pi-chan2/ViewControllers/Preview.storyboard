@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hgs-7w-Gz9">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Preview View Controller-->
+        <scene sceneID="Aiq-5f-wgZ">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="hgs-7w-Gz9" customClass="PreviewViewController" customModule="pi_chan2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qoI-Yx-lM5"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZG0-js-oI5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DdR-KV-saC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r00-mL-oHm">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" red="0.28958413004875183" green="0.31462949514389038" blue="0.32950475811958313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZG0-js-oI5" firstAttribute="top" secondItem="r00-mL-oHm" secondAttribute="bottom" id="PQV-hy-bSQ"/>
+                            <constraint firstAttribute="trailing" secondItem="r00-mL-oHm" secondAttribute="trailing" id="Ztn-co-CQB"/>
+                            <constraint firstItem="r00-mL-oHm" firstAttribute="leading" secondItem="DdR-KV-saC" secondAttribute="leading" id="dpy-jf-FQF"/>
+                            <constraint firstItem="r00-mL-oHm" firstAttribute="top" secondItem="qoI-Yx-lM5" secondAttribute="bottom" id="o3D-n1-b6s"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="4p9-h6-zFV">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="dWJ-r8-3Cu">
+                            <connections>
+                                <action selector="openEditor:" destination="hgs-7w-Gz9" id="R3a-S9-SgZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="rightBarButton" destination="dWJ-r8-3Cu" id="XLy-py-7QM"/>
+                        <outlet property="webView" destination="r00-mL-oHm" id="fKo-5d-MRN"/>
+                        <segue destination="gIG-JA-G8Q" kind="show" identifier="PreviewToPreview" id="hbX-sv-X2G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lhh-x6-cAR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="234" y="315"/>
+        </scene>
+        <!--Preview-->
+        <scene sceneID="XIP-83-QLd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Preview" id="gIG-JA-G8Q" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Rs-qP-Dem" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="720.5" y="315"/>
+        </scene>
+    </scenes>
+</document>

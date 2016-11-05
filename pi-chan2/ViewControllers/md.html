@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title>markdown</title>
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="./emojify.min.js"></script>
+        <link rel="stylesheet" href="./emojify.min.css">
+          <script type="text/javascript" src="./marked.js"></script>
+          <link rel="stylesheet" href="./github-markdown.css">
+            <style>
+              @font-face {
+                font-family: Lato;
+                src: url('../Resources/fonts/Lato-Regular.ttf');
+              }
+            
+            * {
+              font-family: Lato;
+              color: #3c4a60;
+            }
+            
+            a {
+              color: #0a9b94 !important;
+            }
+            </style>
+            <script>
+              function insert(html) {
+                marked.setOptions({
+                                  gfm: true,
+                                  tables: true,
+                                  breaks: true
+                                  });
+                                  document.getElementById('content').innerHTML = marked(html);
+                                  emojify.setConfig({img_dir: 'https://github.global.ssl.fastly.net/images/icons/emoji/' });
+                                  emojify.run(document.getElementById('content'));
+                                  
+              }
+            </script>
+            </head>
+  
+  <body>
+    <article class="markdown-body">
+      <div id="content" />
+    </article>
+  </body>
+  
+</html>

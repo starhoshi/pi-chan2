@@ -29,6 +29,14 @@
 		E36DC5421DCCB98D00D16167 /* Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DC5411DCCB98D00D16167 /* Share.swift */; };
 		E36DC5441DCCB99400D16167 /* SirenUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DC5431DCCB99400D16167 /* SirenUpdater.swift */; };
 		E36DC5461DCCBB9100D16167 /* Acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = E36DC5451DCCBB9100D16167 /* Acknowledgements.plist */; };
+		E36DC55D1DCD842100D16167 /* Preview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E36DC5561DCD842100D16167 /* Preview.storyboard */; };
+		E36DC55E1DCD842100D16167 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DC5571DCD842100D16167 /* PreviewViewController.swift */; };
+		E36DC55F1DCD842100D16167 /* emojify.min.css in Resources */ = {isa = PBXBuildFile; fileRef = E36DC5581DCD842100D16167 /* emojify.min.css */; };
+		E36DC5601DCD842100D16167 /* emojify.min.js in Resources */ = {isa = PBXBuildFile; fileRef = E36DC5591DCD842100D16167 /* emojify.min.js */; };
+		E36DC5611DCD842100D16167 /* github-markdown.css in Resources */ = {isa = PBXBuildFile; fileRef = E36DC55A1DCD842100D16167 /* github-markdown.css */; };
+		E36DC5621DCD842100D16167 /* marked.js in Resources */ = {isa = PBXBuildFile; fileRef = E36DC55B1DCD842100D16167 /* marked.js */; };
+		E36DC5631DCD842100D16167 /* md.html in Resources */ = {isa = PBXBuildFile; fileRef = E36DC55C1DCD842100D16167 /* md.html */; };
+		E36DC5651DCD858500D16167 /* GET_post_Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DC5641DCD858500D16167 /* GET_post_Request.swift */; };
 		E3B301BE1DCB94B500C0A7B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B301BD1DCB94B500C0A7B0 /* AppDelegate.swift */; };
 		E3B301C51DCB94B500C0A7B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3B301C41DCB94B500C0A7B0 /* Assets.xcassets */; };
 		E3B301C81DCB94B500C0A7B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B301C61DCB94B500C0A7B0 /* LaunchScreen.storyboard */; };
@@ -91,6 +99,14 @@
 		E36DC5411DCCB98D00D16167 /* Share.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Share.swift; sourceTree = "<group>"; };
 		E36DC5431DCCB99400D16167 /* SirenUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SirenUpdater.swift; sourceTree = "<group>"; };
 		E36DC5451DCCBB9100D16167 /* Acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Acknowledgements.plist; sourceTree = "<group>"; };
+		E36DC5561DCD842100D16167 /* Preview.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Preview.storyboard; sourceTree = "<group>"; };
+		E36DC5571DCD842100D16167 /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		E36DC5581DCD842100D16167 /* emojify.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = emojify.min.css; sourceTree = "<group>"; };
+		E36DC5591DCD842100D16167 /* emojify.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = emojify.min.js; sourceTree = "<group>"; };
+		E36DC55A1DCD842100D16167 /* github-markdown.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "github-markdown.css"; sourceTree = "<group>"; };
+		E36DC55B1DCD842100D16167 /* marked.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = marked.js; sourceTree = "<group>"; };
+		E36DC55C1DCD842100D16167 /* md.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = md.html; sourceTree = "<group>"; };
+		E36DC5641DCD858500D16167 /* GET_post_Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GET_post_Request.swift; sourceTree = "<group>"; };
 		E3B301BA1DCB94B500C0A7B0 /* pi-chan2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pi-chan2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B301BD1DCB94B500C0A7B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3B301C41DCB94B500C0A7B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -208,6 +224,20 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		E36DC5471DCD83FC00D16167 /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				E36DC5561DCD842100D16167 /* Preview.storyboard */,
+				E36DC5571DCD842100D16167 /* PreviewViewController.swift */,
+				E36DC5581DCD842100D16167 /* emojify.min.css */,
+				E36DC5591DCD842100D16167 /* emojify.min.js */,
+				E36DC55A1DCD842100D16167 /* github-markdown.css */,
+				E36DC55B1DCD842100D16167 /* marked.js */,
+				E36DC55C1DCD842100D16167 /* md.html */,
+			);
+			name = Preview;
+			sourceTree = "<group>";
+		};
 		E3B301B11DCB94B500C0A7B0 = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +293,7 @@
 		E3C6CE841DCC1B36001C2A06 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E36DC5471DCD83FC00D16167 /* Preview */,
 				E36DC52F1DCCB78300D16167 /* Settings */,
 				E36DC5181DCCB01E00D16167 /* Profile */,
 				E36DC5081DCCAA5200D16167 /* Members */,
@@ -328,6 +359,7 @@
 			children = (
 				E3C6CE9D1DCC20CD001C2A06 /* GET_user_Request.swift */,
 				E3C6CEC01DCC54D7001C2A06 /* GET_posts_Request.swift */,
+				E36DC5641DCD858500D16167 /* GET_post_Request.swift */,
 				E3C6CED31DCC82AE001C2A06 /* GET_teams_Request.swift */,
 				E36DC52B1DCCB21900D16167 /* POST_revoke_Request.swift */,
 				E36DC5121DCCACB400D16167 /* GET_members_Request.swift */,
@@ -473,11 +505,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E36DC5621DCD842100D16167 /* marked.js in Resources */,
 				E3B301C81DCB94B500C0A7B0 /* LaunchScreen.storyboard in Resources */,
+				E36DC5611DCD842100D16167 /* github-markdown.css in Resources */,
 				E36DC5461DCCBB9100D16167 /* Acknowledgements.plist in Resources */,
 				E3C6CEB41DCC3292001C2A06 /* Posts.storyboard in Resources */,
+				E36DC5631DCD842100D16167 /* md.html in Resources */,
 				E36DC5291DCCB05400D16167 /* Profile.storyboard in Resources */,
 				E36DC53E1DCCB81C00D16167 /* Settings.storyboard in Resources */,
+				E36DC55D1DCD842100D16167 /* Preview.storyboard in Resources */,
 				E36DC53C1DCCB81C00D16167 /* SettingTableViewCell.xib in Resources */,
 				E3B301C51DCB94B500C0A7B0 /* Assets.xcassets in Resources */,
 				E3C6CEBA1DCC32AC001C2A06 /* PostTableViewCell.xib in Resources */,
@@ -485,6 +521,8 @@
 				E3C6CECE1DCC6EE9001C2A06 /* Authorization.storyboard in Resources */,
 				E3C6CEAD1DCC29FA001C2A06 /* Lato-Regular.ttf in Resources */,
 				E36DC5111DCCAA7200D16167 /* MemberTableViewCell.xib in Resources */,
+				E36DC55F1DCD842100D16167 /* emojify.min.css in Resources */,
+				E36DC5601DCD842100D16167 /* emojify.min.js in Resources */,
 				E3C6CEAA1DCC2947001C2A06 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -587,6 +625,7 @@
 				E3C6CED41DCC82AE001C2A06 /* GET_teams_Request.swift in Sources */,
 				E3C6CEBC1DCC3799001C2A06 /* Toaster+Extension.swift in Sources */,
 				E3C6CE9B1DCC1FF0001C2A06 /* ESAApiClient.swift in Sources */,
+				E36DC55E1DCD842100D16167 /* PreviewViewController.swift in Sources */,
 				E3C6CE951DCC1EAE001C2A06 /* ESASession.swift in Sources */,
 				E3C6CEA61DCC24CE001C2A06 /* Constants.swift in Sources */,
 				E3C6CE991DCC1EED001C2A06 /* ESARequestType.swift in Sources */,
@@ -600,6 +639,7 @@
 				E3C6CEC51DCC5A82001C2A06 /* GET_posts_Response.swift in Sources */,
 				E3C6CEC91DCC6772001C2A06 /* SVProgressHUD+Extension.swift in Sources */,
 				E3C6CEA41DCC2169001C2A06 /* User.swift in Sources */,
+				E36DC5651DCD858500D16167 /* GET_post_Request.swift in Sources */,
 				E3C6CEB91DCC32AC001C2A06 /* PostTableViewCell.swift in Sources */,
 				E36DC5151DCCAD2700D16167 /* GET_members_Response.swift in Sources */,
 				E3C6CEAB1DCC2947001C2A06 /* MainTabBarController.swift in Sources */,

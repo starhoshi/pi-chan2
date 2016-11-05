@@ -52,11 +52,20 @@
                     <connections>
                         <outlet property="rightBarButton" destination="r36-dJ-MKC" id="F5e-N8-xS6"/>
                         <outlet property="tableView" destination="ucX-SB-QA3" id="fnc-cB-bB3"/>
+                        <segue destination="IZC-JF-gSG" kind="show" identifier="toPreview" id="NrS-TP-DPC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0zE-qo-RBf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="219" y="591"/>
+        </scene>
+        <!--Preview-->
+        <scene sceneID="YU2-Wd-3rC">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Preview" id="IZC-JF-gSG" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hcF-Hx-4cY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="854" y="590"/>
         </scene>
     </scenes>
 </document>

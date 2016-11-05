@@ -134,7 +134,12 @@ extension PostsViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         log?.debug("\(indexPath)")
-        // performSegue(withIdentifier: R.segue.dexSelectionListController.toPokemonList, sender: dexPokemonList)
+        performSegue(withIdentifier: R.segue.postsViewController.toPreview, sender: posts[indexPath.row].number)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let previewViewController = segue.destination as! PreviewViewController
+        previewViewController.postNumber = sender as! Int
     }
 }
 
