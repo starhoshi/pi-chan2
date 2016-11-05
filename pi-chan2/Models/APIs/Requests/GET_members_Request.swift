@@ -30,7 +30,7 @@ extension ESAApiClient {
         }
 
         var path: String {
-            return teamPath + "/members"
+            return Constants.Esa.apiVersion + "/" + teamPath + "/members"
         }
     }
 }

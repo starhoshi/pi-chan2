@@ -17,7 +17,7 @@ extension ESAApiClient {
         let perPage: Int
         let q: String
 
-        init(page: Int = 1, perPage: Int = 50, q: String = "") {
+        init(page: Int = 1, perPage: Int = 20, q: String = "") {
             self.page = page
             self.perPage = perPage
             self.q = q
@@ -32,7 +32,7 @@ extension ESAApiClient {
         }
 
         var path: String {
-            return teamPath + "/posts"
+            return Constants.Esa.apiVersion + "/" + teamPath + "/posts"
         }
     }
 }

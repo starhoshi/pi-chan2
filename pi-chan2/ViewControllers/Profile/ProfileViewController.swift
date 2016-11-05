@@ -69,12 +69,11 @@ class ProfileViewController: UIViewController {
 
     func loadRevokeApi() {
         SVProgressHUD.showLoading()
-        let request = ESAApiClient.GetUserRequest()
+        let request = ESAApiClient.PostRevokeRequest()
         ESASession.send(request) { result in
             SVProgressHUD.dismiss()
             switch result {
             case .success(_):
-                try? Keychain().removeAll()
                 Toast.showLong(text: "アプリ連携を解除しました (\\( ⁰⊖⁰)/)\n\n再度ご利用の場合は、もう一度認証をお願いします。")
                 let login = R.storyboard.authorization().instantiateInitialViewController()!
                 self.present(login, animated: true, completion: nil)

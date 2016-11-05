@@ -47,10 +47,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ONS-zm-kZe">
-                                <rect key="frame" x="58" y="281.5" width="259" height="40"/>
+                                <rect key="frame" x="58" y="60" width="259" height="40"/>
                                 <color key="backgroundColor" red="0.039215686274509803" green="0.60784313725490191" blue="0.58039215686274515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="feW-nd-Ae5"/>
+                                    <constraint firstAttribute="height" constant="40" id="XfW-CI-4F7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="22"/>
                                 <state key="normal" title="Login in esa.io">
@@ -65,13 +65,24 @@
                                     <action selector="loginWithSender:" destination="0uY-OQ-eWE" eventType="touchUpInside" id="loW-Xx-s3S"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKe-5T-tQU">
+                                <rect key="frame" x="16" y="160" width="343" height="90"/>
+                                <string key="text">esa.io でのログインをお願いします。
+本アプリ開発者が利用者の情報を閲覧することはありません。
+ソースコードも公開されていますので、不安な方はご確認ください。</string>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ONS-zm-kZe" firstAttribute="centerX" secondItem="3FL-UB-9wh" secondAttribute="centerX" id="Onz-El-Nxd"/>
-                            <constraint firstItem="ONS-zm-kZe" firstAttribute="centerY" secondItem="3FL-UB-9wh" secondAttribute="centerY" id="QyP-HM-560"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ONS-zm-kZe" secondAttribute="trailing" constant="42" id="TKQ-pA-59V"/>
-                            <constraint firstItem="ONS-zm-kZe" firstAttribute="leading" secondItem="3FL-UB-9wh" secondAttribute="leadingMargin" constant="42" id="YNs-8N-G1U"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ONS-zm-kZe" secondAttribute="trailing" constant="42" id="9G7-11-tsh"/>
+                            <constraint firstItem="ONS-zm-kZe" firstAttribute="leading" secondItem="3FL-UB-9wh" secondAttribute="leadingMargin" constant="42" id="FmV-KZ-mjr"/>
+                            <constraint firstItem="ONS-zm-kZe" firstAttribute="top" secondItem="DVf-7R-kIC" secondAttribute="bottom" constant="60" id="G0f-sE-net"/>
+                            <constraint firstItem="QKe-5T-tQU" firstAttribute="leading" secondItem="3FL-UB-9wh" secondAttribute="leadingMargin" id="OGf-Dt-Ler"/>
+                            <constraint firstItem="QKe-5T-tQU" firstAttribute="trailing" secondItem="3FL-UB-9wh" secondAttribute="trailingMargin" id="ZCx-T8-jBL"/>
+                            <constraint firstItem="QKe-5T-tQU" firstAttribute="top" secondItem="ONS-zm-kZe" secondAttribute="bottom" constant="60" id="xlF-oT-7E5"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
@@ -79,7 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qhd-TJ-dmN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="98" y="356"/>
+            <point key="canvasLocation" x="96.799999999999997" y="355.7721139430285"/>
         </scene>
     </scenes>
 </document>

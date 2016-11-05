@@ -18,13 +18,13 @@ extension ESAApiClient {
             return .post
         }
 
-        var contentType: String? {
-            return "application/x-www-form-urlencoded"
-        }
-
         var parameters: Any? {
-            let aa = FormURLEncodedBodyParameters(formObject: ["token": Keychain()[Keychain.tokenKey] ?? ""])
-            return aa
+            let env = ProcessInfo.processInfo.environment
+            return [
+                "token": Keychain()[Keychain.tokenKey] ?? "",
+                "client_id": env["ESA_CLIENT_ID"]!,
+                "client_secret": env["ESA_CLIENT_SECRET"]!,
+            ]
         }
 
         var path: String {

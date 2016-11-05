@@ -12,7 +12,7 @@ import XCGLogger
 let log: XCGLogger? = {
     #if DEBUG
         let logger = XCGLogger.default
-        logger.setup(level: .info, showThreadName: true, showLevel: true, showFileNames: true, showLineNumbers: true)
+        logger.setup(level: .verbose, showThreadName: true, showLevel: true, showFileNames: true, showLineNumbers: true)
 
         if let fileDestination: FileDestination = logger.destination(withIdentifier: XCGLogger.Constants.fileDestinationIdentifier) as? FileDestination {
             let ansiColorLogFormatter: ANSIColorLogFormatter = ANSIColorLogFormatter()

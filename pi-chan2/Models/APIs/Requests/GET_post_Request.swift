@@ -24,7 +24,7 @@ extension ESAApiClient {
         }
 
         var path: String {
-            return teamPath + "/posts/" + String(number)
+            return Constants.Esa.apiVersion + "/" + teamPath + "/posts/" + String(number)
         }
     }
 }

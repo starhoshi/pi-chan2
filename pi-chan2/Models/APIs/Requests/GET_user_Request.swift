@@ -18,7 +18,7 @@ extension ESAApiClient {
         }
 
         var path: String {
-            return "/user"
+            return  Constants.Esa.apiVersion + "/" + "/user"
         }
     }
 }
