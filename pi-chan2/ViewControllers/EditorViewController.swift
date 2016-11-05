@@ -18,20 +18,18 @@ class EditorViewController: UIViewController {
     var post: Post?
     // var postsParameters: PostsParameters!
 
-    @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var contentViewWidthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var sendButton: UIBarButtonItem!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var textField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        contentViewWidthConstraint.constant = view.frame.width
-        contentViewHeightConstraint.constant = CGFloat(view.frame.height - 64)
-        // sendButton.setFAIcon(.FASend, iconSize: 22, forState: .Normal)
-        // cancelButton.setFAIcon(.FAClose, iconSize: 22, forState: .Normal)
+        let attributes = [NSFontAttributeName: UIFont.fontAwesome(ofSize: 20)] as [String: Any]
+        cancelButton.setTitleTextAttributes(attributes, for: .normal)
+        cancelButton.title = String.fontAwesomeIcon(name: .close)
+        sendButton.setTitleTextAttributes(attributes, for: .normal)
+        sendButton.title = String.fontAwesomeIcon(name: .send)
+
         setStatusBarBackground()
         setTextViewStyle()
         textView.text = post?.bodyMd
@@ -45,16 +43,9 @@ class EditorViewController: UIViewController {
     }
 
     func setTextViewStyle() {
-//        textView.placeholder = "# Input with Markdown"
         textView.layer.borderWidth = 1
         textView.layer.borderColor = UIColor.grayUITextFieldBorderColor.cgColor
         textView.layer.cornerRadius = 6
-    }
-
-    func setStatusBarBackground() {
-//        let statusBarBackground = UIView(frame: CGRect(0, 0, self.view.frame.width, CGRectGetHeight(UIApplication.shared.statusBarFrame)))
-//        statusBarBackground.backgroundColor = UIColor.esaGreen
-//        self.view.addSubview(statusBarBackground)
     }
 
     @IBAction func post(sender: AnyObject) {
