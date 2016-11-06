@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,60 +22,48 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r00-mL-oHm">
-                                <rect key="frame" x="0.0" y="108" width="375" height="510"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9qJ-Y8-eds">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="vAP-qU-yXb"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="gMA-FR-iyB"/>
-                                    <barButtonItem title="D" id="r38-Eq-Jz6">
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <action selector="onDeleteTapped:" destination="hgs-7w-Gz9" id="yj8-3T-Yap"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Cl6-sL-Xbs"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="JrP-Uq-8pN"/>
-                                    <barButtonItem title="E" id="AiN-YV-MGr">
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <action selector="openEditorWithSender:" destination="hgs-7w-Gz9" id="aAs-Uq-yhH"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="JaB-Wh-ELT"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="1dM-Ck-U1N"/>
-                                    <barButtonItem title="C" id="Tke-Ye-KaD">
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="GzX-iv-aid"/>
-                                </items>
-                                <color key="barTintColor" red="0.066666666669999999" green="0.53333333329999999" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="r00-mL-oHm" firstAttribute="top" secondItem="9qJ-Y8-eds" secondAttribute="bottom" id="1cl-rA-RHK"/>
-                            <constraint firstItem="r00-mL-oHm" firstAttribute="leading" secondItem="DdR-KV-saC" secondAttribute="leading" id="5kw-4D-6eT"/>
-                            <constraint firstAttribute="trailing" secondItem="r00-mL-oHm" secondAttribute="trailing" id="7SV-dj-RR1"/>
-                            <constraint firstItem="ZG0-js-oI5" firstAttribute="top" secondItem="r00-mL-oHm" secondAttribute="bottom" id="G9k-b1-k74"/>
-                            <constraint firstAttribute="trailing" secondItem="9qJ-Y8-eds" secondAttribute="trailing" id="M70-Pw-p4r"/>
-                            <constraint firstItem="9qJ-Y8-eds" firstAttribute="leading" secondItem="DdR-KV-saC" secondAttribute="leading" id="NRx-AP-yYj"/>
-                            <constraint firstItem="9qJ-Y8-eds" firstAttribute="top" secondItem="qoI-Yx-lM5" secondAttribute="bottom" id="cbS-Wh-6en"/>
+                            <constraint firstItem="r00-mL-oHm" firstAttribute="top" secondItem="qoI-Yx-lM5" secondAttribute="bottom" id="EVS-io-Vha"/>
+                            <constraint firstItem="ZG0-js-oI5" firstAttribute="top" secondItem="r00-mL-oHm" secondAttribute="bottom" id="Tri-5a-59t"/>
+                            <constraint firstItem="r00-mL-oHm" firstAttribute="leading" secondItem="DdR-KV-saC" secondAttribute="leading" id="V0N-mP-Fv9"/>
+                            <constraint firstAttribute="trailing" secondItem="r00-mL-oHm" secondAttribute="trailing" id="xcf-RS-mkL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="4p9-h6-zFV"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="4p9-h6-zFV">
+                        <rightBarButtonItems>
+                            <barButtonItem title="E" id="AiN-YV-MGr">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="openEditorWithSender:" destination="hgs-7w-Gz9" id="aAs-Uq-yhH"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="C" id="Tke-Ye-KaD">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="onCommentTapped:" destination="hgs-7w-Gz9" id="g7G-q3-PNj"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="D" id="r38-Eq-Jz6">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="onDeleteTapped:" destination="hgs-7w-Gz9" id="yj8-3T-Yap"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="commentButton" destination="Tke-Ye-KaD" id="Gyf-2i-0SF"/>
                         <outlet property="deleteButton" destination="r38-Eq-Jz6" id="4Cn-Xk-eBy"/>
                         <outlet property="editButton" destination="AiN-YV-MGr" id="kwJ-DE-Fpd"/>
-                        <outlet property="toolbar" destination="9qJ-Y8-eds" id="x44-MD-YuU"/>
                         <outlet property="webView" destination="r00-mL-oHm" id="fKo-5d-MRN"/>
                         <segue destination="gIG-JA-G8Q" kind="show" identifier="PreviewToPreview" id="hbX-sv-X2G"/>
                         <segue destination="C0b-bm-2WF" kind="presentation" identifier="toEditor" id="KLh-gb-s4C"/>

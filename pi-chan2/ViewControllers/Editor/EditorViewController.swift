@@ -32,7 +32,7 @@ class EditorViewController: UIViewController {
         setTextViewStyle()
         textView.text = post?.bodyMd
         textField.text = post?.fullName
-        navigationItem.title = post?.name ?? "New Posts"
+        navigationItem.title = (post != nil) ? "編集" : "新規投稿"
     }
 
     override func viewDidAppear(_ animated: Bool) {

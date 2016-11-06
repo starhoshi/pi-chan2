@@ -19,7 +19,6 @@ class PreviewViewController: UIViewController, UIWebViewDelegate {
     let localHtml = R.file.mdHtml()!.path
     var post: Post?
 
-    @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var deleteButton: UIBarButtonItem!
 //    @IBOutlet weak var starButton: UIBarButtonItem!
 //    @IBOutlet weak var eyeButton: UIBarButtonItem!
@@ -28,7 +27,7 @@ class PreviewViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var webView: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        initUIBarButton()
+        initNavigation()
 
         let req = URLRequest(url: URL(string: localHtml)!)
         webView.delegate = self;
@@ -37,9 +36,7 @@ class PreviewViewController: UIViewController, UIWebViewDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadByNotification), name: ESAObserver.login, object: nil)
     }
 
-    func initUIBarButton() {
-        toolbar.barTintColor = UIColor.esaGreen
-        toolbar.isTranslucent = false
+    func initNavigation() {
         let attributes = [NSFontAttributeName: UIFont.fontAwesome(ofSize: 20)] as [String: Any]
         deleteButton.setTitleTextAttributes(attributes, for: .normal)
         deleteButton.title = String.fontAwesomeIcon(name: .trashO)
@@ -92,7 +89,7 @@ class PreviewViewController: UIViewController, UIWebViewDelegate {
         guard let comments = post?.comments, comments.count > 0 else {
             return ""
         }
-        var md = "\\n---\\n <div class='pi-chan'> <h2>:speech_balloon: Comments (\(comments.count))</h2>"
+        var md = "\\n\\n---\\n <div class='pi-chan'> <h2>:speech_balloon: Comments (\(comments.count))</h2>"
         for comment in comments {
             md += "<div class='comment'><h4 class='name'><img class='icon' src=\(comment.createdBy.icon) />"
             md += "<span class='screen_name'>`\(comment.createdBy.screenName)`</span></h4>"
@@ -157,7 +154,7 @@ class PreviewViewController: UIViewController, UIWebViewDelegate {
     func showDeleteDialog() {
         let alert = AlertController(title: "記事を削除", message: "この操作は取り消せません。\nよろしいですか？", preferredStyle: .alert)
         alert.add(AlertAction(title: "キャンセル", style: .preferred))
-        alert.add(AlertAction(title: "削除する", style: .destructive) {
+        alert.add(AlertAction(title: "削除", style: .destructive) {
             _ in self.loadDeletePostsApi()
         })
         alert.present()
@@ -179,4 +176,54 @@ class PreviewViewController: UIViewController, UIWebViewDelegate {
         }
     }
 
+    @IBAction func onCommentTapped(_ sender: Any) {
+        showTextViewDialog(text: nil)
+    }
+
+    func showTextViewDialog(text: String?) {
+        let alert = AlertController(title: "コメントを入力", message: "# Input comment (with Markdown)")
+        let bounds = CGRect(x: 0, y: 0, width: 238, height: 100)
+        let textView = UITextView(frame: bounds)
+        textView.borderWidth = 1
+        textView.borderColor = UIColor.grayUITextFieldBorderColor
+        textView.cornerRadius = 6
+        textView.font = R.font.latoRegular(size: 16)
+        textView.textColor = UIColor.esaFontBlue
+        textView.becomeFirstResponder()
+        alert.contentView.addSubview(textView)
+        alert.add(AlertAction(title: "キャンセル", style: .normal))
+        alert.add(AlertAction(title: "投稿", style: .preferred) {
+            _ in self.loadPostCommentApi(bodyMd: textView.text)
+        })
+        textView.centerXAnchor.constraint(equalTo: alert.contentView.centerXAnchor).isActive = true
+        textView.topAnchor.constraint(equalTo: alert.contentView.topAnchor).isActive = true
+        textView.bottomAnchor.constraint(equalTo: alert.contentView.bottomAnchor).isActive = true
+        alert.present()
+    }
+
+    func showCommentConfirmDialog(bodyMd: String) {
+        let alert = AlertController(title: "コメントを投稿", message: "\(bodyMd)\n\n 上記コメントを投稿します、良いですか？", preferredStyle: .alert)
+        alert.add(AlertAction(title: "キャンセル", style: .normal))
+        alert.add(AlertAction(title: "投稿", style: .preferred) {
+            _ in self.loadPostCommentApi(bodyMd: bodyMd)
+        })
+        alert.present()
+    }
+
+    func loadPostCommentApi(bodyMd: String) {
+        SVProgressHUD.showLoading()
+        let request = ESAApiClient.PostPostsCommentsRequest(number: postNumber, bodyMd: bodyMd)
+        ESASession.send(request) { result in
+            SVProgressHUD.dismiss()
+            switch result {
+            case .success(_):
+                self.loadGetPostApi()
+                Toast.showLong(text: "コメントを投稿しました (\\( ⁰⊖⁰)/)")
+                let js = "window.scrollTo(0.0, 10000.0)"
+                self.webView.stringByEvaluatingJavaScript(from: js)
+            case .failure(let error):
+                ESAApiClient.errorHandler(error)
+            }
+        }
+    }
 }

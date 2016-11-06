@@ -46,6 +46,8 @@
 		E3AD42BB1DCE508300E6AD84 /* DELETE_ posts_Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AD42BA1DCE508300E6AD84 /* DELETE_ posts_Request.swift */; };
 		E3AD42BD1DCE50A500E6AD84 /* DELETE_posts_Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AD42BC1DCE50A500E6AD84 /* DELETE_posts_Response.swift */; };
 		E3AD42BF1DCEE16700E6AD84 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AD42BE1DCEE16700E6AD84 /* String+Extension.swift */; };
+		E3AD42C11DCF045400E6AD84 /* POST_posts_comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AD42C01DCF045400E6AD84 /* POST_posts_comments.swift */; };
+		E3AD42C31DCF049800E6AD84 /* POST_posts_comments_Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AD42C21DCF049800E6AD84 /* POST_posts_comments_Response.swift */; };
 		E3B301BE1DCB94B500C0A7B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B301BD1DCB94B500C0A7B0 /* AppDelegate.swift */; };
 		E3B301C51DCB94B500C0A7B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3B301C41DCB94B500C0A7B0 /* Assets.xcassets */; };
 		E3B301C81DCB94B500C0A7B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B301C61DCB94B500C0A7B0 /* LaunchScreen.storyboard */; };
@@ -125,6 +127,8 @@
 		E3AD42BA1DCE508300E6AD84 /* DELETE_ posts_Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DELETE_ posts_Request.swift"; sourceTree = "<group>"; };
 		E3AD42BC1DCE50A500E6AD84 /* DELETE_posts_Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DELETE_posts_Response.swift; sourceTree = "<group>"; };
 		E3AD42BE1DCEE16700E6AD84 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		E3AD42C01DCF045400E6AD84 /* POST_posts_comments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POST_posts_comments.swift; sourceTree = "<group>"; };
+		E3AD42C21DCF049800E6AD84 /* POST_posts_comments_Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POST_posts_comments_Response.swift; sourceTree = "<group>"; };
 		E3B301BA1DCB94B500C0A7B0 /* pi-chan2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pi-chan2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B301BD1DCB94B500C0A7B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3B301C41DCB94B500C0A7B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -392,6 +396,7 @@
 				E3C6CEC01DCC54D7001C2A06 /* GET_posts_Request.swift */,
 				E3C6CED31DCC82AE001C2A06 /* GET_teams_Request.swift */,
 				E3C6CE9D1DCC20CD001C2A06 /* GET_user_Request.swift */,
+				E3AD42C01DCF045400E6AD84 /* POST_posts_comments.swift */,
 				E36DC56D1DCDABDC00D16167 /* PATCH_posts_Request.swift */,
 				E36DC56B1DCD9B1200D16167 /* POST_posts_Request.swift */,
 				E36DC52B1DCCB21900D16167 /* POST_revoke_Request.swift */,
@@ -405,6 +410,7 @@
 			children = (
 				E36DC5141DCCAD2700D16167 /* GET_members_Response.swift */,
 				E3C6CEC41DCC5A82001C2A06 /* GET_posts_Response.swift */,
+				E3AD42C21DCF049800E6AD84 /* POST_posts_comments_Response.swift */,
 				E3C6CED51DCC82C1001C2A06 /* GET_teams_response.swift */,
 				E36DC52D1DCCB27000D16167 /* POST_revoke_Response.swift */,
 				E3AD42BC1DCE50A500E6AD84 /* DELETE_posts_Response.swift */,
@@ -652,6 +658,7 @@
 				E36DC56C1DCD9B1200D16167 /* POST_posts_Request.swift in Sources */,
 				E3C6CEC71DCC5B92001C2A06 /* Post.swift in Sources */,
 				E3C6CED81DCC82F2001C2A06 /* Team.swift in Sources */,
+				E3AD42C31DCF049800E6AD84 /* POST_posts_comments_Response.swift in Sources */,
 				E3C6CEC11DCC54D7001C2A06 /* GET_posts_Request.swift in Sources */,
 				E3C6CE9E1DCC20CD001C2A06 /* GET_user_Request.swift in Sources */,
 				E36DC5701DCDC0B300D16167 /* ESAObserver.swift in Sources */,
@@ -683,6 +690,7 @@
 				E3C6CEA41DCC2169001C2A06 /* User.swift in Sources */,
 				E36DC5651DCD858500D16167 /* GET_post_Request.swift in Sources */,
 				E3C6CEB91DCC32AC001C2A06 /* PostTableViewCell.swift in Sources */,
+				E3AD42C11DCF045400E6AD84 /* POST_posts_comments.swift in Sources */,
 				E3AD42B01DCDF00900E6AD84 /* Comment.swift in Sources */,
 				E36DC5151DCCAD2700D16167 /* GET_members_Response.swift in Sources */,
 				E3C6CEAB1DCC2947001C2A06 /* MainTabBarController.swift in Sources */,
