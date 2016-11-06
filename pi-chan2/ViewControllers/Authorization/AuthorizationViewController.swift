@@ -90,4 +90,8 @@ class AuthorizationViewController: UIViewController {
         Toast.showLong(text: "\(teamName) へのログインが成功しました!")
         NotificationCenter.default.post(name: ESAObserver.login, object: nil)
     }
+
+    @IBAction func onGitHubTapped(_ sender: Any) {
+        Share.openAppStore(Constants.Pichan.Url.gitHub)
+    }
 }
