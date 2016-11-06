@@ -32,7 +32,6 @@ class PostsViewController: UIViewController, UISearchBarDelegate {
         rightBarButton.title = String.fontAwesomeIcon(name: .pencil)
         self.navigationItem.title = searchText == "" ? "Posts" : searchText
         initTableView()
-        resetAndLoadApi()
         setSearchBar()
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadByNotification), name: ESAObserver.write, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadByNotification), name: ESAObserver.login, object: nil)
