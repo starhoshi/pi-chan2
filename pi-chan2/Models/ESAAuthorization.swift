@@ -9,15 +9,14 @@
 import Foundation
 import OAuthSwift
 import UIKit
+import Keys
 
 class ESAAuthorization {
     static func oauth2(success: @escaping (_ credential: OAuthSwiftCredential) -> Void, failure: @escaping (_ error: Error) -> Void) {
 
-        let env = ProcessInfo.processInfo.environment
-
         let oauthswift = OAuth2Swift(
-            consumerKey: env["ESA_CLIENT_ID"]!,
-            consumerSecret: env["ESA_CLIENT_SECRET"]!,
+            consumerKey: Pichan2Keys().esaClientId(),
+            consumerSecret: Pichan2Keys().esaClientSecret(),
             authorizeUrl: Constants.Esa.Url.authorize.absoluteString,
             accessTokenUrl: Constants.Esa.Url.token.absoluteString,
             responseType: "code"

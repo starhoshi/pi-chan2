@@ -9,6 +9,7 @@
 import Foundation
 import APIKit
 import KeychainAccess
+import Keys
 
 extension ESAApiClient {
     struct PostRevokeRequest: ESARequestType {
@@ -22,8 +23,8 @@ extension ESAApiClient {
             let env = ProcessInfo.processInfo.environment
             return [
                 "token": Keychain()[Keychain.tokenKey] ?? "",
-                "client_id": env["ESA_CLIENT_ID"]!,
-                "client_secret": env["ESA_CLIENT_SECRET"]!,
+                "client_id": Pichan2Keys().esaClientId(),
+                "client_secret": Pichan2Keys().esaClientSecret(),
             ]
         }
 

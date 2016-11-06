@@ -50,3 +50,11 @@ post_install do |installer|
   FileUtils.cp_r('Pods/Target Support Files/Pods-pi-chan2/Pods-pi-chan2-acknowledgements.plist', 'pi-chan2/SupportingFiles/Acknowledgements.plist', :remove_destination => true)
 end
 
+plugin 'cocoapods-keys', {
+  :project => "pi-chan2",
+  :keys => [
+    "EsaClientId",
+    "EsaClientSecret"
+  ]
+}
+

@@ -2,6 +2,9 @@ GEM
   remote: https://rubygems.org/
   specs:
     CFPropertyList (2.3.3)
+    RubyInline (3.12.4)
+      ZenTest (~> 4.3)
+    ZenTest (4.11.1)
     activesupport (4.2.7.1)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
@@ -40,6 +43,9 @@ GEM
       nap (~> 1.0)
     cocoapods-deintegrate (1.0.1)
     cocoapods-downloader (1.1.2)
+    cocoapods-keys (1.7.0)
+      dotenv
+      osx_keychain
     cocoapods-plugins (1.0.0)
       nap
     cocoapods-search (1.0.0)
@@ -201,6 +207,8 @@ GEM
     net-ssh (3.2.0)
     netrc (0.7.8)
     os (0.9.6)
+    osx_keychain (1.0.1)
+      RubyInline (~> 3)
     pem (1.4.0)
       fastlane_core (>= 0.53.0, < 1.0.0)
       spaceship (>= 0.36.2, < 1.0.0)
@@ -295,6 +303,7 @@ PLATFORMS
 
 DEPENDENCIES
   cocoapods (>= 1.1.0.rc.3)
+  cocoapods-keys
   fastlane
   synx
   update_xcode_plugins
