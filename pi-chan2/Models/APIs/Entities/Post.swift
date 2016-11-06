@@ -66,12 +66,4 @@ class Post: Mappable {
         comments <- map["comments"]
     }
 
-    func getBodyMdReplacedNewLine() -> String {
-        var md = bodyMd.replacingOccurrences(of: "\r\n", with: "#!#!#")
-        md = md.replacingOccurrences(of: "\n\r", with: "#!#!#")
-        md = md.replacingOccurrences(of: "\n", with: "#!#!#")
-        md = md.replacingOccurrences(of: "\r", with: "#!#!#")
-        md = md.replacingOccurrences(of: "#!#!#", with: "\\n")
-        return md
-    }
 }

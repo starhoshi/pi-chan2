@@ -12,6 +12,7 @@ import FontAwesome_swift
 import SafariServices
 import Toaster
 import SDCAlertView
+import NSDate_TimeAgo
 
 class PreviewViewController: UIViewController, UIWebViewDelegate {
     var postNumber: Int!
@@ -78,12 +79,27 @@ class PreviewViewController: UIViewController, UIWebViewDelegate {
     }
 
     func setMarkdown() {
-        let category = post?.category != nil ? "###### \(post!.category!) \\n" : ""
+        let category = post?.category != nil ? "###### \(post!.category!)/ \\n" : ""
         let mdPrefixTitle = category + "# \(post!.name)\\n\\n"
-        let md = mdPrefixTitle + post!.getBodyMdReplacedNewLine()
+        var md = mdPrefixTitle + post!.bodyMd.replacedNewLine()
+        md += createCommentView()
         let js = "insert('\(md.replacingOccurrences(of: "'", with: "\\'"))');"
         log?.debug("\(js)")
         self.webView.stringByEvaluatingJavaScript(from: js)
+    }
+
+    func createCommentView() -> String {
+        guard let comments = post?.comments, comments.count > 0 else {
+            return ""
+        }
+        var md = "\\n---\\n <div class='pi-chan'> <h2>:speech_balloon: Comments (\(comments.count))</h2>"
+        for comment in comments {
+            md += "<div class='comment'><h4 class='name'><img class='icon' src=\(comment.createdBy.icon) />"
+            md += "<span class='screen_name'>`\(comment.createdBy.screenName)`</span></h4>"
+            md += "<div class='md'>\(comment.bodyMd.replacedNewLine())</div><div  class='date'>"
+            md += NSDate(timeIntervalSince1970: comment.updatedAt.timeIntervalSince1970).timeAgo() + "</div></div>"
+        }
+        return md + "</div>"
     }
 
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
