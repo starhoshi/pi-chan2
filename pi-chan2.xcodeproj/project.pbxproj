@@ -364,12 +364,12 @@
 				E3C6CE8E1DCC1E14001C2A06 /* Bundle+Extension.swift */,
 				E3C6CED11DCC8064001C2A06 /* Keychain+Extension.swift */,
 				E3C6CEC81DCC6772001C2A06 /* SVProgressHUD+Extension.swift */,
+				E3AD42BE1DCEE16700E6AD84 /* String+Extension.swift */,
 				E3C6CEBB1DCC3799001C2A06 /* Toaster+Extension.swift */,
 				E3C6CEBD1DCC4BB5001C2A06 /* UIApplication+Extension.swift */,
 				E3C6CEAF1DCC2A4A001C2A06 /* UIColor+Extension.swift */,
 				E36DC5061DCCA6DC00D16167 /* UIView+Extension.swift */,
 				E3C6CE901DCC1E36001C2A06 /* URL+Extension.swift */,
-				E3AD42BE1DCEE16700E6AD84 /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -391,16 +391,16 @@
 		E3C6CE9C1DCC20A5001C2A06 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				E3AD42BA1DCE508300E6AD84 /* DELETE_ posts_Request.swift */,
 				E36DC5121DCCACB400D16167 /* GET_members_Request.swift */,
 				E36DC5641DCD858500D16167 /* GET_post_Request.swift */,
 				E3C6CEC01DCC54D7001C2A06 /* GET_posts_Request.swift */,
 				E3C6CED31DCC82AE001C2A06 /* GET_teams_Request.swift */,
 				E3C6CE9D1DCC20CD001C2A06 /* GET_user_Request.swift */,
-				E3AD42C01DCF045400E6AD84 /* POST_posts_comments.swift */,
 				E36DC56D1DCDABDC00D16167 /* PATCH_posts_Request.swift */,
 				E36DC56B1DCD9B1200D16167 /* POST_posts_Request.swift */,
+				E3AD42C01DCF045400E6AD84 /* POST_posts_comments.swift */,
 				E36DC52B1DCCB21900D16167 /* POST_revoke_Request.swift */,
-				E3AD42BA1DCE508300E6AD84 /* DELETE_ posts_Request.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -408,12 +408,12 @@
 		E3C6CE9F1DCC20D9001C2A06 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				E3AD42BC1DCE50A500E6AD84 /* DELETE_posts_Response.swift */,
 				E36DC5141DCCAD2700D16167 /* GET_members_Response.swift */,
 				E3C6CEC41DCC5A82001C2A06 /* GET_posts_Response.swift */,
-				E3AD42C21DCF049800E6AD84 /* POST_posts_comments_Response.swift */,
 				E3C6CED51DCC82C1001C2A06 /* GET_teams_response.swift */,
+				E3AD42C21DCF049800E6AD84 /* POST_posts_comments_Response.swift */,
 				E36DC52D1DCCB27000D16167 /* POST_revoke_Response.swift */,
-				E3AD42BC1DCE50A500E6AD84 /* DELETE_posts_Response.swift */,
 				E3C6CEC21DCC5970001C2A06 /* Pagination.swift */,
 			);
 			path = Responses;
@@ -422,12 +422,12 @@
 		E3C6CEA21DCC215E001C2A06 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				E3AD42AF1DCDF00900E6AD84 /* Comment.swift */,
 				E36DC5011DCC9B2600D16167 /* CreatedBy.swift */,
 				E36DC5161DCCAD4F00D16167 /* Member.swift */,
 				E3C6CEC61DCC5B92001C2A06 /* Post.swift */,
 				E3C6CED71DCC82F2001C2A06 /* Team.swift */,
 				E3C6CEA31DCC2169001C2A06 /* User.swift */,
-				E3AD42AF1DCDF00900E6AD84 /* Comment.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
