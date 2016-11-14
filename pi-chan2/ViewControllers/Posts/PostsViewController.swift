@@ -33,6 +33,7 @@ class PostsViewController: UIViewController, UISearchBarDelegate {
         self.navigationItem.title = searchText == "" ? "Posts" : searchText
         initTableView()
         setSearchBar()
+        resetAndLoadApi()
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadByNotification), name: ESAObserver.write, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadByNotification), name: ESAObserver.login, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadByNotification), name: ESAObserver.delete, object: nil)
