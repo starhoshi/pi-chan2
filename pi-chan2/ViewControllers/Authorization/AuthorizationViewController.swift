@@ -91,7 +91,4 @@ class AuthorizationViewController: UIViewController {
         NotificationCenter.default.post(name: ESAObserver.login, object: nil)
     }
 
-    @IBAction func onGitHubTapped(_ sender: Any) {
-        Share.openAppStore(Constants.Pichan.Url.gitHub)
-    }
 }
