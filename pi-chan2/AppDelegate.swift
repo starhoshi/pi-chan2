@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
+        SirenUpdater.checkVersion(checkType: .immediately)
         Fabric.with([Crashlytics.self])
         IQKeyboardManager.sharedManager().enable = true
         settingTabNavBar()
@@ -65,15 +66,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        SirenUpdater.checkVersion(checkType: .immediately)
+//        SirenUpdater.checkVersion(checkType: .immediately)
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        SirenUpdater.checkVersion(checkType: .immediately)
+//        SirenUpdater.checkVersion(checkType: .immediately)
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        SirenUpdater.checkVersion(checkType: .immediately)
+//        SirenUpdater.checkVersion(checkType: .immediately)
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
