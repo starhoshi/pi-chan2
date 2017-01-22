@@ -46,3 +46,7 @@ Swift Lint を利用するため、下記コマンドでインストールして
 ```
 $ brew install swiftlint
 ```
+
+# LICENSE
+
+MIT
