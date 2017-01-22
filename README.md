@@ -46,22 +46,3 @@ Swift Lint を利用するため、下記コマンドでインストールして
 ```
 $ brew install swiftlint
 ```
-
-# ビルド設定
-TODO
-
-# その他
-TODO
-
-## synx
-
-新しいファイルを追加した場合、 synx を実行してください。  
-Xcode 上の Directory 構成と実際の　Directory 構成は異なるため、 synx により一致させてください。  
-(ここはプルリク時にチェック自動化したい)
-
-```
-$ bundle exec synx pi-chan2.xcodeproj/
-```
-
-
-
