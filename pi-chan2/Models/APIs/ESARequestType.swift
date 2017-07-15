@@ -46,7 +46,7 @@ extension ESARequestType {
     func intercept(urlRequest: URLRequest) throws -> URLRequest {
         log?.info("requestURL: \(urlRequest)")
         log?.info("requestHeader: \(urlRequest.allHTTPHeaderFields!)")
-        log?.info("requestBody: \(String(data: urlRequest.httpBody ?? Data(), encoding: .utf8))")
+        log?.info("requestBody: \(String(data: urlRequest.httpBody ?? Data(), encoding: .utf8)?.debugDescription)")
         return urlRequest
     }
 

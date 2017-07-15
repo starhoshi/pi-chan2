@@ -101,7 +101,7 @@ class PreviewViewController: UIViewController, UIWebViewDelegate {
     }
 
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        log?.info("\(request.url)")
+        log?.info("\(request.url.debugDescription)")
 
         guard let url = request.url else {
             return false

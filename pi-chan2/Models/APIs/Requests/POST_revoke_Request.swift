@@ -20,7 +20,7 @@ extension ESAApiClient {
         }
 
         var parameters: Any? {
-            let env = ProcessInfo.processInfo.environment
+            _ = ProcessInfo.processInfo.environment
             return [
                 "token": Keychain()[Keychain.tokenKey] ?? "",
                 "client_id": Pichan2Keys().esaClientId(),
