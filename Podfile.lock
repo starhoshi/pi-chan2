@@ -1,35 +1,39 @@
 PODS:
-  - APIKit (3.0.0):
+  - APIKit (3.1.1):
     - Result (~> 3.0)
-  - Crashlytics (3.8.3):
+  - Crashlytics (3.8.5):
     - Fabric (~> 1.6.3)
   - DZNEmptyDataSet (1.8.1)
-  - Fabric (1.6.11)
-  - FontAwesome.swift (1.0.0)
-  - IQKeyboardManagerSwift (4.0.7)
-  - KeychainAccess (3.0.1)
+  - Fabric (1.6.12)
+  - FontAwesome.swift (1.2.0)
+  - IQKeyboardManagerSwift (4.0.10)
+  - KeychainAccess (3.0.2)
   - Keys (1.0.0)
-  - Kingfisher (3.1.4)
+  - Kingfisher (3.10.3)
   - MGSwipeTableCell (1.5.6)
   - NSDate+TimeAgo (1.0.6)
-  - OAuthSwift (1.0.0)
-  - ObjectMapper (2.2.0)
+  - OAuthSwift (1.1.2)
+  - ObjcExceptionBridging (1.0.1):
+    - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
+  - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
+  - ObjectMapper (2.2.8)
   - PullToRefreshSwift (3.0.3)
-  - R.swift (3.1.0):
+  - R.swift (3.3.0):
     - R.swift.Library (~> 3.0.2)
   - R.swift.Library (3.0.2)
-  - Result (3.0.0)
+  - Result (3.2.3)
   - SCLAlertView (0.7.0)
-  - SDCAlertView (7.1)
-  - Siren (1.0.3)
-  - SVProgressHUD (2.0.3)
-  - SwiftDate (4.0.7)
+  - SDCAlertView (7.1.2)
+  - Siren (2.0.6)
+  - SVProgressHUD (2.1.2)
+  - SwiftDate (4.1.6)
   - SwiftyUserDefaults (3.0.0)
-  - Toaster (2.0.1)
-  - VTAcknowledgementsViewController (1.2)
-  - XCGLogger (4.0.0):
-    - XCGLogger/Core (= 4.0.0)
-  - XCGLogger/Core (4.0.0)
+  - Toaster (2.0.4)
+  - VTAcknowledgementsViewController (1.2.1)
+  - XCGLogger (5.0.1):
+    - XCGLogger/Core (= 5.0.1)
+  - XCGLogger/Core (5.0.1):
+    - ObjcExceptionBridging
   - XLActionController/Core (3.0.1)
   - XLActionController/Twitter (3.0.1):
     - XLActionController/Core
@@ -69,38 +73,39 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   FontAwesome.swift:
-    :commit: 9ca8cc149b14856605ca744ee7c36621e5dc194b
+    :commit: d4bd83d8de195c502af886aad78e47188a6c5b2e
     :git: https://github.com/thii/FontAwesome.swift.git
 
 SPEC CHECKSUMS:
-  APIKit: f541a78fc054a03690e7bd32198b00bb835654b6
-  Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
+  APIKit: 7460983f490d3bde6aaaaa4164d18c9865a6f91d
+  Crashlytics: dfbae35ef22ca189240d230ad501feea4ee85d2d
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
-  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
-  FontAwesome.swift: beb1ff2f206a1517745f4f057a4d30a76f8d7d4e
-  IQKeyboardManagerSwift: 58bbcf46b5cf9fd4ed625d28a60cb2fbae4ab0f4
-  KeychainAccess: 017ea25e313a49eda10bb19b0bb0760fb1edfe1a
+  Fabric: f050464eac45a2ce5a8e6e6a07e977c0df32fe28
+  FontAwesome.swift: 609815397a9b51cb4d774969787163c7d1306739
+  IQKeyboardManagerSwift: 75ba21a23794a1e6b6fe6d9a267ea17f80e06771
+  KeychainAccess: a986406022dfc7c634c691ad3bec670cc6a32002
   Keys: 9c35bf00f612ee1d48556f4a4b9b4551e224e90f
-  Kingfisher: 6c67e3e57f2d81a9cfdfa25052cd86f33ceac9bb
+  Kingfisher: a0ac82dc5bcf0388dd74b294cf2cc13730c63436
   MGSwipeTableCell: 616700eb0ffd1c611ba909066cb7fd739790a0a7
   NSDate+TimeAgo: 35601c619b2d59290055e4fe76e61d97677a2360
-  OAuthSwift: dd4f502ffd4f6e122b861b5e4529bf6454a30fe6
-  ObjectMapper: 4060d739febae11ab0c6af8d786f98667c82e1bd
+  OAuthSwift: 5aa5659984d3ca3206ba636a9e7a9c6626b2e8bd
+  ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
+  ObjectMapper: 3d571bb5af471c779e1160828cd9ad5c4ef90958
   PullToRefreshSwift: 0743b818072bfd7c9464addc2d1b987b131057ca
-  R.swift: 14400e5784224d1e4e59a8fc5549198c7e8fe360
+  R.swift: bde9704d50ff36820f49e266bc88ef545e1e9b36
   R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
-  Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
+  Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
-  SDCAlertView: b92fd1f00e522e18a062005e15a16c1e8295c5b5
-  Siren: 0b3b813f4ba6a55b4058348ae4e719795c4f8cc7
-  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
-  SwiftDate: 0efb04a6751b1ab804049b2b09a69848cd304c12
+  SDCAlertView: c39fa91a3aeb5eeba58fe9cea648263b131ff2bf
+  Siren: fae83cda4d08373982313ba64873035e7c1bab40
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  SwiftDate: 6bae71add23ce9f16ec2be3a521b21000da5804b
   SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
-  Toaster: be65cd48e93a525b2a9cc4bd25a2bfc900e02d9f
-  VTAcknowledgementsViewController: 62d2b3979b6d86677246967cf880d14b13ee7ac4
-  XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
+  Toaster: f13031c636ef065281bc11857be9a16c7659e04f
+  VTAcknowledgementsViewController: e1de80f2c0ce31cc7e1c6f1c8aaeec2770371f09
+  XCGLogger: 0b43697155d41e4a1b15fc776f319c2141646b09
   XLActionController: 57fe0ce1642e2eed971b188b490762345fdbf963
 
-PODFILE CHECKSUM: 2e97b48a9ec1b3858bf3a057201365a9a3683b0a
+PODFILE CHECKSUM: 3d14742fbaa0fc0754785714b24554d780f7fc85
 
 COCOAPODS: 1.2.0.beta.1

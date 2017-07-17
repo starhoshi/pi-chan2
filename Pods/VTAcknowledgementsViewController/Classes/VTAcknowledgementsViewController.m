@@ -1,7 +1,7 @@
 //
 // VTAcknowledgementsViewController.m
 //
-// Copyright (c) 2013-2016 Vincent Tourraine (http://www.vtourraine.net)
+// Copyright (c) 2013-2017 Vincent Tourraine (http://www.vtourraine.net)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,8 +23,6 @@
 
 #import "VTAcknowledgementsViewController.h"
 #import "VTAcknowledgementViewController.h"
-#import "VTAcknowledgementsParser.h"
-#import "VTAcknowledgement.h"
 
 #if !TARGET_OS_TV
 #if __has_feature(modules)
@@ -163,10 +161,10 @@ static const CGFloat VTFooterBottomMargin = 20;
 {
     static NSBundle *bundle = nil;
     if (!bundle) {
-        NSString *bundlePath = [NSBundle.mainBundle pathForResource:@"VTAcknowledgementsViewController" ofType:@"bundle"];
+        NSString *bundlePath = [[NSBundle bundleForClass:VTAcknowledgementsViewController.class] pathForResource:@"VTAcknowledgementsViewController" ofType:@"bundle"];
         bundle = [NSBundle bundleWithPath:bundlePath];
-
-        NSString *language = NSLocale.preferredLanguages.count? NSLocale.preferredLanguages.firstObject: @"en";
+        
+        NSString *language = NSBundle.mainBundle.preferredLocalizations.firstObject ?: @"en";
         if (![bundle.localizations containsObject:language]) {
             language = [language componentsSeparatedByString:@"-"].firstObject;
         }

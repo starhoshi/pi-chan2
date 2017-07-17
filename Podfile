@@ -36,15 +36,15 @@ target 'pi-chan2' do
 end
 
 post_install do |installer|
-  puts("Update debug pod settings to speed up build time")
-  Dir.glob(File.join("Pods", "**", "Pods*{debug,Private}.xcconfig")).each do |file|
-    File.open(file, 'a') { |f| f.puts "\nDEBUG_INFORMATION_FORMAT = dwarf" }
-  end
-  installer.pods_project.targets.each do |target|
-    target.build_configurations.each do |config|
-      config.build_settings['SWIFT_VERSION'] = '3.0'
-    end
-  end
+#  puts("Update debug pod settings to speed up build time")
+#  Dir.glob(File.join("Pods", "**", "Pods*{debug,Private}.xcconfig")).each do |file|
+#    File.open(file, 'a') { |f| f.puts "\nDEBUG_INFORMATION_FORMAT = dwarf" }
+#  end
+#  installer.pods_project.targets.each do |target|
+#    target.build_configurations.each do |config|
+#      config.build_settings['SWIFT_VERSION'] = '3.0'
+#    end
+#  end
 
   require 'fileutils'
   FileUtils.cp_r('Pods/Target Support Files/Pods-pi-chan2/Pods-pi-chan2-acknowledgements.plist', 'pi-chan2/SupportingFiles/Acknowledgements.plist', :remove_destination => true)

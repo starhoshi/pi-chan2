@@ -1,6 +1,6 @@
 {
   "name": "FontAwesome.swift",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "summary": "Use Font Awesome in your Swift projects",
   "homepage": "https://github.com/thii/FontAwesome.swift",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/thii/FontAwesome.swift.git",
-    "tag": "1.0.0"
+    "tag": "1.2.0"
   },
   "platforms": {
     "ios": "8.0",

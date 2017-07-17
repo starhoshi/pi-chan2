@@ -53,7 +53,8 @@ open class ToastWindow: UIWindow {
   override open var rootViewController: UIViewController? {
     get {
       guard !self.isStatusBarOrientationChanging else { return nil }
-      return UIApplication.shared.windows.first?.rootViewController
+      guard let firstWindow = UIApplication.shared.delegate?.window else { return nil }
+      return firstWindow is ToastWindow ? nil : firstWindow?.rootViewController
     }
     set { /* Do nothing */ }
   }
@@ -144,9 +145,9 @@ open class ToastWindow: UIWindow {
 
   func angleForOrientation(_ orientation: UIInterfaceOrientation) -> Double {
     switch orientation {
-    case .landscapeLeft: return -M_PI_2
-    case .landscapeRight: return M_PI_2
-    case .portraitUpsideDown: return M_PI
+    case .landscapeLeft: return -.pi / 2
+    case .landscapeRight: return .pi / 2
+    case .portraitUpsideDown: return .pi
     default: return 0
     }
   }

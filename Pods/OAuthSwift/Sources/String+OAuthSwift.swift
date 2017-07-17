@@ -10,40 +10,28 @@ import Foundation
 
 extension String {
 
-    internal func indexOf(_ sub: String) -> Int? {
-        var pos: Int?
-        
-        if let range = self.range(of: sub) {
-            if !range.isEmpty {
-                pos = self.characters.distance(from: self.startIndex, to: range.lowerBound)
-            }
-        }
-        
-        return pos
-    }
-
     var urlEncodedString: String {
         let customAllowedSet =  CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~")
         let escapedString = self.addingPercentEncoding(withAllowedCharacters: customAllowedSet)
         return escapedString!
     }
 
-    func parametersFromQueryString() -> Dictionary<String, String> {
+    var parametersFromQueryString: [String: String] {
         return dictionaryBySplitting("&", keyValueSeparator: "=")
     }
-    
+
     var urlQueryEncoded: String? {
         return self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
     }
 
-    func dictionaryBySplitting(_ elementSeparator: String, keyValueSeparator: String) -> Dictionary<String, String> {
-		
+    fileprivate func dictionaryBySplitting(_ elementSeparator: String, keyValueSeparator: String) -> [String: String] {
+
 		var string = self
-		if(hasPrefix(elementSeparator)) {
+		if hasPrefix(elementSeparator) {
 			string = String(characters.dropFirst(1))
 		}
-		
-        var parameters = Dictionary<String, String>()
+
+        var parameters = [String: String]()
 
         let scanner = Scanner(string: string)
 
@@ -59,60 +47,22 @@ extension String {
             scanner.scanUpTo(elementSeparator, into: &value)
             scanner.scanString(elementSeparator, into: nil)
 
-            if let key = key as? String, let value = value as? String {
+            if let key = key as String?, let value = value as String? {
                 parameters.updateValue(value, forKey: key)
             }
         }
-        
+
         return parameters
     }
-        
-    public var headerDictionary: Dictionary<String, String> {
+
+    public var headerDictionary: OAuthSwift.Headers {
         return dictionaryBySplitting(",", keyValueSeparator: "=")
     }
-    
+
     var safeStringByRemovingPercentEncoding: String {
         return self.removingPercentEncoding ?? self
     }
-    
-    func split(_ s:String)->[String]{
-        if s.isEmpty{
-            var x=[String]()
-            for y in self.characters{
-                x.append(String(y))
-            }
-            return x
-        }
-        return self.components(separatedBy: s)
-    }
-    func trim()->String{
-        return self.trimmingCharacters(in: CharacterSet.whitespaces)
-    }
-    func has(_ s:String)->Bool{
-        if (self.range(of: s) != nil) {
-            return true
-        }else{
-            return false
-        }
-    }
- 
- 
-    func `repeat`(_ times: Int) -> String{
-        var result = ""
-        for _ in 0..<times {
-            result += self
-        }
-        return result
-    }
-    func reverse()-> String{
-        let s=Array(self.split("").reversed())
-        var x=""
-        for y in s{
-            x+=y
-        }
-        return x
-    }
-    
+
     var droppedLast: String {
        return self.substring(to: self.index(before: self.endIndex))
     }
@@ -121,22 +71,22 @@ extension String {
         self.remove(at: self.index(before: self.endIndex))
     }
 
-    func substring(to offset: String.IndexDistance) -> String{
+    func substring(to offset: String.IndexDistance) -> String {
         return self.substring(to: self.index(self.startIndex, offsetBy: offset))
     }
 
-    func substring(from offset: String.IndexDistance) -> String{
+    func substring(from offset: String.IndexDistance) -> String {
         return self.substring(from: self.index(self.startIndex, offsetBy: offset))
     }
-    
+
 }
 
 extension String.Encoding {
-    
+
     var charset: String {
         let charset = CFStringConvertEncodingToIANACharSetName(CFStringConvertNSStringEncodingToEncoding(self.rawValue))
-        return charset as! String
+        // swiftlint:disable force_cast
+        return charset! as String
     }
 
 }
-

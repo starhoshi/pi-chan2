@@ -30,7 +30,9 @@ public enum ActionLayout: Int {
 @objc(SDCAlertController)
 public class AlertController: UIViewController {
 
-    private lazy var assignResponder: () -> Bool = { self.textFields?.first?.becomeFirstResponder() ?? false }
+    private lazy var assignResponder: () -> Bool = { [weak self] _ in
+        self?.textFields?.first?.becomeFirstResponder() ?? false
+    }
 
     /// The alert's title. Directly uses `attributedTitle` without any attributes.
     override public var title: String? {
@@ -221,7 +223,7 @@ public class AlertController: UIViewController {
         // http://stackoverflow.com/a/19580888/751268
 
         if self.behaviors?.contains(.AutomaticallyFocusTextField) == true {
-            _ = self.assignResponder
+            _ = self.assignResponder()
         }
     }
 

@@ -20,15 +20,15 @@ import Foundation
 #endif
 
 // Delegate for OAuthWebViewController
-public protocol OAuthWebViewControllerDelegate {
-    
+public protocol OAuthWebViewControllerDelegate: class {
+
     #if os(iOS) || os(tvOS)
     // Did web view presented (work only without navigation controller)
     func oauthWebViewControllerDidPresent()
     // Did web view dismiss (work only without navigation controller)
     func oauthWebViewControllerDidDismiss()
     #endif
-    
+
     func oauthWebViewControllerWillAppear()
     func oauthWebViewControllerDidAppear()
     func oauthWebViewControllerWillDisappear()
@@ -37,16 +37,19 @@ public protocol OAuthWebViewControllerDelegate {
 
 // A web view controller, which handler OAuthSwift authentification.
 open class OAuthWebViewController: OAuthViewController, OAuthSwiftURLHandlerType {
- 
+
     #if os(iOS) || os(tvOS) || os(OSX)
     // Delegate for this view
-    public var delegate: OAuthWebViewControllerDelegate?
+    public weak var delegate: OAuthWebViewControllerDelegate?
     #endif
 
     #if os(iOS) || os(tvOS)
     // If controller have an navigation controller, application top view controller could be used if true
     public var useTopViewControlerInsteadOfNavigation = false
-    
+
+    // If you want you could set animation transition to NO
+    public var presentViewControllerAnimated = true
+
     public var topViewController: UIViewController? {
         #if !OAUTH_APP_EXTENSIONS
             return UIApplication.topViewController
@@ -66,7 +69,7 @@ open class OAuthWebViewController: OAuthViewController, OAuthSwiftURLHandlerType
     }
     public var present: Present = .asModalWindow
     #endif
-    
+
     open func handle(_ url: URL) {
         // do UI in main thread
         OAuthSwift.main { [unowned self] in
@@ -83,22 +86,18 @@ open class OAuthWebViewController: OAuthViewController, OAuthSwiftURLHandlerType
             let completion: () -> Void = { [unowned self] in
                 self.delegate?.oauthWebViewControllerDidPresent()
             }
-            let animated = true
             if let navigationController = self.navigationController, (!useTopViewControlerInsteadOfNavigation || self.topViewController == nil) {
-                navigationController.pushViewController(self, animated: animated)
-            }
-            else if let p = self.parent {
-                p.present(self, animated: animated, completion: completion)
-            }
-            else if let topViewController = topViewController {
-                topViewController.present(self, animated: animated, completion: completion)
-            }
-            else {
+                navigationController.pushViewController(self, animated: presentViewControllerAnimated)
+            } else if let p = self.parent {
+                p.present(self, animated: presentViewControllerAnimated, completion: completion)
+            } else if let topViewController = topViewController {
+                topViewController.present(self, animated: presentViewControllerAnimated, completion: completion)
+            } else {
                 // assert no presentation
                 assertionFailure("Failed to present. Maybe add a parent")
             }
         #elseif os(watchOS)
-            if (url.scheme == "http" || url.scheme == "https") {
+            if url.scheme == "http" || url.scheme == "https" {
                 self.updateUserActivity(OAuthWebViewController.userActivityType, userInfo: nil, webpageURL: url)
             }
         #elseif os(OSX)
@@ -126,11 +125,9 @@ open class OAuthWebViewController: OAuthViewController, OAuthSwiftURLHandlerType
                     p.performSegue(withIdentifier: segueIdentifier, sender: self) // The segue must display self.view
                     break
                 }
-            }
-            else if let window = self.view.window {
+            } else if let window = self.view.window {
                 window.makeKeyAndOrderFront(nil)
-            }
-            else {
+            } else {
                 assertionFailure("Failed to present. Add controller into a window or add a parent")
             }
             // or create an NSWindow or NSWindowController (/!\ keep a strong reference on it)
@@ -143,17 +140,14 @@ open class OAuthWebViewController: OAuthViewController, OAuthSwiftURLHandlerType
                 self.delegate?.oauthWebViewControllerDidDismiss()
             }
             let animated = true
-            if let navigationController = self.navigationController , (!useTopViewControlerInsteadOfNavigation || self.topViewController == nil){
+            if let navigationController = self.navigationController, (!useTopViewControlerInsteadOfNavigation || self.topViewController == nil) {
                 navigationController.popViewController(animated: animated)
-            }
-            else if let parentViewController = self.parent {
+            } else if let parentViewController = self.parent {
                 // The presenting view controller is responsible for dismissing the view controller it presented
                 parentViewController.dismiss(animated: animated, completion: completion)
-            }
-            else if let topViewController = topViewController {
+            } else if let topViewController = topViewController {
                 topViewController.dismiss(animated: animated, completion: completion)
-            }
-            else {
+            } else {
                 // keep old code...
                 self.dismiss(animated: animated, completion: completion)
             }
@@ -165,13 +159,12 @@ open class OAuthWebViewController: OAuthViewController, OAuthSwiftURLHandlerType
                 if self.parent != nil {
                     self.removeFromParentViewController()
                 }
-            }
-            else if let window = self.view.window {
+            } else if let window = self.view.window {
                 window.performClose(nil)
             }
         #endif
     }
-    
+
     // MARK: overrides
     #if os(iOS) || os(tvOS)
     open override func viewWillAppear(_ animated: Bool) {
@@ -199,6 +192,6 @@ open class OAuthWebViewController: OAuthViewController, OAuthSwiftURLHandlerType
     open override func viewDidDisappear() {
         self.delegate?.oauthWebViewControllerDidDisappear()
     }
-    
+
     #endif
 }

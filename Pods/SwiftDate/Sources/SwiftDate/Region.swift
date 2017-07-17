@@ -28,9 +28,9 @@ import Foundation
 
 /// Region encapsulate information about the TimeZone, Calendar and Locale of an absolute time
 public struct Region: CustomStringConvertible {
-	private(set) var timeZone: TimeZone
-	private(set) var calendar: Calendar
-	private(set) var locale: Locale
+	public fileprivate(set) var timeZone: TimeZone
+	public fileprivate(set) var calendar: Calendar
+	public fileprivate(set) var locale: Locale
 	
 	public var description: String {
 		return "Region with timezone: \(self.timeZone), calendar: \(self.calendar), locale: \(self.locale)"
@@ -97,6 +97,17 @@ public struct Region: CustomStringConvertible {
 		let cal = (auto ? CalendarName.currentAutoUpdating : CalendarName.current).calendar
 		let loc = (auto ? Locale.autoupdatingCurrent : Locale.current)
 		return Region(tz: tz, cal: cal, loc: loc)
+	}
+		
+	/// Identify the first weekday of the calendar.
+	/// By default is `sunday`.
+	public var firstWeekday: WeekDay {
+		set {
+			self.calendar.firstWeekday = newValue.rawValue
+		}
+		get {
+			return WeekDay(rawValue: self.calendar.firstWeekday)!
+		}
 	}
 
 }

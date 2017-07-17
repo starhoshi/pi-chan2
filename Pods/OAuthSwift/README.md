@@ -8,7 +8,7 @@ Swift based OAuth library for iOS and OSX.
 
 ## Support OAuth1.0, OAuth2.0
 
-Twitter, Flickr, Github, Instagram, Foursquare. Fitbit, Withings, Linkedin, Dropbox, Dribbble, Salesforce, BitBucket, GoogleDrive, Smugmug, Intuit, Zaim, Tumblr, Slack, Uber, Gitter, Facebook, Spotify, Typetalk, SoundCloud etc
+Twitter, Flickr, Github, Instagram, Foursquare. Fitbit, Withings, Linkedin, Dropbox, Dribbble, Salesforce, BitBucket, GoogleDrive, Smugmug, Intuit, Zaim, Tumblr, Slack, Uber, Gitter, Facebook, Spotify, Typetalk, SoundCloud, etc
 
 ## Installation
 
@@ -24,7 +24,7 @@ OAuthSwift is packaged as a Swift framework. Currently this is the simplest way 
 * Install Carthage (https://github.com/Carthage/Carthage)
 * Create Cartfile file
 ```
-github "OAuthSwift/OAuthSwift" ~> 1.0.0
+github "OAuthSwift/OAuthSwift" ~> 1.1.0
 ```
 * Run `carthage update`.
 * On your application targets’ “General” settings tab, in the “Embedded Binaries” section, drag and drop OAuthSwift.framework from the Carthage/Build/iOS folder on disk.
@@ -37,7 +37,7 @@ github "OAuthSwift/OAuthSwift" ~> 1.0.0
 platform :ios, '8.0'
 use_frameworks!
 
-pod 'OAuthSwift', '~> 1.0.0'
+pod 'OAuthSwift', '~> 1.1.0'
 ```
 ## How to
 ### Setting URL Schemes
@@ -57,7 +57,7 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpe
 ```
 :warning: Any other application may try to open a URL with your url scheme. So you can check the source application, for instance for safari controller :
 ```
-if (options["UIApplicationOpenURLOptionsSourceApplicationKey"] as? String == "com.apple.SafariViewService") {
+if (options[.sourceApplication] as? String == "com.apple.SafariViewService") {
 ```
 
 - On previous iOS version
@@ -86,18 +86,39 @@ oauthswift = OAuth1Swift(
     authorizeUrl:    "https://api.twitter.com/oauth/authorize",
     accessTokenUrl:  "https://api.twitter.com/oauth/access_token"
 )
+// authorize
 let handle = oauthswift.authorize(
     withCallbackURL: URL(string: "oauth-swift://oauth-callback/twitter")!,
     success: { credential, response, parameters in
-      print(credential.oauth_token)
-      print(credential.oauth_token_secret)
+      print(credential.oauthToken)
+      print(credential.oauthTokenSecret)
       print(parameters["user_id"])
+      // Do your request
     },
     failure: { error in
       print(error.localizedDescription)
     }             
 )
 ```
+### OAuth1 without authorization
+No urls to specify here
+```swift
+// create an instance and retain it
+oauthswift = OAuth1Swift(
+    consumerKey:    "********",
+    consumerSecret: "********"
+)
+// do your HTTP request without authorize
+oauthswift.client.get("https://api.example.com/foo/bar",
+    success: { response in
+        //....
+    },
+    failure: { error in
+        //...
+    }
+)
+```
+
 ### Authorize with OAuth2.0
 ```swift
 oauthswift = OAuth2Swift(
@@ -110,7 +131,8 @@ let handle = oauthswift.authorize(
     withCallbackURL: URL(string: "oauth-swift://oauth-callback/instagram")!,
     scope: "likes+comments", state:"INSTAGRAM",
     success: { credential, response, parameters in
-      print(credential.oauth_token)
+      print(credential.oauthToken)
+      // Do your request
     },
     failure: { error in
       print(error.localizedDescription)
@@ -139,7 +161,7 @@ func handle(_ url: NSURL) {
   ...
 ```
 and present the view (`present(viewController`, `performSegue(withIdentifier: `, ...)
-*You can extends `OAuthWebViewController` for a default implementation of view presentation and dismiss*
+*You can extend `OAuthWebViewController` for a default implementation of view presentation and dismiss*
 
 #### Use the SFSafariViewController (iOS9)
 A default implementation of `OAuthSwiftURLHandlerType` is provided using the `SFSafariViewController`, with automatic view dismiss.
@@ -150,10 +172,12 @@ Of course you can create your own class or customize the controller by setting t
 
 ### Make signed request
 
+Just call HTTP functions of `oauthswift.client`
+
 ```swift
 oauthswift.client.get("https://api.linkedin.com/v1/people/~",
-      success: { data, response in
-        let dataString = String(data: data, encoding: String.Encoding.utf8)
+      success: { response in
+        let dataString = response.string
         print(dataString)
       },
       failure: { error in
@@ -166,7 +190,7 @@ oauthswift.client.request("https://api.linkedin.com/v1/people/~", .GET,
       success: { ...
 ```
 
-See more examples in the demo application: [ViewController.swift](/OAuthSwiftDemo/ViewController.swift)
+See more examples in the demo application: [ViewController.swift](/Demo/Common/ViewController.swift)
 
 ## OAuth provider pages
 
@@ -188,7 +212,7 @@ See more examples in the demo application: [ViewController.swift](/OAuthSwiftDem
 * [Zaim](https://dev.zaim.net/home/api/authorize)
 * [Tumblr](https://www.tumblr.com/docs/en/api/v2#auth)
 * [Slack](https://api.slack.com/docs/oauth)
-* [Uber](https://developer.uber.com/v1/auth/)
+* [Uber](https://developer.uber.com/docs/ride-requests/guides/authentication/introduction#oauth-20)
 * [Gitter](https://developer.gitter.im/docs/authentication)
 * [Facebook](https://developers.facebook.com/docs/facebook-login)
 * [Spotify](https://developer.spotify.com/web-api/authorization-guide/)
@@ -197,6 +221,8 @@ See more examples in the demo application: [ViewController.swift](/OAuthSwiftDem
 * [Goodreads](https://www.goodreads.com/api/documentation#oauth)
 * [Typetalk](http://developer.nulab-inc.com/docs/typetalk/auth)
 * [SoundCloud](https://developers.soundcloud.com/docs/api/guide#authentication)
+* [Digu](https://digu.io/developer/oauth)
+* [NounProject](http://api.thenounproject.com/getting_started.html#authentication)
 
 ## Images
 
@@ -205,9 +231,20 @@ See more examples in the demo application: [ViewController.swift](/OAuthSwiftDem
 ![Image](Assets/TwitterOAuthTokens.png "Image")
 
 ## Contributing
- See [CONTRIBUTING.md](CONTRIBUTING.md)
+ See [CONTRIBUTING.md](.github/CONTRIBUTING.md)
 
 [Add a new service in demo app](https://github.com/OAuthSwift/OAuthSwift/wiki/Demo-application#add-a-new-service-in-demo-app)
+
+
+## Integration
+OAuthSwift could be used with others frameworks
+
+You can sign [Alamofire](https://github.com/Alamofire/Alamofire) request with [OAuthSwiftAlamofire](https://github.com/OAuthSwift/OAuthSwiftAlamofire)
+
+To achieve great asynchronous code you can use one of this integration frameworks
+- [OAuthSwiftFutures](https://github.com/OAuthSwift/OAuthSwiftFutures) - [BrightFutures](https://github.com/Thomvis/BrightFutures)
+- [OAuthRxSwift](https://github.com/OAuthSwift/OAuthRxSwift) - [RxSwift](https://github.com/ReactiveX/RxSwift)
+- [OAuthReactiveSwift](https://github.com/OAuthSwift/OAuthReactiveSwift) - [ReactiveSwift](https://github.com/ReactiveCocoa/ReactiveSwift)
 
 ## License
 

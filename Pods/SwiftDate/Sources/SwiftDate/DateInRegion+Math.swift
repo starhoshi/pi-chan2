@@ -27,7 +27,6 @@ import Foundation
 // MARK: - DateInRegion Private Extension
 
 extension DateInRegion {
-
 	
 	/// Return a `DateComponent` object from a given set of `Calendar.Component` object with associated values and a specific region
 	///
@@ -49,6 +48,69 @@ extension DateInRegion {
 			}
 		}
 		return cmps
+	}
+	
+	
+	/// Create a new DateInRegion by adding specified DateComponents to self.
+	/// If fails it return `nil`o object.
+	///
+	/// - Parameter dateComponents: date components to add
+	/// - Returns: a new instance of DateInRegion expressed in same region
+	public func add(components dateComponents: DateComponents) -> DateInRegion? {
+		let newDate = self.region.calendar.date(byAdding: dateComponents, to: self.absoluteDate)
+		if newDate == nil { return nil }
+		return DateInRegion(absoluteDate: newDate!, in: self.region)
+	}
+	
+	
+	/// Enumerate dates between two intervals by adding specified time components and return an array of dates.
+	/// `startDate` interval will be the first item of the resulting array. The last item of the array is evaluated automatically.
+	///
+	/// - Parameters:
+	///   - startDate: starting date
+	///   - endDate: ending date
+	///   - components: components to add
+	///	  - normalize: normalize both start and end date at the start of the specified component (if nil, normalization is skipped)
+	/// - Returns: an array of DateInRegion objects
+	public static func dates(between startDate: DateInRegion, and endDate: DateInRegion, increment components: DateComponents) -> [DateInRegion]? {
+		guard startDate.region.calendar == endDate.region.calendar else {
+			return nil
+		}
+
+		var dates: [DateInRegion] = []
+		var currentDate = startDate
+		
+		while (currentDate <= endDate) {
+			dates.append(currentDate)
+			guard let c_date = currentDate.add(components: components) else {
+				return nil
+			}
+			currentDate = c_date
+		}
+		
+		return dates
+	}
+	
+	
+	/// Adjust time of the date by rounding to the next `value` interval.
+	/// Interval can be `seconds` or `minutes` and you can specify the type of rounding function to use.
+	///
+	/// - Parameters:
+	///   - value: value to round
+	///   - type: type of rounding
+	public func roundAt(_ value: IntervalType, type: IntervalRoundingType = .ceil) {
+		var roundedInterval: TimeInterval = 0
+		let rounded_abs_date = self.absoluteDate
+		let seconds = value.seconds
+		switch type  {
+		case .round:
+			roundedInterval = (rounded_abs_date.timeIntervalSinceReferenceDate / seconds).rounded() * seconds
+		case .ceil:
+			roundedInterval = ceil(rounded_abs_date.timeIntervalSinceReferenceDate / seconds) * seconds
+		case .floor:
+			roundedInterval = floor(rounded_abs_date.timeIntervalSinceReferenceDate / seconds) * seconds
+		}
+		self.absoluteDate = Date(timeIntervalSinceReferenceDate: roundedInterval)
 	}
 	
 }
