@@ -27,7 +27,6 @@
 		E36DC53E1DCCB81C00D16167 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E36DC5391DCCB81C00D16167 /* Settings.storyboard */; };
 		E36DC53F1DCCB81C00D16167 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DC53A1DCCB81C00D16167 /* SettingsViewController.swift */; };
 		E36DC5421DCCB98D00D16167 /* Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DC5411DCCB98D00D16167 /* Share.swift */; };
-		E36DC5441DCCB99400D16167 /* SirenUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DC5431DCCB99400D16167 /* SirenUpdater.swift */; };
 		E36DC5461DCCBB9100D16167 /* Acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = E36DC5451DCCBB9100D16167 /* Acknowledgements.plist */; };
 		E36DC55D1DCD842100D16167 /* Preview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E36DC5561DCD842100D16167 /* Preview.storyboard */; };
 		E36DC55E1DCD842100D16167 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DC5571DCD842100D16167 /* PreviewViewController.swift */; };
@@ -110,7 +109,6 @@
 		E36DC5391DCCB81C00D16167 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		E36DC53A1DCCB81C00D16167 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E36DC5411DCCB98D00D16167 /* Share.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Share.swift; sourceTree = "<group>"; };
-		E36DC5431DCCB99400D16167 /* SirenUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SirenUpdater.swift; sourceTree = "<group>"; };
 		E36DC5451DCCBB9100D16167 /* Acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Acknowledgements.plist; sourceTree = "<group>"; };
 		E36DC5561DCD842100D16167 /* Preview.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Preview.storyboard; sourceTree = "<group>"; };
 		E36DC5571DCD842100D16167 /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
@@ -321,7 +319,6 @@
 			children = (
 				E3C6CE921DCC1E6C001C2A06 /* Log.swift */,
 				E36DC5411DCCB98D00D16167 /* Share.swift */,
-				E36DC5431DCCB99400D16167 /* SirenUpdater.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -685,7 +682,6 @@
 				E36DC56E1DCDABDC00D16167 /* PATCH_posts_Request.swift in Sources */,
 				E3AD42BF1DCEE16700E6AD84 /* String+Extension.swift in Sources */,
 				E3C6CEB01DCC2A4A001C2A06 /* UIColor+Extension.swift in Sources */,
-				E36DC5441DCCB99400D16167 /* SirenUpdater.swift in Sources */,
 				E3C6CEB51DCC3292001C2A06 /* PostsViewController.swift in Sources */,
 				E36DC5021DCC9B2600D16167 /* CreatedBy.swift in Sources */,
 				E3AD42C91DCF305100E6AD84 /* GET_categories_Response.swift in Sources */,

@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        SirenUpdater.checkVersion(checkType: .immediately)
         Fabric.with([Crashlytics.self])
         IQKeyboardManager.sharedManager().enable = true
         settingTabNavBar()

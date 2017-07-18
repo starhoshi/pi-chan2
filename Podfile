@@ -25,7 +25,6 @@ def main_pods
   pod 'NSDate+TimeAgo'
   pod 'SwiftDate'
   pod 'VTAcknowledgementsViewController'
-  pod 'Siren'
   pod 'SCLAlertView'
   pod 'IQKeyboardManagerSwift'
 end
