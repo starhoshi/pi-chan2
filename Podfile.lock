@@ -24,9 +24,8 @@ PODS:
   - Result (3.2.3)
   - SCLAlertView (0.7.0)
   - SDCAlertView (7.1.2)
-  - Siren (2.0.6)
   - SVProgressHUD (2.1.2)
-  - SwiftDate (4.1.6)
+  - SwiftDate (4.1.7)
   - SwiftyUserDefaults (3.0.0)
   - Toaster (2.0.4)
   - VTAcknowledgementsViewController (1.2.1)
@@ -56,7 +55,6 @@ DEPENDENCIES:
   - R.swift
   - SCLAlertView
   - SDCAlertView
-  - Siren
   - SVProgressHUD
   - SwiftDate
   - SwiftyUserDefaults
@@ -97,15 +95,14 @@ SPEC CHECKSUMS:
   Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SDCAlertView: c39fa91a3aeb5eeba58fe9cea648263b131ff2bf
-  Siren: fae83cda4d08373982313ba64873035e7c1bab40
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
-  SwiftDate: 6bae71add23ce9f16ec2be3a521b21000da5804b
+  SwiftDate: 029be76691ee89176da3a46c7df3415b6734bc5b
   SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
   Toaster: f13031c636ef065281bc11857be9a16c7659e04f
   VTAcknowledgementsViewController: e1de80f2c0ce31cc7e1c6f1c8aaeec2770371f09
   XCGLogger: 0b43697155d41e4a1b15fc776f319c2141646b09
   XLActionController: 57fe0ce1642e2eed971b188b490762345fdbf963
 
-PODFILE CHECKSUM: 3d14742fbaa0fc0754785714b24554d780f7fc85
+PODFILE CHECKSUM: d290b3e52642b82167d388ce84101211e2e2fb80
 
 COCOAPODS: 1.2.0.beta.1
